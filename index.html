@@ -1549,8 +1549,8 @@
                                         class="w-full h-full object-cover"></video>
 
                                     <!-- Play/Pause Button -->
-                                    <button id="playPauseBtn"
-                                        class="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 focus:outline-none">
+                                    <button
+                                        class="playPauseBtn absolute bottom-4 right-4 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 focus:outline-none">
                                         <i class="fas fa-play"></i>
                                     </button>
                                 </div>
@@ -2377,44 +2377,26 @@
 </html>
 
 <script>
-    const video = document.getElementById('dysevolutionVideo');
-    const video2 = document.getElementById('narikaVideo');
-    const button = document.getElementById('playPauseBtn');
-    const icon = button.querySelector('i');
+    document.querySelectorAll('.playPauseBtn').forEach(button => {
+        const container = button.closest('.relative');
+        const video = container.querySelector('video');
+        const icon = button.querySelector('i');
 
-    button.addEventListener('click', () => {
-        if (video.paused) {
-            video.play();
-            icon.classList.remove('fa-play');
-            icon.classList.add('fa-pause');
-        } else {
-            video.pause();
+        button.addEventListener('click', () => {
+            if (video.paused) {
+                video.play();
+                icon.classList.remove('fa-play');
+                icon.classList.add('fa-pause');
+            } else {
+                video.pause();
+                icon.classList.remove('fa-pause');
+                icon.classList.add('fa-play');
+            }
+        });
+
+        video.addEventListener('ended', () => {
             icon.classList.remove('fa-pause');
             icon.classList.add('fa-play');
-        }
-    });
-
-    // Optional: reset icon when video ends
-    video.addEventListener('ended', () => {
-        icon.classList.remove('fa-pause');
-        icon.classList.add('fa-play');
-    });
-
-    button.addEventListener('click', () => {
-        if (video2.paused) {
-            video2.play();
-            icon.classList.remove('fa-play');
-            icon.classList.add('fa-pause');
-        } else {
-            video2.pause();
-            icon.classList.remove('fa-pause');
-            icon.classList.add('fa-play');
-        }
-    });
-
-    // Optional: reset icon when video ends
-    video2.addEventListener('ended', () => {
-        icon.classList.remove('fa-pause');
-        icon.classList.add('fa-play');
+        });
     });
 </script>
