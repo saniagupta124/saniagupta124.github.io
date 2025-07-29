@@ -1375,21 +1375,19 @@
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
 
                                 <div class="relative rounded-xl overflow-hidden h-80">
-                                    <video class="w-full h-full object-cover">
-                                        <source src="files/dysevolution_video.mp4" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                    <!-- Play/Pause Button -->
-                                    <button
-                                        class="playPauseBtn absolute bottom-4 right-4 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 focus:outline-none">
-                                        <i class="fas fa-play"></i>
-                                    </button>
-
-                                    <!-- Timeline slider -->
-                                    <input type="range"
-                                        class="videoTimeline absolute bottom-5 left-1/2 w-4/5 h-2 z-10 appearance-none bg-white bg-opacity-30 transform -translate-x-1/2"
-                                        value="0" min="0" max="100" step="0.1">
+                                    <div style="padding:56.25% 0 0 0;position:relative;">
+                                        <iframe
+                                            src="https://player.vimeo.com/video/1105514379?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                                            frameborder="0"
+                                            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                                            referrerpolicy="strict-origin-when-cross-origin"
+                                            style="position:absolute;top:0;left:0;width:100%;height:100%;"
+                                            title="dysevolution_video">
+                                        </iframe>
+                                    </div>
+                                    <script src="https://player.vimeo.com/api/player.js"></script>
                                 </div>
+
                                 <div>
                                     <h3 class="text-2xl font-bold mb-4">Project Overview</h3>
                                     <p class="text-slate-300 mb-4">
