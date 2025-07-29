@@ -1504,15 +1504,15 @@
                             </div>
 
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                                <div class="rounded-xl h-56 overflow-hidden">
+                                <div class="rounded-xl overflow-hidden aspect-square">
                                     <img src="files/moonPatrol1.png" alt="Moon Patrol Screenshot 1"
                                         class="w-full h-full object-cover">
                                 </div>
-                                <div class="rounded-xl h-56 overflow-hidden">
+                                <div class="rounded-xl overflow-hidden aspect-square">
                                     <img src="files/moonPatrol2.png" alt="Moon Patrol Screenshot 2"
                                         class="w-full h-full object-cover">
                                 </div>
-                                <div class="rounded-xl h-56 overflow-hidden">
+                                <div class="rounded-xl overflow-hidden aspect-square">
                                     <img src="files/moonPatrol3.png" alt="Moon Patrol Screenshot 3"
                                         class="w-full h-full object-cover">
                                 </div>
@@ -1671,7 +1671,7 @@
                                             class="bg-orange-900 text-orange-200 px-3 py-1 rounded-full text-sm">Project
                                             Management</span>
                                         <span class="bg-orange-900 text-orange-200 px-3 py-1 rounded-full text-sm">2D
-                                            Asset Creation
+                                            Art
                                         </span>
                                         <span
                                             class="bg-orange-900 text-orange-200 px-3 py-1 rounded-full text-sm">Physical
@@ -1728,17 +1728,20 @@
                             <p class="text-xl text-slate-300 mb-8">Immersive VR endless runner</p>
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                                <div
-                                    class="bg-gradient-to-br from-red-500 to-orange-600 rounded-xl h-80 flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-32 w-32 text-white opacity-80"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                            d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z">
-                                        </path>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                            d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z">
-                                        </path>
-                                    </svg>
+                                <div class="relative rounded-xl overflow-hidden h-80">
+                                    <video id="gemRushVideo" src="files/gemRush_video.mov"
+                                        class="w-full h-full object-cover"></video>
+
+                                    <!-- Play/Pause Button -->
+                                    <button
+                                        class="playPauseBtn absolute bottom-4 right-4 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 focus:outline-none">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+
+                                    <!-- Timeline slider -->
+                                    <input type="range"
+                                        class="videoTimeline absolute bottom-5 left-1/2 w-4/5 h-2 z-10 appearance-none bg-white bg-opacity-30 transform -translate-x-1/2"
+                                        value="0" min="0" max="100" step="0.1">
                                 </div>
                                 <div>
                                     <h3 class="text-2xl font-bold mb-4">Project Overview</h3>
@@ -1766,7 +1769,7 @@
                                             class="bg-orange-900 text-orange-200 px-3 py-1 rounded-full text-sm">Project
                                             Management</span>
                                         <span class="bg-orange-900 text-orange-200 px-3 py-1 rounded-full text-sm">3D
-                                            Asset Creation
+                                            Modeling
                                         </span>
                                         <span
                                             class="bg-orange-900 text-orange-200 px-3 py-1 rounded-full text-sm">Virtual
@@ -1776,32 +1779,17 @@
                             </div>
 
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                                <div
-                                    class="bg-gradient-to-br from-orange-500 to-red-600 rounded-xl h-48 flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-white opacity-80"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                        </path>
-                                    </svg>
+                                <div class="rounded-xl h-56 overflow-hidden">
+                                    <img src="files/gemRush1.png" alt="Gem Rush Screenshot 1"
+                                        class="w-full h-full object-cover">
                                 </div>
-                                <div
-                                    class="bg-gradient-to-br from-orange-500 to-red-600 rounded-xl h-48 flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-white opacity-80"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                        </path>
-                                    </svg>
+                                <div class="rounded-xl h-56 overflow-hidden">
+                                    <img src="files/gemRush2.png" alt="Gem Rush Screenshot 2"
+                                        class="w-full h-full object-cover">
                                 </div>
-                                <div
-                                    class="bg-gradient-to-br from-orange-500 to-red-600 rounded-xl h-48 flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-white opacity-80"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                        </path>
-                                    </svg>
+                                <div class="rounded-xl h-56 overflow-hidden">
+                                    <img src="files/gemRush3.png" alt="Gem Rush Screenshot 3"
+                                        class="w-full h-full object-cover">
                                 </div>
                             </div>
 
@@ -1840,17 +1828,20 @@
                             <p class="text-xl text-slate-300 mb-8">Immersive VR endless runner</p>
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                                <div
-                                    class="bg-gradient-to-br from-red-500 to-orange-600 rounded-xl h-80 flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-32 w-32 text-white opacity-80"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                            d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z">
-                                        </path>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                            d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z">
-                                        </path>
-                                    </svg>
+                                <div class="relative rounded-xl overflow-hidden h-80">
+                                    <video id="somebodysWatchingVideo" src="files/somebodysWatchingVideo.mov"
+                                        class="w-full h-full object-cover"></video>
+
+                                    <!-- Play/Pause Button -->
+                                    <button
+                                        class="playPauseBtn absolute bottom-4 right-4 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 focus:outline-none">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+
+                                    <!-- Timeline slider -->
+                                    <input type="range"
+                                        class="videoTimeline absolute bottom-5 left-1/2 w-4/5 h-2 z-10 appearance-none bg-white bg-opacity-30 transform -translate-x-1/2"
+                                        value="0" min="0" max="100" step="0.1">
                                 </div>
                                 <div>
                                     <h3 class="text-2xl font-bold mb-4">Project Overview</h3>
@@ -1884,32 +1875,17 @@
                             </div>
 
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                                <div
-                                    class="bg-gradient-to-br from-orange-500 to-red-600 rounded-xl h-48 flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-white opacity-80"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                        </path>
-                                    </svg>
+                                <div class="rounded-xl h-56 overflow-hidden">
+                                    <img src="files/somebodysWatching1.png" alt="Somebody's Watching Screenshot 1"
+                                        class="w-full h-full object-cover">
                                 </div>
-                                <div
-                                    class="bg-gradient-to-br from-orange-500 to-red-600 rounded-xl h-48 flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-white opacity-80"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                        </path>
-                                    </svg>
+                                <div class="rounded-xl h-56 overflow-hidden">
+                                    <img src="files/somebodysWatching2.png" alt="Somebody's Watching Screenshot 1"
+                                        class="w-full h-full object-cover">
                                 </div>
-                                <div
-                                    class="bg-gradient-to-br from-orange-500 to-red-600 rounded-xl h-48 flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-white opacity-80"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                        </path>
-                                    </svg>
+                                <div class="rounded-xl h-56 overflow-hidden">
+                                    <img src="files/somebodysWatching3.png" alt="Somebody's Watching Screenshot 1"
+                                        class="w-full h-full object-cover">
                                 </div>
                             </div>
 
