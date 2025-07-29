@@ -2429,48 +2429,91 @@
 </html>
 
 <script src="https://player.vimeo.com/api/player.js"></script>
-<script>
-    document.querySelectorAll('.video-container').forEach(container => {
-        const iframe = container.querySelector('.vimeo-player');
-        const playPauseBtn = container.querySelector('.playPauseBtn');
-        const videoTimeline = container.querySelector('.videoTimeline');
-        const player = new Vimeo.Player(iframe);
+<style>
+    .video-container {
+        position: relative;
+        padding-top: 56.25%;
+        /* 16:9 aspect ratio */
+        margin-bottom: 2rem;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
 
-        function setIcon(isPlaying) {
-            playPauseBtn.innerHTML = isPlaying
-                ? '<i class="fas fa-pause"></i>'
-                : '<i class="fas fa-play"></i>';
-        }
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 1rem;
+        object-fit: cover;
+        /* maintain aspect ratio */
+    }
 
-        setIcon(false);
+    /* Play/Pause button aligned vertically with slider */
+    .playPauseBtn {
+        position: absolute;
+        bottom: 15px;
+        /* same as slider */
+        right: 15px;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, 0.6);
+        border: none;
+        color: white;
+        padding: 0.6rem 0.8rem;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+        /* fix vertical centering */
+    }
 
-        playPauseBtn.addEventListener('click', () => {
-            player.getPaused().then(paused => {
-                if (paused) {
-                    player.play();
-                    setIcon(true);
-                } else {
-                    player.pause();
-                    setIcon(false);
-                }
-            });
-        });
+    .playPauseBtn:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
 
-        player.on('timeupdate', data => {
-            player.getDuration().then(duration => {
-                videoTimeline.max = duration;
-                videoTimeline.value = data.seconds;
-            });
-        });
+    /* Slider styling */
+    .videoTimeline {
+        position: absolute;
+        bottom: 15px;
+        /* align with button */
+        left: 15px;
+        right: 60px;
+        /* leave space for button */
+        z-index: 10;
+        -webkit-appearance: none;
+        height: 6px;
+        border-radius: 3px;
+        background: rgba(255, 255, 255, 0.3);
+        cursor: pointer;
+    }
 
-        videoTimeline.addEventListener('input', () => {
-            player.setCurrentTime(videoTimeline.value);
-        });
+    /* Slider thumb for Webkit browsers */
+    .videoTimeline::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: white;
+        cursor: pointer;
+        margin-top: -5px;
+        /* centers thumb vertically on track */
+    }
 
-        player.on('pause', () => setIcon(false));
-        player.on('play', () => setIcon(true));
-    });
-</script>
+    /* Slider thumb for Firefox */
+    .videoTimeline::-moz-range-thumb {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: white;
+        cursor: pointer;
+        border: none;
+    }
+</style>
 
 
 <!-- <script>
