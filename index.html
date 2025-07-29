@@ -2474,6 +2474,24 @@
         player.on('pause', () => setIcon(false));
         player.on('play', () => setIcon(true));
     });
+
+    // Pause all Vimeo videos on page hide or unload
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+            document.querySelectorAll('iframe.vimeo-player').forEach((iframe) => {
+                const player = new Vimeo.Player(iframe);
+                player.pause();
+            });
+        }
+    });
+
+    // Optional: pause before the page unloads completely
+    window.addEventListener('beforeunload', () => {
+        document.querySelectorAll('iframe.vimeo-player').forEach((iframe) => {
+            const player = new Vimeo.Player(iframe);
+            player.pause();
+        });
+    });
 </script>
 
 
