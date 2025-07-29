@@ -1228,7 +1228,7 @@
                     <!-- Background image -->
                     <div class="absolute inset-0">
                         <img src="files/background_image.png" alt="Background" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black bg-opacity-60"></div> <!-- Dark overlay -->
+                        <div class="absolute inset-0 bg-black bg-opacity-20"></div> <!-- Dark overlay -->
                     </div>
 
                     <!-- Foreground content -->
@@ -1374,18 +1374,19 @@
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
 
-                                <div class="relative rounded-xl overflow-hidden h-80">
-                                    <div style="padding:56.25% 0 0 0;position:relative;">
-                                        <iframe
-                                            src="https://player.vimeo.com/video/1105514379?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0"
-                                            frameborder="0"
-                                            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                                            referrerpolicy="strict-origin-when-cross-origin"
-                                            style="position:absolute;top:0;left:0;width:100%;height:100%;"
-                                            title="dysevolution_video">
-                                        </iframe>
-                                    </div>
-                                    <script src="https://player.vimeo.com/api/player.js"></script>
+                                <!-- Container for dysevolution_video -->
+                                <div class="video-container"
+                                    style="position:relative; padding-top:56.25%; margin-bottom:2rem;">
+                                    <iframe class="vimeo-player"
+                                        src="https://player.vimeo.com/video/1105514379?badge=0&title=0&byline=0&portrait=0&controls=0"
+                                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+                                        style="position:absolute;top:0;left:0;width:100%;height:100%;"
+                                        title="dysevolution_video">
+                                    </iframe>
+                                    <button class="playPauseBtn"
+                                        style="position:absolute;bottom:10px;right:10px;z-index:10;">Play</button>
+                                    <input type="range" class="videoTimeline" min="0" max="100" value="0" step="0.1"
+                                        style="position:absolute;bottom:10px;left:10px;right:80px;z-index:10;">
                                 </div>
 
                                 <div>
@@ -1467,20 +1468,19 @@
                             <p class="text-xl text-slate-300 mb-8">Recreation of the classic 2-D runner</p>
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                                <div class="relative rounded-xl overflow-hidden h-80">
-                                    <video id="moonPatrolVideo" src="files/moonPatrol_video.mp4"
-                                        class="w-full h-full object-cover"></video>
-
-                                    <!-- Play/Pause Button -->
-                                    <button
-                                        class="playPauseBtn absolute bottom-4 right-4 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 focus:outline-none">
-                                        <i class="fas fa-play"></i>
-                                    </button>
-
-                                    <!-- Timeline slider -->
-                                    <input type="range"
-                                        class="videoTimeline absolute bottom-5 left-1/2 w-4/5 h-2 z-10 appearance-none bg-white bg-opacity-30 transform -translate-x-1/2"
-                                        value="0" min="0" max="100" step="0.1">
+                                <!-- Container for moonPatrol_video -->
+                                <div class="video-container"
+                                    style="position:relative; padding-top:56.25%; margin-bottom:2rem;">
+                                    <iframe class="vimeo-player"
+                                        src="https://player.vimeo.com/video/1105514422?badge=0&title=0&byline=0&portrait=0&controls=0"
+                                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+                                        style="position:absolute;top:0;left:0;width:100%;height:100%;"
+                                        title="moonPatrol_video">
+                                    </iframe>
+                                    <button class="playPauseBtn"
+                                        style="position:absolute;bottom:10px;right:10px;z-index:10;">Play</button>
+                                    <input type="range" class="videoTimeline" min="0" max="100" value="0" step="0.1"
+                                        style="position:absolute;bottom:10px;left:10px;right:80px;z-index:10;">
                                 </div>
                                 <div>
                                     <h3 class="text-2xl font-bold mb-4">Project Overview</h3>
@@ -1563,20 +1563,19 @@
                             <p class="text-xl text-slate-300 mb-8">Animated short for Narika's teen program</p>
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                                <div class="relative rounded-xl overflow-hidden h-80">
-                                    <video id="narikaVideo" src="files/narika_video.mp4"
-                                        class="w-full h-full object-cover"></video>
-
-                                    <!-- Play/Pause Button -->
-                                    <button
-                                        class="playPauseBtn absolute bottom-4 right-4 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 focus:outline-none">
-                                        <i class="fas fa-play"></i>
-                                    </button>
-
-                                    <!-- Timeline slider -->
-                                    <input type="range"
-                                        class="videoTimeline absolute bottom-5 left-1/2 w-4/5 h-2 z-10 appearance-none bg-white bg-opacity-30 transform -translate-x-1/2"
-                                        value="0" min="0" max="100" step="0.1">
+                                <!-- Container for narika_video -->
+                                <div class="video-container"
+                                    style="position:relative; padding-top:56.25%; margin-bottom:2rem;">
+                                    <iframe class="vimeo-player"
+                                        src="https://player.vimeo.com/video/1105514438?badge=0&title=0&byline=0&portrait=0&controls=0"
+                                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+                                        style="position:absolute;top:0;left:0;width:100%;height:100%;"
+                                        title="narika_video">
+                                    </iframe>
+                                    <button class="playPauseBtn"
+                                        style="position:absolute;bottom:10px;right:10px;z-index:10;">Play</button>
+                                    <input type="range" class="videoTimeline" min="0" max="100" value="0" step="0.1"
+                                        style="position:absolute;bottom:10px;left:10px;right:80px;z-index:10;">
                                 </div>
                                 <div>
                                     <h3 class="text-2xl font-bold mb-4">Project Overview</h3>
@@ -1737,20 +1736,19 @@
                             <p class="text-xl text-slate-300 mb-8">Immersive VR endless runner</p>
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                                <div class="relative rounded-xl overflow-hidden h-80">
-                                    <video id="gemRushVideo" src="files/gemRush_video.mp4"
-                                        class="w-full h-full object-cover"></video>
-
-                                    <!-- Play/Pause Button -->
-                                    <button
-                                        class="playPauseBtn absolute bottom-4 right-4 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 focus:outline-none">
-                                        <i class="fas fa-play"></i>
-                                    </button>
-
-                                    <!-- Timeline slider -->
-                                    <input type="range"
-                                        class="videoTimeline absolute bottom-5 left-1/2 w-4/5 h-2 z-10 appearance-none bg-white bg-opacity-30 transform -translate-x-1/2"
-                                        value="0" min="0" max="100" step="0.1">
+                                <!-- Container for gemRush_video -->
+                                <div class="video-container"
+                                    style="position:relative; padding-top:56.25%; margin-bottom:2rem;">
+                                    <iframe class="vimeo-player"
+                                        src="https://player.vimeo.com/video/1105514397?badge=0&title=0&byline=0&portrait=0&controls=0"
+                                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+                                        style="position:absolute;top:0;left:0;width:100%;height:100%;"
+                                        title="gemRush_video">
+                                    </iframe>
+                                    <button class="playPauseBtn"
+                                        style="position:absolute;bottom:10px;right:10px;z-index:10;">Play</button>
+                                    <input type="range" class="videoTimeline" min="0" max="100" value="0" step="0.1"
+                                        style="position:absolute;bottom:10px;left:10px;right:80px;z-index:10;">
                                 </div>
                                 <div>
                                     <h3 class="text-2xl font-bold mb-4">Project Overview</h3>
@@ -1837,20 +1835,19 @@
                             <p class="text-xl text-slate-300 mb-8">Immersive VR endless runner</p>
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                                <div class="relative rounded-xl overflow-hidden h-80">
-                                    <video id="somebodysWatchingVideo" src="files/somebodysWatching_video.mp4"
-                                        class="w-full h-full object-cover"></video>
-
-                                    <!-- Play/Pause Button -->
-                                    <button
-                                        class="playPauseBtn absolute bottom-4 right-4 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-75 focus:outline-none">
-                                        <i class="fas fa-play"></i>
-                                    </button>
-
-                                    <!-- Timeline slider -->
-                                    <input type="range"
-                                        class="videoTimeline absolute bottom-5 left-1/2 w-4/5 h-2 z-10 appearance-none bg-white bg-opacity-30 transform -translate-x-1/2"
-                                        value="0" min="0" max="100" step="0.1">
+                                <!-- Container for somebodysWatching_video -->
+                                <div class="video-container"
+                                    style="position:relative; padding-top:56.25%; margin-bottom:2rem;">
+                                    <iframe class="vimeo-player"
+                                        src="https://player.vimeo.com/video/1105514457?badge=0&title=0&byline=0&portrait=0&controls=0"
+                                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+                                        style="position:absolute;top:0;left:0;width:100%;height:100%;"
+                                        title="somebodysWatching_video">
+                                    </iframe>
+                                    <button class="playPauseBtn"
+                                        style="position:absolute;bottom:10px;right:10px;z-index:10;">Play</button>
+                                    <input type="range" class="videoTimeline" min="0" max="100" value="0" step="0.1"
+                                        style="position:absolute;bottom:10px;left:10px;right:80px;z-index:10;">
                                 </div>
                                 <div>
                                     <h3 class="text-2xl font-bold mb-4">Project Overview</h3>
@@ -2376,7 +2373,44 @@
 
 </html>
 
+<script src="https://player.vimeo.com/api/player.js"></script>
 <script>
+    document.querySelectorAll('.video-container').forEach(container => {
+        const iframe = container.querySelector('.vimeo-player');
+        const playPauseBtn = container.querySelector('.playPauseBtn');
+        const videoTimeline = container.querySelector('.videoTimeline');
+        const player = new Vimeo.Player(iframe);
+
+        // Play/pause toggle button
+        playPauseBtn.addEventListener('click', () => {
+            player.getPaused().then(paused => {
+                if (paused) {
+                    player.play();
+                    playPauseBtn.textContent = 'Pause';
+                } else {
+                    player.pause();
+                    playPauseBtn.textContent = 'Play';
+                }
+            });
+        });
+
+        // Update slider as video plays
+        player.on('timeupdate', data => {
+            player.getDuration().then(duration => {
+                videoTimeline.max = duration;
+                videoTimeline.value = data.seconds;
+            });
+        });
+
+        // Seek video when slider is changed
+        videoTimeline.addEventListener('input', () => {
+            player.setCurrentTime(videoTimeline.value);
+        });
+    });
+</script>
+
+
+<!-- <script>
     document.querySelectorAll('.playPauseBtn').forEach(button => {
         const container = button.closest('.relative');
         const video = container.querySelector('video');
@@ -2414,4 +2448,4 @@
             video.currentTime = seekTime;
         });
     });
-</script>
+</script> -->
