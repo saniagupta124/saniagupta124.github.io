@@ -1,5 +1,6 @@
 <html lang="en">
 
+<!--Portfolio website with page navigation, custom Vimeo video controls, and various projects' content-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,46 +29,46 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
-        }
+            .project-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
+            }
 
         .nav-link {
             position: relative;
         }
 
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background-color: #3b82f6;
-            transition: width 0.3s ease;
-        }
+            .nav-link::after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 2px;
+                bottom: -2px;
+                left: 0;
+                background-color: #3b82f6;
+                transition: width 0.3s ease;
+            }
 
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
+            .nav-link:hover::after,
+            .nav-link.active::after {
+                width: 100%;
+            }
 
         .page {
             display: none;
         }
 
-        .page.active {
-            display: block;
-        }
+            .page.active {
+                display: block;
+            }
 
         .project-detail {
             display: none;
         }
 
-        .project-detail.active {
-            display: block;
-        }
+            .project-detail.active {
+                display: block;
+            }
 
         .btn-primary {
             background-color: #3b82f6;
@@ -75,19 +76,19 @@
             transition: all 0.3s ease;
         }
 
-        .btn-primary:hover {
-            background-color: #2563eb;
-            transform: translateY(-2px);
-        }
+            .btn-primary:hover {
+                background-color: #2563eb;
+                transform: translateY(-2px);
+            }
 
         .social-icon {
             transition: transform 0.3s ease, color 0.3s ease;
         }
 
-        .social-icon:hover {
-            transform: translateY(-3px);
-            color: #3b82f6;
-        }
+            .social-icon:hover {
+                transform: translateY(-3px);
+                color: #3b82f6;
+            }
 
         .hero-gradient {
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
@@ -115,19 +116,19 @@
             --tw-skew-y: 0;
             --tw-scale-x: 1;
             --tw-scale-y: 1;
-            --tw-pan-x: ;
-            --tw-pan-y: ;
-            --tw-pinch-zoom: ;
+            --tw-pan-x:;
+            --tw-pan-y:;
+            --tw-pinch-zoom:;
             --tw-scroll-snap-strictness: proximity;
-            --tw-gradient-from-position: ;
-            --tw-gradient-via-position: ;
-            --tw-gradient-to-position: ;
-            --tw-ordinal: ;
-            --tw-slashed-zero: ;
-            --tw-numeric-figure: ;
-            --tw-numeric-spacing: ;
-            --tw-numeric-fraction: ;
-            --tw-ring-inset: ;
+            --tw-gradient-from-position:;
+            --tw-gradient-via-position:;
+            --tw-gradient-to-position:;
+            --tw-ordinal:;
+            --tw-slashed-zero:;
+            --tw-numeric-figure:;
+            --tw-numeric-spacing:;
+            --tw-numeric-fraction:;
+            --tw-ring-inset:;
             --tw-ring-offset-width: 0px;
             --tw-ring-offset-color: #fff;
             --tw-ring-color: rgb(59 130 246 / 0.5);
@@ -135,27 +136,27 @@
             --tw-ring-shadow: 0 0 #0000;
             --tw-shadow: 0 0 #0000;
             --tw-shadow-colored: 0 0 #0000;
-            --tw-blur: ;
-            --tw-brightness: ;
-            --tw-contrast: ;
-            --tw-grayscale: ;
-            --tw-hue-rotate: ;
-            --tw-invert: ;
-            --tw-saturate: ;
-            --tw-sepia: ;
-            --tw-drop-shadow: ;
-            --tw-backdrop-blur: ;
-            --tw-backdrop-brightness: ;
-            --tw-backdrop-contrast: ;
-            --tw-backdrop-grayscale: ;
-            --tw-backdrop-hue-rotate: ;
-            --tw-backdrop-invert: ;
-            --tw-backdrop-opacity: ;
-            --tw-backdrop-saturate: ;
-            --tw-backdrop-sepia: ;
-            --tw-contain-size: ;
-            --tw-contain-layout: ;
-            --tw-contain-paint: ;
+            --tw-blur:;
+            --tw-brightness:;
+            --tw-contrast:;
+            --tw-grayscale:;
+            --tw-hue-rotate:;
+            --tw-invert:;
+            --tw-saturate:;
+            --tw-sepia:;
+            --tw-drop-shadow:;
+            --tw-backdrop-blur:;
+            --tw-backdrop-brightness:;
+            --tw-backdrop-contrast:;
+            --tw-backdrop-grayscale:;
+            --tw-backdrop-hue-rotate:;
+            --tw-backdrop-invert:;
+            --tw-backdrop-opacity:;
+            --tw-backdrop-saturate:;
+            --tw-backdrop-sepia:;
+            --tw-contain-size:;
+            --tw-contain-layout:;
+            --tw-contain-paint:;
             --tw-contain-style:
         }
 
@@ -169,19 +170,19 @@
             --tw-skew-y: 0;
             --tw-scale-x: 1;
             --tw-scale-y: 1;
-            --tw-pan-x: ;
-            --tw-pan-y: ;
-            --tw-pinch-zoom: ;
+            --tw-pan-x:;
+            --tw-pan-y:;
+            --tw-pinch-zoom:;
             --tw-scroll-snap-strictness: proximity;
-            --tw-gradient-from-position: ;
-            --tw-gradient-via-position: ;
-            --tw-gradient-to-position: ;
-            --tw-ordinal: ;
-            --tw-slashed-zero: ;
-            --tw-numeric-figure: ;
-            --tw-numeric-spacing: ;
-            --tw-numeric-fraction: ;
-            --tw-ring-inset: ;
+            --tw-gradient-from-position:;
+            --tw-gradient-via-position:;
+            --tw-gradient-to-position:;
+            --tw-ordinal:;
+            --tw-slashed-zero:;
+            --tw-numeric-figure:;
+            --tw-numeric-spacing:;
+            --tw-numeric-fraction:;
+            --tw-ring-inset:;
             --tw-ring-offset-width: 0px;
             --tw-ring-offset-color: #fff;
             --tw-ring-color: rgb(59 130 246 / 0.5);
@@ -189,27 +190,27 @@
             --tw-ring-shadow: 0 0 #0000;
             --tw-shadow: 0 0 #0000;
             --tw-shadow-colored: 0 0 #0000;
-            --tw-blur: ;
-            --tw-brightness: ;
-            --tw-contrast: ;
-            --tw-grayscale: ;
-            --tw-hue-rotate: ;
-            --tw-invert: ;
-            --tw-saturate: ;
-            --tw-sepia: ;
-            --tw-drop-shadow: ;
-            --tw-backdrop-blur: ;
-            --tw-backdrop-brightness: ;
-            --tw-backdrop-contrast: ;
-            --tw-backdrop-grayscale: ;
-            --tw-backdrop-hue-rotate: ;
-            --tw-backdrop-invert: ;
-            --tw-backdrop-opacity: ;
-            --tw-backdrop-saturate: ;
-            --tw-backdrop-sepia: ;
-            --tw-contain-size: ;
-            --tw-contain-layout: ;
-            --tw-contain-paint: ;
+            --tw-blur:;
+            --tw-brightness:;
+            --tw-contrast:;
+            --tw-grayscale:;
+            --tw-hue-rotate:;
+            --tw-invert:;
+            --tw-saturate:;
+            --tw-sepia:;
+            --tw-drop-shadow:;
+            --tw-backdrop-blur:;
+            --tw-backdrop-brightness:;
+            --tw-backdrop-contrast:;
+            --tw-backdrop-grayscale:;
+            --tw-backdrop-hue-rotate:;
+            --tw-backdrop-invert:;
+            --tw-backdrop-opacity:;
+            --tw-backdrop-saturate:;
+            --tw-backdrop-sepia:;
+            --tw-contain-size:;
+            --tw-contain-layout:;
+            --tw-contain-paint:;
             --tw-contain-style:
         }
 
@@ -419,11 +420,11 @@
             resize: vertical
         }
 
-        input::placeholder,
-        textarea::placeholder {
-            opacity: 1;
-            color: #9ca3af
-        }
+            input::placeholder,
+            textarea::placeholder {
+                opacity: 1;
+                color: #9ca3af
+            }
 
         [role=button],
         button {
@@ -719,37 +720,37 @@
             gap: 2rem
         }
 
-        .space-x-4> :not([hidden])~ :not([hidden]) {
+        .space-x-4 > :not([hidden]) ~ :not([hidden]) {
             --tw-space-x-reverse: 0;
             margin-right: calc(1rem * var(--tw-space-x-reverse));
             margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)))
         }
 
-        .space-x-6> :not([hidden])~ :not([hidden]) {
+        .space-x-6 > :not([hidden]) ~ :not([hidden]) {
             --tw-space-x-reverse: 0;
             margin-right: calc(1.5rem * var(--tw-space-x-reverse));
             margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)))
         }
 
-        .space-x-8> :not([hidden])~ :not([hidden]) {
+        .space-x-8 > :not([hidden]) ~ :not([hidden]) {
             --tw-space-x-reverse: 0;
             margin-right: calc(2rem * var(--tw-space-x-reverse));
             margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)))
         }
 
-        .space-y-1> :not([hidden])~ :not([hidden]) {
+        .space-y-1 > :not([hidden]) ~ :not([hidden]) {
             --tw-space-y-reverse: 0;
             margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
             margin-bottom: calc(0.25rem * var(--tw-space-y-reverse))
         }
 
-        .space-y-3> :not([hidden])~ :not([hidden]) {
+        .space-y-3 > :not([hidden]) ~ :not([hidden]) {
             --tw-space-y-reverse: 0;
             margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
             margin-bottom: calc(0.75rem * var(--tw-space-y-reverse))
         }
 
-        .space-y-4> :not([hidden])~ :not([hidden]) {
+        .space-y-4 > :not([hidden]) ~ :not([hidden]) {
             --tw-space-y-reverse: 0;
             margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
             margin-bottom: calc(1rem * var(--tw-space-y-reverse))
@@ -1183,14 +1184,14 @@
             overflow: hidden;
         }
 
-        .video-container iframe.vimeo-player {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 2rem;
-        }
+            .video-container iframe.vimeo-player {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 2rem;
+            }
 
         .playPauseBtn {
             position: absolute;
@@ -1228,28 +1229,28 @@
             outline: none;
         }
 
-        .videoTimeline::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: white;
-            cursor: pointer;
-            margin-top: 0px;
-            /* vertical center on track */
-            border: none;
-            box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
-        }
+            .videoTimeline::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                background: white;
+                cursor: pointer;
+                margin-top: 0px;
+                /* vertical center on track */
+                border: none;
+                box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+            }
 
-        .videoTimeline::-moz-range-thumb {
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: white;
-            cursor: pointer;
-            border: none;
-            box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
-        }
+            .videoTimeline::-moz-range-thumb {
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                background: white;
+                cursor: pointer;
+                border: none;
+                box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+            }
 
         .vimeo-player {
             width: 100%;
@@ -1272,10 +1273,10 @@
                 </a>
                 <div class="hidden md:flex space-x-8">
                     <a href="#" class="nav-link active text-white hover:text-blue-400 transition"
-                        data-page="home">Home</a>
+                       data-page="home">Home</a>
                     <a href="#" class="nav-link text-white hover:text-blue-400 transition" data-page="about">About</a>
                     <a href="#" class="nav-link text-white hover:text-blue-400 transition"
-                        data-page="contact">Contact</a>
+                       data-page="contact">Contact</a>
                 </div>
                 <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
                     <i class="fas fa-bars text-2xl"></i>
@@ -1312,7 +1313,7 @@
                         </p>
                         <div class="mt-10">
                             <a href="#" class="btn-primary px-8 py-3 rounded-full font-medium text-lg inline-block"
-                                data-page="about">
+                               data-page="about">
                                 Learn More
                             </a>
                         </div>
@@ -1326,16 +1327,16 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             <!-- Project 1 -->
                             <div class="project-card bg-slate-700 rounded-xl overflow-hidden shadow-lg"
-                                data-project="project1">
+                                 data-project="project1">
                                 <div class="h-56 flex items-center justify-center bg-black">
                                     <img src="files/dysevolution_title.png" alt="Dysevolution"
-                                        class="h-full w-full object-cover">
+                                         class="h-full w-full object-cover">
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-bold mb-2">Dysevolution</h3>
                                     <p class="text-slate-300 mb-4">A 2-D top-down puzzle game</p>
                                     <a href="#" class="text-blue-400 hover:text-blue-300 font-medium flex items-center"
-                                        data-project="project1">
+                                       data-project="project1">
                                         View Project <i class="fas fa-arrow-right ml-2"></i>
                                     </a>
                                 </div>
@@ -1343,17 +1344,18 @@
 
                             <!-- Project 2 -->
                             <div class="project-card bg-slate-700 rounded-xl overflow-hidden shadow-lg"
-                                data-project="project2">
+                                 data-project="project2">
                                 <div class="h-56 flex items-center justify-center bg-black">
                                     <img src="files/moonPatrol_title.png" alt="Moon Patrol"
-                                        class="h-full w-full object-cover">
+                                         class="h-full w-full object-cover">
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-bold mb-2">Moon Patrol</h3>
-                                    <p class="text-slate-300 mb-4">Recreation of the classic 2-D runner
+                                    <p class="text-slate-300 mb-4">
+                                        Recreation of the classic 2-D runner
                                     </p>
                                     <a href="#" class="text-blue-400 hover:text-blue-300 font-medium flex items-center"
-                                        data-project="project2">
+                                       data-project="project2">
                                         View Project <i class="fas fa-arrow-right ml-2"></i>
                                     </a>
                                 </div>
@@ -1361,16 +1363,16 @@
 
                             <!-- Project 3 -->
                             <div class="project-card bg-slate-700 rounded-xl overflow-hidden shadow-lg"
-                                data-project="project3">
+                                 data-project="project3">
                                 <div class="h-56 flex items-center justify-center bg-black">
                                     <img src="files/narika_title.jpg" alt="DV Prevention Animation"
-                                        class="h-full w-full object-cover">
+                                         class="h-full w-full object-cover">
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-bold mb-2">DV Prevention Animation</h3>
                                     <p class="text-slate-300 mb-4">Animated short for Narika's teen program</p>
                                     <a href="#" class="text-blue-400 hover:text-blue-300 font-medium flex items-center"
-                                        data-project="project3">
+                                       data-project="project3">
                                         View Project <i class="fas fa-arrow-right ml-2"></i>
                                     </a>
                                 </div>
@@ -1378,16 +1380,16 @@
 
                             <!-- Project 4 -->
                             <div class="project-card bg-slate-700 rounded-xl overflow-hidden shadow-lg"
-                                data-project="project4">
+                                 data-project="project4">
                                 <div class="h-56 flex items-center justify-center bg-black">
                                     <img src="files/barnyardBonfire_title.png" alt="Barnyard Bonfire Title"
-                                        class="h-full w-full object-cover">
+                                         class="h-full w-full object-cover">
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-bold mb-2">Barnyard Bonfire</h3>
                                     <p class="text-slate-300 mb-4">A tense multiplayer stacking game</p>
                                     <a href="#" class="text-blue-400 hover:text-blue-300 font-medium flex items-center"
-                                        data-project="project4">
+                                       data-project="project4">
                                         View Project <i class="fas fa-arrow-right ml-2"></i>
                                     </a>
                                 </div>
@@ -1395,16 +1397,16 @@
 
                             <!-- Project 5 -->
                             <div class="project-card bg-slate-700 rounded-xl overflow-hidden shadow-lg"
-                                data-project="project5">
+                                 data-project="project5">
                                 <div class="h-56 flex items-center justify-center bg-black">
                                     <img src="files/gemRush_title.jpg" alt="Gem Rush"
-                                        class="h-full w-full object-cover">
+                                         class="h-full w-full object-cover">
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-bold mb-2">Gem Rush</h3>
                                     <p class="text-slate-300 mb-4">Immersive VR endless runner</p>
                                     <a href="#" class="text-blue-400 hover:text-blue-300 font-medium flex items-center"
-                                        data-project="project5">
+                                       data-project="project5">
                                         View Project <i class="fas fa-arrow-right ml-2"></i>
                                     </a>
                                 </div>
@@ -1412,16 +1414,16 @@
 
                             <!-- Project 6 -->
                             <div class="project-card bg-slate-700 rounded-xl overflow-hidden shadow-lg"
-                                data-project="project6">
+                                 data-project="project6">
                                 <div class="h-56 flex items-center justify-center bg-black">
                                     <img src="files/somebodysWatching_title.png" alt="Somebody's Watching"
-                                        class="h-full w-full object-cover">
+                                         class="h-full w-full object-cover">
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-bold mb-2">Somebody's Watching</h3>
                                     <p class="text-slate-300 mb-4">Dynamic 3-D projection installation</p>
                                     <a href="#" class="text-blue-400 hover:text-blue-300 font-medium flex items-center"
-                                        data-project="project6">
+                                       data-project="project6">
                                         View Project <i class="fas fa-arrow-right ml-2"></i>
                                     </a>
                                 </div>
@@ -1438,7 +1440,7 @@
                     <div class="bg-slate-800 py-16">
                         <div class="container mx-auto px-6">
                             <a href="#" class="inline-block mb-8 text-blue-400 hover:text-blue-300 transition"
-                                data-back-to-home="">
+                               data-back-to-home="">
                                 <i class="fas fa-arrow-left mr-2"></i> Back to Projects
                             </a>
                             <h2 class="text-4xl font-bold mb-6">Dysevolution</h2>
@@ -1449,15 +1451,16 @@
                                 <!-- Container for dysevolution_video -->
                                 <div class="video-container">
                                     <iframe class="vimeo-player"
-                                        src="https://player.vimeo.com/video/1105514379?badge=0&title=0&byline=0&portrait=0&controls=0"
-                                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
-                                        title="dysevolution_video"></iframe>
+                                            src="https://player.vimeo.com/video/1105514379?badge=0&title=0&byline=0&portrait=0&controls=0"
+                                            frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+                                            title="dysevolution_video"></iframe>
 
-                                    <button class="playPauseBtn" aria-label="Play video"><i
-                                            class="fas fa-play"></i></button>
+                                    <button class="playPauseBtn" aria-label="Play video">
+                                        <i class="fas fa-play"></i>
+                                    </button>
 
                                     <input type="range" class="videoTimeline" min="0" max="100" value="0" step="0.1"
-                                        aria-label="Video timeline slider" />
+                                           aria-label="Video timeline slider" />
                                 </div>
 
                                 <div>
@@ -1477,12 +1480,18 @@
                                         life's demands.
                                     </p>
                                     <div class="flex flex-wrap gap-2 mt-6">
-                                        <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">C# &
-                                            Unity</span>
-                                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">Game
-                                            Design</span>
-                                        <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">Version
-                                            Control</span>
+                                        <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">
+                                            C# &
+                                            Unity
+                                        </span>
+                                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">
+                                            Game
+                                            Design
+                                        </span>
+                                        <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">
+                                            Version
+                                            Control
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -1490,15 +1499,15 @@
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                                 <div class="rounded-xl h-56 overflow-hidden">
                                     <img src="files/dysevolution_1.png" alt="Dysevolution Screenshot 1"
-                                        class="w-full h-full object-cover">
+                                         class="w-full h-full object-cover">
                                 </div>
                                 <div class="rounded-xl h-56 overflow-hidden">
                                     <img src="files/dysevolution_2.png" alt="Dysevolution Screenshot 2"
-                                        class="w-full h-full object-cover">
+                                         class="w-full h-full object-cover">
                                 </div>
                                 <div class="rounded-xl h-56 overflow-hidden">
                                     <img src="files/dysevolution_3.png" alt="Dysevolution Screenshot 3"
-                                        class="w-full h-full object-cover">
+                                         class="w-full h-full object-cover">
                                 </div>
                             </div>
 
@@ -1517,7 +1526,7 @@
 
                             <div class="text-center">
                                 <a href="#" class="btn-primary px-8 py-3 rounded-full font-medium text-lg inline-block"
-                                    data-back-to-home="">
+                                   data-back-to-home="">
                                     Back to Projects
                                 </a>
                             </div>
@@ -1530,7 +1539,7 @@
                     <div class="bg-slate-800 py-16">
                         <div class="container mx-auto px-6">
                             <a href="#" class="inline-block mb-8 text-blue-400 hover:text-blue-300 transition"
-                                data-back-to-home="">
+                               data-back-to-home="">
                                 <i class="fas fa-arrow-left mr-2"></i> Back to Projects
                             </a>
                             <h2 class="text-4xl font-bold mb-6">Moon Patrol</h2>
@@ -1540,13 +1549,14 @@
                                 <!-- Container for moonPatrol_video -->
                                 <div class="video-container">
                                     <iframe class="vimeo-player"
-                                        src="https://player.vimeo.com/video/1105514422?badge=0&title=0&byline=0&portrait=0&controls=0"
-                                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
-                                        title="moonPatrol_video"></iframe>
-                                    <button class="playPauseBtn" aria-label="Play video"><i
-                                            class="fas fa-play"></i></button>
+                                            src="https://player.vimeo.com/video/1105514422?badge=0&title=0&byline=0&portrait=0&controls=0"
+                                            frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+                                            title="moonPatrol_video"></iframe>
+                                    <button class="playPauseBtn" aria-label="Play video">
+                                        <i class="fas fa-play"></i>
+                                    </button>
                                     <input type="range" class="videoTimeline" min="0" max="100" value="0" step="0.1"
-                                        aria-label="Video timeline slider" />
+                                           aria-label="Video timeline slider" />
                                 </div>
                                 <div>
                                     <h3 class="text-2xl font-bold mb-4">Project Overview</h3>
@@ -1564,12 +1574,18 @@
                                         feedback, core to crafting engaging experiences.
                                     </p>
                                     <div class="flex flex-wrap gap-2 mt-6">
-                                        <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">C# &
-                                            Unity</span>
-                                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">Project
-                                            Management</span>
-                                        <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">Version
-                                            Control</span>
+                                        <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">
+                                            C# &
+                                            Unity
+                                        </span>
+                                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">
+                                            Project
+                                            Management
+                                        </span>
+                                        <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">
+                                            Version
+                                            Control
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -1577,15 +1593,15 @@
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                                 <div class="rounded-xl h-96 w-80 mx-auto overflow-hidden">
                                     <img src="files/moonPatrol1.png" alt="Moon Patrol Screenshot 1"
-                                        class="w-full h-full object-cover">
+                                         class="w-full h-full object-cover">
                                 </div>
                                 <div class="rounded-xl h-96 w-80 mx-auto overflow-hidden">
                                     <img src="files/moonPatrol2.png" alt="Moon Patrol Screenshot 2"
-                                        class="w-full h-full object-cover">
+                                         class="w-full h-full object-cover">
                                 </div>
                                 <div class="rounded-xl h-96 w-80 mx-auto overflow-hidden">
                                     <img src="files/moonPatrol3.png" alt="Moon Patrol Screenshot 3"
-                                        class="w-full h-full object-cover">
+                                         class="w-full h-full object-cover">
                                 </div>
                             </div>
 
@@ -1605,7 +1621,7 @@
 
                             <div class="text-center">
                                 <a href="#" class="btn-primary px-8 py-3 rounded-full font-medium text-lg inline-block"
-                                    data-back-to-home="">
+                                   data-back-to-home="">
                                     Back to Projects
                                 </a>
                             </div>
@@ -1618,7 +1634,7 @@
                     <div class="bg-slate-800 py-16">
                         <div class="container mx-auto px-6">
                             <a href="#" class="inline-block mb-8 text-blue-400 hover:text-blue-300 transition"
-                                data-back-to-home="">
+                               data-back-to-home="">
                                 <i class="fas fa-arrow-left mr-2"></i> Back to Projects
                             </a>
                             <h2 class="text-4xl font-bold mb-6">DV Prevention Animation</h2>
@@ -1628,13 +1644,14 @@
                                 <!-- Container for narika_video -->
                                 <div class="video-container">
                                     <iframe class="vimeo-player"
-                                        src="https://player.vimeo.com/video/1105514438?badge=0&title=0&byline=0&portrait=0&controls=0"
-                                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
-                                        title="narika_video"></iframe>
-                                    <button class="playPauseBtn" aria-label="Play video"><i
-                                            class="fas fa-play"></i></button>
+                                            src="https://player.vimeo.com/video/1105514438?badge=0&title=0&byline=0&portrait=0&controls=0"
+                                            frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+                                            title="narika_video"></iframe>
+                                    <button class="playPauseBtn" aria-label="Play video">
+                                        <i class="fas fa-play"></i>
+                                    </button>
                                     <input type="range" class="videoTimeline" min="0" max="100" value="0" step="0.1"
-                                        aria-label="Video timeline slider" />
+                                           aria-label="Video timeline slider" />
                                 </div>
                                 <div>
                                     <h3 class="text-2xl font-bold mb-4">Project Overview</h3>
@@ -1648,13 +1665,18 @@
                                         relationships and personal boundaries among teens.
                                     </p>
                                     <div class="flex flex-wrap gap-2 mt-6">
-                                        <span
-                                            class="bg-green-900 text-green-200 px-3 py-1 rounded-full text-sm">Autodesk
-                                            Maya</span>
-                                        <span class="bg-green-900 text-green-200 px-3 py-1 rounded-full text-sm">3D
-                                            Animation</span>
-                                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">Narrative
-                                            Design</span>
+                                        <span class="bg-green-900 text-green-200 px-3 py-1 rounded-full text-sm">
+                                            Autodesk
+                                            Maya
+                                        </span>
+                                        <span class="bg-green-900 text-green-200 px-3 py-1 rounded-full text-sm">
+                                            3D
+                                            Animation
+                                        </span>
+                                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">
+                                            Narrative
+                                            Design
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -1662,15 +1684,15 @@
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                                 <div class="rounded-xl h-56 overflow-hidden">
                                     <img src="files/narika_1.png" alt="Narika Screenshot 1"
-                                        class="w-full h-full object-cover">
+                                         class="w-full h-full object-cover">
                                 </div>
                                 <div class="rounded-xl h-56 overflow-hidden">
                                     <img src="files/narika_2.png" alt="Narika Screenshot 2"
-                                        class="w-full h-full object-cover">
+                                         class="w-full h-full object-cover">
                                 </div>
                                 <div class="rounded-xl h-56 overflow-hidden">
                                     <img src="files/narika_3.png" alt="Narika Screenshot 3"
-                                        class="w-full h-full object-cover">
+                                         class="w-full h-full object-cover">
                                 </div>
                             </div>
 
@@ -1687,7 +1709,7 @@
 
                             <div class="text-center">
                                 <a href="#" class="btn-primary px-8 py-3 rounded-full font-medium text-lg inline-block"
-                                    data-back-to-home="">
+                                   data-back-to-home="">
                                     Back to Projects
                                 </a>
                             </div>
@@ -1700,7 +1722,7 @@
                     <div class="bg-slate-800 py-16">
                         <div class="container mx-auto px-6">
                             <a href="#" class="inline-block mb-8 text-blue-400 hover:text-blue-300 transition"
-                                data-back-to-home="">
+                               data-back-to-home="">
                                 <i class="fas fa-arrow-left mr-2"></i> Back to Projects
                             </a>
                             <h2 class="text-4xl font-bold mb-6">Barnyard Bonfire</h2>
@@ -1709,7 +1731,7 @@
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                                 <div class="rounded-xl overflow-hidden h-80">
                                     <img src="files/barnyardBonfire_cover.png" alt="Barnyard Bonfire Cover"
-                                        class="w-full h-full object-cover">
+                                         class="w-full h-full object-cover">
                                 </div>
                                 <div>
                                     <h3 class="text-2xl font-bold mb-4">Project Overview</h3>
@@ -1725,11 +1747,16 @@
                                     The game was named Most Innovative Game Design and was a USC Games Expo finalist.
                                     </p>
                                     <div class="flex flex-wrap gap-2 mt-6">
-                                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">Game
-                                            Design</span>
-                                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">Project
-                                            Management</span>
-                                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">Narrative
+                                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">
+                                            Game
+                                            Design
+                                        </span>
+                                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">
+                                            Project
+                                            Management
+                                        </span>
+                                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">
+                                            Narrative
                                             Design
                                         </span>
                                     </div>
@@ -1739,15 +1766,15 @@
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                                 <div class="rounded-xl h-56 overflow-hidden">
                                     <img src="files/barnyard_1.png" alt="Barnyard Bonfire Screenshot 1"
-                                        class="w-full h-full object-cover">
+                                         class="w-full h-full object-cover">
                                 </div>
                                 <div class="rounded-xl h-56 overflow-hidden">
                                     <img src="files/barnyard_2.jpg" alt="Barnyard Bonfire Screenshot 2"
-                                        class="w-full h-full object-cover">
+                                         class="w-full h-full object-cover">
                                 </div>
                                 <div class="rounded-xl h-56 overflow-hidden">
                                     <img src="files/barnyard_3.jpg" alt="Barnyard Bonfire Screenshot 3"
-                                        class="w-full h-full object-cover">
+                                         class="w-full h-full object-cover">
                                 </div>
                             </div>
 
@@ -1764,7 +1791,7 @@
 
                             <div class="text-center">
                                 <a href="#" class="btn-primary px-8 py-3 rounded-full font-medium text-lg inline-block"
-                                    data-back-to-home="">
+                                   data-back-to-home="">
                                     Back to Projects
                                 </a>
                             </div>
@@ -1777,7 +1804,7 @@
                     <div class="bg-slate-800 py-16">
                         <div class="container mx-auto px-6">
                             <a href="#" class="inline-block mb-8 text-blue-400 hover:text-blue-300 transition"
-                                data-back-to-home="">
+                               data-back-to-home="">
                                 <i class="fas fa-arrow-left mr-2"></i> Back to Projects
                             </a>
                             <h2 class="text-4xl font-bold mb-6">Gem Rush</h2>
@@ -1787,13 +1814,14 @@
                                 <!-- Container for gemRush_video -->
                                 <div class="video-container">
                                     <iframe class="vimeo-player"
-                                        src="https://player.vimeo.com/video/1105514397?badge=0&title=0&byline=0&portrait=0&controls=0"
-                                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
-                                        title="gemRush_video"></iframe>
-                                    <button class="playPauseBtn" aria-label="Play video"><i
-                                            class="fas fa-play"></i></button>
+                                            src="https://player.vimeo.com/video/1105514397?badge=0&title=0&byline=0&portrait=0&controls=0"
+                                            frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+                                            title="gemRush_video"></iframe>
+                                    <button class="playPauseBtn" aria-label="Play video">
+                                        <i class="fas fa-play"></i>
+                                    </button>
                                     <input type="range" class="videoTimeline" min="0" max="100" value="0" step="0.1"
-                                        aria-label="Video timeline slider" />
+                                           aria-label="Video timeline slider" />
                                 </div>
                                 <div>
                                     <h3 class="text-2xl font-bold mb-4">Project Overview</h3>
@@ -1810,12 +1838,16 @@
                                         with immersive VR to deliver a thrilling experience.
                                     </p>
                                     <div class="flex flex-wrap gap-2 mt-6">
-                                        <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">C# &
-                                            Unity</span>
-                                        <span
-                                            class="bg-green-900 text-green-200 px-3 py-1 rounded-full text-sm">Autodesk
-                                            Maya</span>
-                                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">Project
+                                        <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">
+                                            C# &
+                                            Unity
+                                        </span>
+                                        <span class="bg-green-900 text-green-200 px-3 py-1 rounded-full text-sm">
+                                            Autodesk
+                                            Maya
+                                        </span>
+                                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">
+                                            Project
                                             Management
                                         </span>
                                     </div>
@@ -1825,15 +1857,15 @@
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                                 <div class="rounded-xl h-56 overflow-hidden">
                                     <img src="files/gemRush1.png" alt="Gem Rush Screenshot 1"
-                                        class="w-full h-full object-cover">
+                                         class="w-full h-full object-cover">
                                 </div>
                                 <div class="rounded-xl h-56 overflow-hidden">
                                     <img src="files/gemRush2.png" alt="Gem Rush Screenshot 2"
-                                        class="w-full h-full object-cover">
+                                         class="w-full h-full object-cover">
                                 </div>
                                 <div class="rounded-xl h-56 overflow-hidden">
                                     <img src="files/gemRush3.png" alt="Gem Rush Screenshot 3"
-                                        class="w-full h-full object-cover">
+                                         class="w-full h-full object-cover">
                                 </div>
                             </div>
 
@@ -1852,7 +1884,7 @@
 
                             <div class="text-center">
                                 <a href="#" class="btn-primary px-8 py-3 rounded-full font-medium text-lg inline-block"
-                                    data-back-to-home="">
+                                   data-back-to-home="">
                                     Back to Projects
                                 </a>
                             </div>
@@ -1865,7 +1897,7 @@
                     <div class="bg-slate-800 py-16">
                         <div class="container mx-auto px-6">
                             <a href="#" class="inline-block mb-8 text-blue-400 hover:text-blue-300 transition"
-                                data-back-to-home="">
+                               data-back-to-home="">
                                 <i class="fas fa-arrow-left mr-2"></i> Back to Projects
                             </a>
                             <h2 class="text-4xl font-bold mb-6">Somebody's Watching</h2>
@@ -1875,13 +1907,14 @@
                                 <!-- Container for somebodysWatching_video -->
                                 <div class="video-container">
                                     <iframe class="vimeo-player"
-                                        src="https://player.vimeo.com/video/1105514457?badge=0&title=0&byline=0&portrait=0&controls=0"
-                                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
-                                        title="somebodysWatching_video"></iframe>
-                                    <button class="playPauseBtn" aria-label="Play video"><i
-                                            class="fas fa-play"></i></button>
+                                            src="https://player.vimeo.com/video/1105514457?badge=0&title=0&byline=0&portrait=0&controls=0"
+                                            frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+                                            title="somebodysWatching_video"></iframe>
+                                    <button class="playPauseBtn" aria-label="Play video">
+                                        <i class="fas fa-play"></i>
+                                    </button>
                                     <input type="range" class="videoTimeline" min="0" max="100" value="0" step="0.1"
-                                        aria-label="Video timeline slider" />
+                                           aria-label="Video timeline slider" />
                                 </div>
                                 <div>
                                     <h3 class="text-2xl font-bold mb-4">Project Overview</h3>
@@ -1898,12 +1931,16 @@
                                         isolation and the uncanny.
                                     </p>
                                     <div class="flex flex-wrap gap-2 mt-6">
-                                        <span
-                                            class="bg-green-900 text-green-200 px-3 py-1 rounded-full text-sm">Autodesk
-                                            Maya</span>
-                                        <span class="bg-green-900 text-green-200 px-3 py-1 rounded-full text-sm">3D
-                                            Animation</span>
-                                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">Narrative
+                                        <span class="bg-green-900 text-green-200 px-3 py-1 rounded-full text-sm">
+                                            Autodesk
+                                            Maya
+                                        </span>
+                                        <span class="bg-green-900 text-green-200 px-3 py-1 rounded-full text-sm">
+                                            3D
+                                            Animation
+                                        </span>
+                                        <span class="bg-blue-900 text-blue-200 px-3 py-1 rounded-full text-sm">
+                                            Narrative
                                             Design
                                         </span>
                                     </div>
@@ -1913,15 +1950,15 @@
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
                                 <div class="rounded-xl h-56 overflow-hidden">
                                     <img src="files/somebodysWatching1.png" alt="Somebody's Watching Screenshot 1"
-                                        class="w-full h-full object-cover">
+                                         class="w-full h-full object-cover">
                                 </div>
                                 <div class="rounded-xl h-56 overflow-hidden">
                                     <img src="files/somebodysWatching2.png" alt="Somebody's Watching Screenshot 1"
-                                        class="w-full h-full object-cover">
+                                         class="w-full h-full object-cover">
                                 </div>
                                 <div class="rounded-xl h-56 overflow-hidden">
                                     <img src="files/somebodysWatching3.png" alt="Somebody's Watching Screenshot 1"
-                                        class="w-full h-full object-cover">
+                                         class="w-full h-full object-cover">
                                 </div>
                             </div>
 
@@ -1939,7 +1976,7 @@
 
                             <div class="text-center">
                                 <a href="#" class="btn-primary px-8 py-3 rounded-full font-medium text-lg inline-block"
-                                    data-back-to-home="">
+                                   data-back-to-home="">
                                     Back to Projects
                                 </a>
                             </div>
@@ -1959,29 +1996,29 @@
                                 <div class="bg-slate-700 rounded-xl overflow-hidden">
                                     <div class="h-64 flex items-center justify-center bg-black">
                                         <img src="files/portrait.png" alt="Sania Gupta"
-                                            class="h-full object-cover w-full">
+                                             class="h-full object-cover w-full">
                                     </div>
                                     <div class="p-6">
                                         <h3 class="text-xl font-bold mb-2">Sania Gupta</h3>
                                         <p class="text-slate-300 mb-4">Game Developer &amp; Designer</p>
                                         <div class="flex space-x-4 mt-4">
                                             <a href="https://www.linkedin.com/in/sania-gupta/" target="_blank"
-                                                rel="noopener noreferrer"
-                                                class="social-icon text-slate-300 hover:text-blue-400">
+                                               rel="noopener noreferrer"
+                                               class="social-icon text-slate-300 hover:text-blue-400">
                                                 <i class="fab fa-linkedin text-xl"></i>
                                             </a>
                                             <a href="https://github.com/saniagupta124" target="_blank"
-                                                rel="noopener noreferrer"
-                                                class="social-icon text-slate-300 hover:text-blue-400">
+                                               rel="noopener noreferrer"
+                                               class="social-icon text-slate-300 hover:text-blue-400">
                                                 <i class="fab fa-github text-xl"></i>
                                             </a>
                                             <a href="mailto:saniagup@usc.edu" target="_blank" rel="noopener noreferrer"
-                                                class="social-icon text-slate-300 hover:text-blue-400">
+                                               class="social-icon text-slate-300 hover:text-blue-400">
                                                 <i class="fas fa-envelope text-xl"></i>
                                             </a>
 
                                             <a href="/files/SaniaGuptaResume.pdf" download
-                                                class="bg-slate-600 hover:bg-slate-500 transition px-4 py-2 rounded-md font-medium text-sm text-white text-center mt-[-2px]">
+                                               class="bg-slate-600 hover:bg-slate-500 transition px-4 py-2 rounded-md font-medium text-sm text-white text-center mt-[-2px]">
                                                 View My Resume
                                             </a>
 
@@ -2023,8 +2060,10 @@
                                     <h4 class="text-xl font-semibold mb-2">University of Southern California</h4>
                                     <p class="text-blue-400 mb-2">B.A. in Game Development and Interactive Design</p>
                                     <p class="text-slate-300">Class of 2028</p>
-                                    <p class="text-blue-400 mt-2">Minors in Computer Programming, Artificial
-                                        Intelligence Applications</p>
+                                    <p class="text-blue-400 mt-2">
+                                        Minors in Computer Programming, Artificial
+                                        Intelligence Applications
+                                    </p>
                                 </div>
                                 <div>
                                     <h4 class="text-xl font-semibold mb-2">Relevant Coursework</h4>
@@ -2079,18 +2118,18 @@
                                             <h4 class="text-lg font-semibold mb-1">Social</h4>
                                             <div class="flex space-x-4 mt-2">
                                                 <a href="https://www.linkedin.com/in/sania-gupta/" target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    class="social-icon text-slate-300 hover:text-blue-400">
+                                                   rel="noopener noreferrer"
+                                                   class="social-icon text-slate-300 hover:text-blue-400">
                                                     <i class="fab fa-linkedin text-xl"></i>
                                                 </a>
                                                 <a href="https://github.com/saniagupta124" target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    class="social-icon text-slate-300 hover:text-blue-400">
+                                                   rel="noopener noreferrer"
+                                                   class="social-icon text-slate-300 hover:text-blue-400">
                                                     <i class="fab fa-github text-xl"></i>
                                                 </a>
                                                 <a href="mailto:saniagup@usc.edu" target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    class="social-icon text-slate-300 hover:text-blue-400">
+                                                   rel="noopener noreferrer"
+                                                   class="social-icon text-slate-300 hover:text-blue-400">
                                                     <i class="fas fa-envelope text-xl"></i>
                                                 </a>
                                             </div>
@@ -2103,25 +2142,27 @@
                                 <div>
                                     <label for="name" class="block text-slate-300 mb-2">Name</label>
                                     <input type="text" id="name" name="name" required
-                                        class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                           class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
                                 </div>
                                 <div>
                                     <label for="email" class="block text-slate-300 mb-2">Email</label>
                                     <input type="email" id="email" name="email" required
-                                        class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                           class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
                                 </div>
                                 <div>
                                     <label for="subject" class="block text-slate-300 mb-2">Subject</label>
                                     <input type="text" id="subject" name="subject"
-                                        class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                           class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
                                 </div>
                                 <div>
                                     <label for="message" class="block text-slate-300 mb-2">Message</label>
                                     <textarea id="message" name="message" rows="4" required
-                                        class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                                              class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
                                 </div>
                                 <button type="submit"
-                                    class="btn-primary w-full py-3 rounded-lg font-medium text-lg">Send Message</button>
+                                        class="btn-primary w-full py-3 rounded-lg font-medium text-lg">
+                                    Send Message
+                                </button>
                             </form>
                         </div>
 
@@ -2135,11 +2176,15 @@
                             </p>
                             <div class="flex flex-col sm:flex-row gap-4">
                                 <a href="mailto:saniagup@usc.edu"
-                                    class="btn-primary px-8 py-3 rounded-lg font-medium text-lg text-center">Start a
-                                    Conversation</a>
+                                   class="btn-primary px-8 py-3 rounded-lg font-medium text-lg text-center">
+                                    Start a
+                                    Conversation
+                                </a>
                                 <a href="/files/SaniaGuptaResume.pdf" download
-                                    class="bg-slate-600 hover:bg-slate-500 transition px-8 py-3 rounded-lg font-medium text-lg text-white text-center">View
-                                    My Resume</a>
+                                   class="bg-slate-600 hover:bg-slate-500 transition px-8 py-3 rounded-lg font-medium text-lg text-white text-center">
+                                    View
+                                    My Resume
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -2156,15 +2201,15 @@
                     </div>
                     <div class="flex space-x-6">
                         <a href="https://www.linkedin.com/in/sania-gupta/" target="_blank" rel="noopener noreferrer"
-                            class="social-icon text-slate-400 hover:text-blue-400">
+                           class="social-icon text-slate-400 hover:text-blue-400">
                             <i class="fab fa-linkedin text-xl"></i>
                         </a>
                         <a href="https://github.com/saniagupta124" target="_blank" rel="noopener noreferrer"
-                            class="social-icon text-slate-400 hover:text-blue-400">
+                           class="social-icon text-slate-400 hover:text-blue-400">
                             <i class="fab fa-github text-xl"></i>
                         </a>
                         <a href="mailto:saniagup@usc.edu" target="_blank" rel="noopener noreferrer"
-                            class="social-icon text-slate-400 hover:text-blue-400">
+                           class="social-icon text-slate-400 hover:text-blue-400">
                             <i class="fas fa-envelope text-xl"></i>
                         </a>
                     </div>
@@ -2173,7 +2218,8 @@
         </footer>
 
         <script>
-            // Navigation and Page Switching
+        // Navigation and Page Switching
+
             document.addEventListener('DOMContentLoaded', function () {
                 const navLinks = document.querySelectorAll('[data-page]');
                 const pages = document.querySelectorAll('.page');
@@ -2185,94 +2231,76 @@
                 const formMessage = document.getElementById('form-message');
                 const copyCodeBtn = document.getElementById('copy-code-btn');
 
-                // Mobile menu toggle
                 mobileMenuButton.addEventListener('click', function () {
                     mobileMenu.classList.toggle('hidden');
                 });
 
-                // Page navigation
+                // Page navigation without reload
                 navLinks.forEach(link => {
                     link.addEventListener('click', function (e) {
                         e.preventDefault();
 
-                        // Update active nav link
                         navLinks.forEach(navLink => {
                             navLink.classList.remove('active');
                         });
                         this.classList.add('active');
 
-                        // Show selected page
                         const targetPage = this.getAttribute('data-page');
                         pages.forEach(page => {
                             page.classList.remove('active');
                         });
                         document.getElementById(targetPage).classList.add('active');
 
-                        // Hide mobile menu after click
                         mobileMenu.classList.add('hidden');
 
-                        // Scroll to top
                         window.scrollTo(0, 0);
                     });
                 });
 
-                // Project detail navigation
                 projectLinks.forEach(link => {
                     link.addEventListener('click', function (e) {
                         e.preventDefault();
 
-                        // Hide home page
                         document.getElementById('home').classList.remove('active');
 
-                        // Show project details page
                         document.getElementById('project-details').classList.add('active');
 
-                        // Show specific project
                         const targetProject = this.getAttribute('data-project');
                         document.querySelectorAll('.project-detail').forEach(project => {
                             project.classList.remove('active');
                         });
                         document.getElementById(targetProject).classList.add('active');
 
-                        // Scroll to top
                         window.scrollTo(0, 0);
                     });
                 });
 
-                // Back to home from project details
                 backToHomeLinks.forEach(link => {
                     link.addEventListener('click', function (e) {
                         e.preventDefault();
 
-                        // Hide project details page
                         document.getElementById('project-details').classList.remove('active');
 
-                        // Show home page
                         document.getElementById('home').classList.add('active');
 
-                        // Scroll to top
                         window.scrollTo(0, 0);
                     });
                 });
 
-                // Contact form submission
                 if (contactForm) {
                     contactForm.addEventListener('submit', function (e) {
                         e.preventDefault();
 
-                        // Simple form validation
                         const name = document.getElementById('name').value;
                         const email = document.getElementById('email').value;
                         const message = document.getElementById('message').value;
 
-                        if (name && email && message) {
-                            // Show success message
+                        if (name && email && message)
+                        {
                             formMessage.classList.remove('hidden');
 
-                            // Reset form
                             contactForm.reset();
 
-                            // Hide success message after 5 seconds
                             setTimeout(() => {
                                 formMessage.classList.add('hidden');
                             }, 5000);
@@ -2280,12 +2308,10 @@
                     });
                 }
 
-                // Copy code button
                 if (copyCodeBtn) {
                     copyCodeBtn.addEventListener('click', function () {
                         const htmlContent = document.documentElement.outerHTML;
 
-                        // Create a temporary textarea element to copy the code
                         const textarea = document.createElement('textarea');
                         textarea.value = htmlContent;
                         textarea.setAttribute('readonly', '');
@@ -2293,29 +2319,24 @@
                         textarea.style.left = '-9999px';
                         document.body.appendChild(textarea);
 
-                        // Select and copy the text
                         textarea.select();
                         document.execCommand('copy');
 
-                        // Remove the textarea
                         document.body.removeChild(textarea);
 
-                        // Update button text temporarily
                         const originalText = this.innerHTML;
                         this.innerHTML = '<i class="fas fa-check mr-2"></i> Copied!';
 
-                        // Revert button text after 2 seconds
                         setTimeout(() => {
                             this.innerHTML = originalText;
                         }, 2000);
                     });
                 }
-            });
-        </script>
+            });</script>
     </div>
     <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'9560f2ac86aa5c17',t:'MTc1MDk4NTQwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
     <iframe height="1" width="1"
-        style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
+            style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
 
 </body>
 
@@ -2323,6 +2344,8 @@
 
 <script src="https://player.vimeo.com/api/player.js"></script>
 <script>
+    // Custom Vimeo video controls
+
     document.querySelectorAll('.video-container').forEach(container => {
         const iframe = container.querySelector('.vimeo-player');
         const playPauseBtn = container.querySelector('.playPauseBtn');
@@ -2349,6 +2372,7 @@
             });
         });
 
+        // Sync timeline with video progress
         player.on('timeupdate', data => {
             player.getDuration().then(duration => {
                 videoTimeline.max = duration;
@@ -2364,7 +2388,7 @@
         player.on('play', () => setIcon(true));
     });
 
-    // Pause all Vimeo videos on page hide or unload
+    // Pause videos when page hidden
     document.addEventListener('visibilitychange', function () {
         if (document.hidden) {
             document.querySelectorAll('iframe.vimeo-player').forEach((iframe) => {
@@ -2374,7 +2398,6 @@
         }
     });
 
-    // Optional: pause before the page unloads completely
     window.addEventListener('beforeunload', () => {
         document.querySelectorAll('iframe.vimeo-player').forEach((iframe) => {
             const player = new Vimeo.Player(iframe);
@@ -2382,44 +2405,3 @@
         });
     });
 </script>
-
-
-<!-- <script>
-    document.querySelectorAll('.playPauseBtn').forEach(button => {
-        const container = button.closest('.relative');
-        const video = container.querySelector('video');
-        const icon = button.querySelector('i');
-        const timeline = container.querySelector('.videoTimeline');
-
-        // Play/pause toggle
-        button.addEventListener('click', () => {
-            if (video.paused) {
-                video.play();
-                icon.classList.remove('fa-play');
-                icon.classList.add('fa-pause');
-            } else {
-                video.pause();
-                icon.classList.remove('fa-pause');
-                icon.classList.add('fa-play');
-            }
-        });
-
-        // Reset icon when video ends
-        video.addEventListener('ended', () => {
-            icon.classList.remove('fa-pause');
-            icon.classList.add('fa-play');
-        });
-
-        // Update slider as video plays
-        video.addEventListener('timeupdate', () => {
-            const percent = (video.currentTime / video.duration) * 100;
-            timeline.value = percent || 0;
-        });
-
-        // Seek when slider is changed
-        timeline.addEventListener('input', () => {
-            const seekTime = (timeline.value / 100) * video.duration;
-            video.currentTime = seekTime;
-        });
-    });
-</script> -->
