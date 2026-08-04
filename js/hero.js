@@ -68,8 +68,8 @@ export function initTypewriter() {
   const el = document.getElementById('typewriter-text');
   if (!el) return;
 
-  const phrases = ['Startup Founder', 'Graphics Programmer', 'Software Engineer', 'Game Developer', 'AI Engineer'];
-  const SPEED = 65; /* uniform rate for every character — type and delete */
+  const phrases = ['Startup Founder', 'Graphics Programmer', 'AI Engineer', 'Game Developer', 'Software Engineer'];
+  const SPEED = 56; /* uniform rate for every character — type and delete */
   let pi = 0, ci = 0, del = false, pause = 0;
 
   function tick() {
@@ -79,7 +79,7 @@ export function initTypewriter() {
       el.textContent = cur.slice(0, ci);
       if (ci < cur.length) { ci++; return setTimeout(tick, SPEED); }
       /* Word complete — brief hold before deleting */
-      if (++pause < 20) return setTimeout(tick, SPEED);
+      if (++pause < 17) return setTimeout(tick, SPEED);
       pause = 0; del = true;
       return setTimeout(tick, SPEED);
     }
@@ -139,12 +139,33 @@ export function initHeroAnimations() {
     /* Hero text and decos fade by 35% of scroll range */
     .to('.hero-content',      { opacity:0, y:-45 },               0)
     .to('.hero-decos',        { opacity:0 },                      0)
-    /* Tint clears from 10% to 55% */
-    .to('#hero-tint',         { opacity:0 },                    '10%')
-    /* Projects label + view toggle + resume button: come in at 55% */
-    .to('.projects-reveal',   { opacity:1, pointerEvents:'auto' },'55%')
-    .to('.view-toggle',       { opacity:1, pointerEvents:'auto' },'55%')
-    .to('.cards-resume-link', { opacity:1, pointerEvents:'auto' },'55%');
+    /* Tint clears from 10% to 55% — autoAlpha so visibility:hidden at 0,
+       guaranteeing the backdrop-filter blur can't linger over the cards */
+    .to('#hero-tint',         { autoAlpha:0 },                  '10%')
+    /* Empty padding keeps the timeline the same total length it had when
+       the reveal tweens lived here, so the fades above map to the same
+       scroll positions as before. */
+    .to({},                   { duration: 0.47 },               0.55);
+
+  /* Projects title + view toggle + resume button snap in as a quick fade
+     the moment scroll crosses into the projects zone — not scrubbed, so
+     they're always fully opaque at the section regardless of how fast you
+     scrolled or whether you jumped via the nav link. */
+  const revealEls = ['.projects-reveal', '.view-toggle', '.cards-resume-link'];
+  ScrollTrigger.create({
+    trigger: '#hero',
+    start:   '40% top', /* ≈96vh — tint is essentially clear by here */
+    onEnter: () => {
+      /* Force the lagged scrub to catch up instantly, so the tint over the
+         cards vanishes at the same moment the PROJECTS title snaps in. */
+      const scrubTween = tl.scrollTrigger && tl.scrollTrigger.getTween();
+      if (scrubTween) scrubTween.progress(1);
+      gsap.to(revealEls,
+        { opacity: 1, pointerEvents: 'auto', duration: 0.35, ease: 'power1.out', overwrite: true });
+    },
+    onLeaveBack: () => gsap.to(revealEls,
+      { opacity: 0, pointerEvents: 'none', duration: 0.3, ease: 'power1.out', overwrite: true }),
+  });
 
   /* ── Nav-jump snap ──
      The 2.5s scrub lag feels right for manual scrolling, but when a nav
@@ -160,7 +181,9 @@ export function initHeroAnimations() {
       if (scrubTween) scrubTween.progress(1);
       idleFrames = Math.abs(window.scrollY - lastY) < 1 ? idleFrames + 1 : 0;
       lastY = window.scrollY;
-      if (idleFrames < 10) requestAnimationFrame(step);
+      /* Keep snapping through the smooth-scroll's slow deceleration tail —
+         only stop after the scroll has been genuinely still for ~0.5s. */
+      if (idleFrames < 30) requestAnimationFrame(step);
     })();
   }
 
