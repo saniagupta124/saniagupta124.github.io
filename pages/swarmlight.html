@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwarmLight — Sania Gupta</title>
+  <meta name="description" content="SwarmLight — emergent firefly-swarm mechanics. Physics-driven flocking, dual carry mechanics, and a tuned energy economy.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/animations.css">
+
+  <style>
+    body { background: var(--bg); }
+    /* Darkest color sampled from swarmlighthome.png */
+    .project-hero { background: #131317; }
+  </style>
+</head>
+<body>
+
+<div id="cursor-dot"  aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+
+<nav class="page-nav" id="page-nav" aria-label="Page navigation">
+  <a href="../index.html#projects" class="back-link">← WORK</a>
+  <a href="../index.html" class="nav-monogram">SG</a>
+</nav>
+
+<header class="project-hero" aria-label="SwarmLight project header">
+  <img class="project-hero-img is-blur" src="../files/swarmlighthome.png" alt="" aria-hidden="true">
+  <img class="project-hero-img" src="../files/swarmlighthome.png" alt="SwarmLight gameplay">
+
+  <div class="card-pills" style="margin-bottom:1.5rem;">
+    <span class="pill">Unity</span>
+    <span class="pill">C#</span>
+    <span class="pill">HLSL</span>
+    <span class="pill">Perforce</span>
+  </div>
+
+  <h1 class="project-hero-title">SwarmLight</h1>
+  <p class="project-hook">
+    A physics-driven 3D puzzle game where you control a swarm of fireflies, collect objects,
+    and manage your swarm's energy.
+  </p>
+</header>
+
+<div class="project-content">
+
+  <div class="project-links">
+    <a href="https://saniag.itch.io/swarmlight" target="_blank" rel="noopener noreferrer" class="project-link-chip">Play on itch.io <span aria-hidden="true">↗</span></a>
+    <a href="https://www.youtube.com/watch?v=0mKQb3tcGsk" target="_blank" rel="noopener noreferrer" class="project-link-chip">Gameplay Video <span aria-hidden="true">↗</span></a>
+  </div>
+
+  <div class="project-meta">
+    <div class="project-meta-item">
+      <span class="project-meta-label">Role</span>
+      <span class="project-meta-value">Lead Developer</span>
+    </div>
+    <div class="project-meta-item">
+      <span class="project-meta-label">Team</span>
+      <span class="project-meta-value">2 — me (systems/graphics), partner (level/puzzle design)</span>
+    </div>
+    <div class="project-meta-item">
+      <span class="project-meta-label">Dates</span>
+      <span class="project-meta-value">September 2025 – May 2026</span>
+    </div>
+  </div>
+
+  <section class="project-section">
+    <h2 class="project-section-title">The Problem</h2>
+    <p>
+      We wanted to develop a game that was puzzle based but included unique mechanics and a
+      unique player character that hasn't been seen before. Players needed a way to physically
+      manipulate objects using a swarm of independent agents that still felt alive and organic
+      rather than mechanical — grabbing solid objects, entering hollow ones, and managing a
+      shared energy resource across the whole swarm.
+    </p>
+  </section>
+
+  <section class="project-section">
+    <h2 class="project-section-title">What I Built</h2>
+    <p>
+      I owned swarm physics and movement, pickup mechanics, all graphics programming, frog enemy
+      mechanics, and telemetry for user research; my partner focused on game and level design
+      with an emphasis on puzzle mechanics.
+    </p>
+    <ul class="highlight-list">
+      <li>
+        <strong>Dual pickup modes</strong> — LMB clusters the swarm around solid objects to carry
+        them via "squeeze," RMB spreads fireflies inside hollow objects via "possess."
+      </li>
+      <li>
+        <strong>Flocking movement</strong> built on cohesion forces and MovePosition rather than
+        direct velocity, for smoother formation behavior.
+      </li>
+      <li>
+        <strong>ClosestPoint()-based distribution</strong> so fireflies wrap evenly around a
+        surface instead of clumping on one side.
+      </li>
+      <li>
+        <strong>Frog enemy mechanics</strong> that sense the swarm within a certain radius,
+        stretch their tongue out, and kill any fireflies that collide.
+      </li>
+      <li>
+        A full energy-absorption/revival loop instrumented with a <strong>custom telemetry
+        framework</strong> — tracking level time, absorption count, revival count, total energy
+        absorbed, and deaths for user research.
+      </li>
+    </ul>
+  </section>
+
+  <section class="project-section">
+    <h2 class="project-section-title">Outcome &amp; Impact</h2>
+    <ul class="highlight-list">
+      <li>
+        Diagnosed and fixed a <strong>core economy bug</strong> where drain outpaced gain at scale
+        (40 fireflies), rebalancing absorption rate and total energy pool to make the swarm
+        sustainable.
+      </li>
+      <li>
+        Gained rewarding playtest feedback that the game is <strong>enjoyable, emotional, and
+        intense</strong> — meeting our experience goals.
+      </li>
+      <li>
+        Met all GDLC deadlines and <strong>successfully published on itch.io</strong>.
+      </li>
+    </ul>
+  </section>
+
+</div>
+
+<!-- ── Media gallery ── -->
+<div class="media-grid" aria-label="SwarmLight media">
+  <div class="media-item media-item--wide video-wrap">
+    <video src="../files/swarmlighttrailer.mp4" muted loop playsinline preload="metadata" aria-label="SwarmLight trailer"></video>
+  </div>
+</div>
+
+<div class="next-project-bar">
+  <span>Next Project</span>
+  <a href="adaptive-pursuit.html" class="next-project-link">Adaptive Pursuit <span aria-hidden="true">→</span></a>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script type="module">
+  import { initScroll } from '../js/scroll.js';
+  import { initProjectMedia } from '../js/project-media.js';
+  gsap.registerPlugin(ScrollTrigger);
+  initScroll();
+  initProjectMedia();
+
+  const nav = document.getElementById('page-nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 30), { passive: true });
+
+  const dot = document.getElementById('cursor-dot');
+  const ring = document.getElementById('cursor-ring');
+  document.addEventListener('mousemove', e => {
+    dot.style.left = ring.style.left = e.clientX + 'px';
+    dot.style.top  = ring.style.top  = e.clientY + 'px';
+  });
+  document.addEventListener('mouseover', e => {
+    if (e.target.closest('a,button,.video-wrap')) document.body.classList.add('cursor-hover');
+  });
+  document.addEventListener('mouseout', e => {
+    if (e.target.closest('a,button,.video-wrap')) document.body.classList.remove('cursor-hover');
+  });
+
+  gsap.from('body', { opacity: 0, duration: 0.5, ease: 'power2.out' });
+</script>
+</body>
+</html>

@@ -1,2689 +1,570 @@
+<!DOCTYPE html>
 <html lang="en">
-
-<!--Portfolio website with page navigation, custom Vimeo video controls, and various projects' content-->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sania Gupta</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #0f172a;
-            color: #e2e8f0;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .project-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-            .project-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
-            }
-
-        .nav-link {
-            position: relative;
-        }
-
-            .nav-link::after {
-                content: '';
-                position: absolute;
-                width: 0;
-                height: 2px;
-                bottom: -2px;
-                left: 0;
-                background-color: #3b82f6;
-                transition: width 0.3s ease;
-            }
-
-            .nav-link:hover::after,
-            .nav-link.active::after {
-                width: 100%;
-            }
-
-        .page {
-            display: none;
-        }
-
-            .page.active {
-                display: block;
-            }
-
-        .project-detail {
-            display: none;
-        }
-
-            .project-detail.active {
-                display: block;
-            }
-
-        .btn-primary {
-            background-color: #3b82f6;
-            color: white;
-            transition: all 0.3s ease;
-        }
-
-            .btn-primary:hover {
-                background-color: #2563eb;
-                transform: translateY(-2px);
-            }
-
-        .social-icon {
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-
-            .social-icon:hover {
-                transform: translateY(-3px);
-                color: #3b82f6;
-            }
-
-        .hero-gradient {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background-color: #3b82f6;
-            margin-top: 8px;
-        }
-    </style>
-    <style>
-        *,
-        ::before,
-        ::after {
-            --tw-border-spacing-x: 0;
-            --tw-border-spacing-y: 0;
-            --tw-translate-x: 0;
-            --tw-translate-y: 0;
-            --tw-rotate: 0;
-            --tw-skew-x: 0;
-            --tw-skew-y: 0;
-            --tw-scale-x: 1;
-            --tw-scale-y: 1;
-            --tw-pan-x:;
-            --tw-pan-y:;
-            --tw-pinch-zoom:;
-            --tw-scroll-snap-strictness: proximity;
-            --tw-gradient-from-position:;
-            --tw-gradient-via-position:;
-            --tw-gradient-to-position:;
-            --tw-ordinal:;
-            --tw-slashed-zero:;
-            --tw-numeric-figure:;
-            --tw-numeric-spacing:;
-            --tw-numeric-fraction:;
-            --tw-ring-inset:;
-            --tw-ring-offset-width: 0px;
-            --tw-ring-offset-color: #fff;
-            --tw-ring-color: rgb(59 130 246 / 0.5);
-            --tw-ring-offset-shadow: 0 0 #0000;
-            --tw-ring-shadow: 0 0 #0000;
-            --tw-shadow: 0 0 #0000;
-            --tw-shadow-colored: 0 0 #0000;
-            --tw-blur:;
-            --tw-brightness:;
-            --tw-contrast:;
-            --tw-grayscale:;
-            --tw-hue-rotate:;
-            --tw-invert:;
-            --tw-saturate:;
-            --tw-sepia:;
-            --tw-drop-shadow:;
-            --tw-backdrop-blur:;
-            --tw-backdrop-brightness:;
-            --tw-backdrop-contrast:;
-            --tw-backdrop-grayscale:;
-            --tw-backdrop-hue-rotate:;
-            --tw-backdrop-invert:;
-            --tw-backdrop-opacity:;
-            --tw-backdrop-saturate:;
-            --tw-backdrop-sepia:;
-            --tw-contain-size:;
-            --tw-contain-layout:;
-            --tw-contain-paint:;
-            --tw-contain-style:
-        }
-
-        ::backdrop {
-            --tw-border-spacing-x: 0;
-            --tw-border-spacing-y: 0;
-            --tw-translate-x: 0;
-            --tw-translate-y: 0;
-            --tw-rotate: 0;
-            --tw-skew-x: 0;
-            --tw-skew-y: 0;
-            --tw-scale-x: 1;
-            --tw-scale-y: 1;
-            --tw-pan-x:;
-            --tw-pan-y:;
-            --tw-pinch-zoom:;
-            --tw-scroll-snap-strictness: proximity;
-            --tw-gradient-from-position:;
-            --tw-gradient-via-position:;
-            --tw-gradient-to-position:;
-            --tw-ordinal:;
-            --tw-slashed-zero:;
-            --tw-numeric-figure:;
-            --tw-numeric-spacing:;
-            --tw-numeric-fraction:;
-            --tw-ring-inset:;
-            --tw-ring-offset-width: 0px;
-            --tw-ring-offset-color: #fff;
-            --tw-ring-color: rgb(59 130 246 / 0.5);
-            --tw-ring-offset-shadow: 0 0 #0000;
-            --tw-ring-shadow: 0 0 #0000;
-            --tw-shadow: 0 0 #0000;
-            --tw-shadow-colored: 0 0 #0000;
-            --tw-blur:;
-            --tw-brightness:;
-            --tw-contrast:;
-            --tw-grayscale:;
-            --tw-hue-rotate:;
-            --tw-invert:;
-            --tw-saturate:;
-            --tw-sepia:;
-            --tw-drop-shadow:;
-            --tw-backdrop-blur:;
-            --tw-backdrop-brightness:;
-            --tw-backdrop-contrast:;
-            --tw-backdrop-grayscale:;
-            --tw-backdrop-hue-rotate:;
-            --tw-backdrop-invert:;
-            --tw-backdrop-opacity:;
-            --tw-backdrop-saturate:;
-            --tw-backdrop-sepia:;
-            --tw-contain-size:;
-            --tw-contain-layout:;
-            --tw-contain-paint:;
-            --tw-contain-style:
-        }
-
-        /* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */
-        *,
-        ::after,
-        ::before {
-            box-sizing: border-box;
-            border-width: 0;
-            border-style: solid;
-            border-color: #e5e7eb
-        }
-
-        ::after,
-        ::before {
-            --tw-content: ''
-        }
-
-        :host,
-        html {
-            line-height: 1.5;
-            -webkit-text-size-adjust: 100%;
-            -moz-tab-size: 4;
-            tab-size: 4;
-            font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-            font-feature-settings: normal;
-            font-variation-settings: normal;
-            -webkit-tap-highlight-color: transparent
-        }
-
-        body {
-            margin: 0;
-            line-height: inherit
-        }
-
-        hr {
-            height: 0;
-            color: inherit;
-            border-top-width: 1px
-        }
-
-        abbr:where([title]) {
-            -webkit-text-decoration: underline dotted;
-            text-decoration: underline dotted
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-size: inherit;
-            font-weight: inherit
-        }
-
-        a {
-            color: inherit;
-            text-decoration: inherit
-        }
-
-        b,
-        strong {
-            font-weight: bolder
-        }
-
-        code,
-        kbd,
-        pre,
-        samp {
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-            font-feature-settings: normal;
-            font-variation-settings: normal;
-            font-size: 1em
-        }
-
-        small {
-            font-size: 80%
-        }
-
-        sub,
-        sup {
-            font-size: 75%;
-            line-height: 0;
-            position: relative;
-            vertical-align: baseline
-        }
-
-        sub {
-            bottom: -.25em
-        }
-
-        sup {
-            top: -.5em
-        }
-
-        table {
-            text-indent: 0;
-            border-color: inherit;
-            border-collapse: collapse
-        }
-
-        button,
-        input,
-        optgroup,
-        select,
-        textarea {
-            font-family: inherit;
-            font-feature-settings: inherit;
-            font-variation-settings: inherit;
-            font-size: 100%;
-            font-weight: inherit;
-            line-height: inherit;
-            letter-spacing: inherit;
-            color: inherit;
-            margin: 0;
-            padding: 0
-        }
-
-        button,
-        select {
-            text-transform: none
-        }
-
-        button,
-        input:where([type=button]),
-        input:where([type=reset]),
-        input:where([type=submit]) {
-            -webkit-appearance: button;
-            background-color: transparent;
-            background-image: none
-        }
-
-        :-moz-focusring {
-            outline: auto
-        }
-
-        :-moz-ui-invalid {
-            box-shadow: none
-        }
-
-        progress {
-            vertical-align: baseline
-        }
-
-        ::-webkit-inner-spin-button,
-        ::-webkit-outer-spin-button {
-            height: auto
-        }
-
-        [type=search] {
-            -webkit-appearance: textfield;
-            outline-offset: -2px
-        }
-
-        ::-webkit-search-decoration {
-            -webkit-appearance: none
-        }
-
-        ::-webkit-file-upload-button {
-            -webkit-appearance: button;
-            font: inherit
-        }
-
-        summary {
-            display: list-item
-        }
-
-        blockquote,
-        dd,
-        dl,
-        figure,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        hr,
-        p,
-        pre {
-            margin: 0
-        }
-
-        fieldset {
-            margin: 0;
-            padding: 0
-        }
-
-        legend {
-            padding: 0
-        }
-
-        menu,
-        ol,
-        ul {
-            list-style: none;
-            margin: 0;
-            padding: 0
-        }
-
-        dialog {
-            padding: 0
-        }
-
-        textarea {
-            resize: vertical
-        }
-
-            input::placeholder,
-            textarea::placeholder {
-                opacity: 1;
-                color: #9ca3af
-            }
-
-        [role=button],
-        button {
-            cursor: pointer
-        }
-
-        :disabled {
-            cursor: default
-        }
-
-        audio,
-        canvas,
-        embed,
-        iframe,
-        img,
-        object,
-        svg,
-        video {
-            display: block;
-            vertical-align: middle
-        }
-
-        img,
-        video {
-            max-width: 100%;
-            height: auto
-        }
-
-        [hidden]:where(:not([hidden=until-found])) {
-            display: none
-        }
-
-        .container {
-            width: 100%
-        }
-
-        @media (min-width: 640px) {
-            .container {
-                max-width: 640px
-            }
-        }
-
-        @media (min-width: 768px) {
-            .container {
-                max-width: 768px
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .container {
-                max-width: 1024px
-            }
-        }
-
-        @media (min-width: 1280px) {
-            .container {
-                max-width: 1280px
-            }
-        }
-
-        @media (min-width: 1536px) {
-            .container {
-                max-width: 1536px
-            }
-        }
-
-        .fixed {
-            position: fixed
-        }
-
-        .sticky {
-            position: sticky
-        }
-
-        .bottom-6 {
-            bottom: 1.5rem
-        }
-
-        .right-6 {
-            right: 1.5rem
-        }
-
-        .top-0 {
-            top: 0px
-        }
-
-        .z-50 {
-            z-index: 50
-        }
-
-        .mx-auto {
-            margin-left: auto;
-            margin-right: auto
-        }
-
-        .mb-1 {
-            margin-bottom: 0.25rem
-        }
-
-        .mb-12 {
-            margin-bottom: 3rem
-        }
-
-        .mb-16 {
-            margin-bottom: 4rem
-        }
-
-        .mb-2 {
-            margin-bottom: 0.5rem
-        }
-
-        .mb-4 {
-            margin-bottom: 1rem
-        }
-
-        .mb-6 {
-            margin-bottom: 1.5rem
-        }
-
-        .mb-8 {
-            margin-bottom: 2rem
-        }
-
-        .ml-2 {
-            margin-left: 0.5rem
-        }
-
-        .mr-2 {
-            margin-right: 0.5rem
-        }
-
-        .mr-4 {
-            margin-right: 1rem
-        }
-
-        .mt-10 {
-            margin-top: 2.5rem
-        }
-
-        .mt-16 {
-            margin-top: 4rem
-        }
-
-        .mt-2 {
-            margin-top: 0.5rem
-        }
-
-        .mt-4 {
-            margin-top: 1rem
-        }
-
-        .mt-6 {
-            margin-top: 1.5rem
-        }
-
-        .block {
-            display: block
-        }
-
-        .inline-block {
-            display: inline-block
-        }
-
-        .flex {
-            display: flex
-        }
-
-        .grid {
-            display: grid
-        }
-
-        .hidden {
-            display: none
-        }
-
-        .h-16 {
-            height: 4rem
-        }
-
-        .h-2 {
-            height: 0.5rem
-        }
-
-        .h-24 {
-            height: 6rem
-        }
-
-        .h-32 {
-            height: 8rem
-        }
-
-        .h-48 {
-            height: 12rem
-        }
-
-        .h-56 {
-            height: 14rem
-        }
-
-        .h-64 {
-            height: 16rem
-        }
-
-        .h-80 {
-            height: 20rem
-        }
-
-        .h-full {
-            height: 100%
-        }
-
-        .min-h-screen {
-            min-height: 100vh
-        }
-
-        .w-16 {
-            width: 4rem
-        }
-
-        .w-24 {
-            width: 6rem
-        }
-
-        .w-32 {
-            width: 8rem
-        }
-
-        .w-full {
-            width: 100%
-        }
-
-        .max-w-3xl {
-            max-width: 48rem
-        }
-
-        .max-w-4xl {
-            max-width: 56rem
-        }
-
-        .flex-grow {
-            flex-grow: 1
-        }
-
-        .list-inside {
-            list-style-position: inside
-        }
-
-        .list-disc {
-            list-style-type: disc
-        }
-
-        .grid-cols-1 {
-            grid-template-columns: repeat(1, minmax(0, 1fr))
-        }
-
-        .flex-col {
-            flex-direction: column
-        }
-
-        .flex-wrap {
-            flex-wrap: wrap
-        }
-
-        .items-start {
-            align-items: flex-start
-        }
-
-        .items-center {
-            align-items: center
-        }
-
-        .justify-center {
-            justify-content: center
-        }
-
-        .justify-between {
-            justify-content: space-between
-        }
-
-        .gap-2 {
-            gap: 0.5rem
-        }
-
-        .gap-4 {
-            gap: 1rem
-        }
-
-        .gap-6 {
-            gap: 1.5rem
-        }
-
-        .gap-8 {
-            gap: 2rem
-        }
-
-        .space-x-4 > :not([hidden]) ~ :not([hidden]) {
-            --tw-space-x-reverse: 0;
-            margin-right: calc(1rem * var(--tw-space-x-reverse));
-            margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)))
-        }
-
-        .space-x-6 > :not([hidden]) ~ :not([hidden]) {
-            --tw-space-x-reverse: 0;
-            margin-right: calc(1.5rem * var(--tw-space-x-reverse));
-            margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)))
-        }
-
-        .space-x-8 > :not([hidden]) ~ :not([hidden]) {
-            --tw-space-x-reverse: 0;
-            margin-right: calc(2rem * var(--tw-space-x-reverse));
-            margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)))
-        }
-
-        .space-y-1 > :not([hidden]) ~ :not([hidden]) {
-            --tw-space-y-reverse: 0;
-            margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
-            margin-bottom: calc(0.25rem * var(--tw-space-y-reverse))
-        }
-
-        .space-y-3 > :not([hidden]) ~ :not([hidden]) {
-            --tw-space-y-reverse: 0;
-            margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
-            margin-bottom: calc(0.75rem * var(--tw-space-y-reverse))
-        }
-
-        .space-y-4 > :not([hidden]) ~ :not([hidden]) {
-            --tw-space-y-reverse: 0;
-            margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
-            margin-bottom: calc(1rem * var(--tw-space-y-reverse))
-        }
-
-        .overflow-hidden {
-            overflow: hidden
-        }
-
-        .rounded-full {
-            border-radius: 9999px
-        }
-
-        .rounded-lg {
-            border-radius: 0.5rem
-        }
-
-        .rounded-xl {
-            border-radius: 0.75rem
-        }
-
-        .border {
-            border-width: 1px
-        }
-
-        .border-slate-600 {
-            --tw-border-opacity: 1;
-            border-color: rgb(71 85 105 / var(--tw-border-opacity, 1))
-        }
-
-        .bg-blue-500 {
-            --tw-bg-opacity: 1;
-            background-color: rgb(59 130 246 / var(--tw-bg-opacity, 1))
-        }
-
-        .bg-blue-600 {
-            --tw-bg-opacity: 1;
-            background-color: rgb(37 99 235 / var(--tw-bg-opacity, 1))
-        }
-
-        .bg-blue-900 {
-            --tw-bg-opacity: 1;
-            background-color: rgb(30 58 138 / var(--tw-bg-opacity, 1))
-        }
-
-        .bg-orange-900 {
-            --tw-bg-opacity: 1;
-            background-color: rgb(124 45 18 / var(--tw-bg-opacity, 1))
-        }
-
-        .bg-slate-600 {
-            --tw-bg-opacity: 1;
-            background-color: rgb(71 85 105 / var(--tw-bg-opacity, 1))
-        }
-
-        .bg-slate-700 {
-            --tw-bg-opacity: 1;
-            background-color: rgb(51 65 85 / var(--tw-bg-opacity, 1))
-        }
-
-        .bg-slate-800 {
-            --tw-bg-opacity: 1;
-            background-color: rgb(30 41 59 / var(--tw-bg-opacity, 1))
-        }
-
-        .bg-slate-900 {
-            --tw-bg-opacity: 1;
-            background-color: rgb(15 23 42 / var(--tw-bg-opacity, 1))
-        }
-
-        .bg-teal-900 {
-            --tw-bg-opacity: 1;
-            background-color: rgb(19 78 74 / var(--tw-bg-opacity, 1))
-        }
-
-        .bg-gradient-to-br {
-            background-image: linear-gradient(to bottom right, var(--tw-gradient-stops))
-        }
-
-        .from-blue-500 {
-            --tw-gradient-from: #3b82f6 var(--tw-gradient-from-position);
-            --tw-gradient-to: rgb(59 130 246 / 0) var(--tw-gradient-to-position);
-            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
-        }
-
-        .from-green-500 {
-            --tw-gradient-from: #22c55e var(--tw-gradient-from-position);
-            --tw-gradient-to: rgb(34 197 94 / 0) var(--tw-gradient-to-position);
-            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
-        }
-
-        .from-indigo-500 {
-            --tw-gradient-from: #6366f1 var(--tw-gradient-from-position);
-            --tw-gradient-to: rgb(99 102 241 / 0) var(--tw-gradient-to-position);
-            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
-        }
-
-        .from-orange-500 {
-            --tw-gradient-from: #f97316 var(--tw-gradient-from-position);
-            --tw-gradient-to: rgb(249 115 22 / 0) var(--tw-gradient-to-position);
-            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
-        }
-
-        .from-red-500 {
-            --tw-gradient-from: #ef4444 var(--tw-gradient-from-position);
-            --tw-gradient-to: rgb(239 68 68 / 0) var(--tw-gradient-to-position);
-            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
-        }
-
-        .from-teal-500 {
-            --tw-gradient-from: #14b8a6 var(--tw-gradient-from-position);
-            --tw-gradient-to: rgb(20 184 166 / 0) var(--tw-gradient-to-position);
-            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
-        }
-
-        .to-blue-600 {
-            --tw-gradient-to: #2563eb var(--tw-gradient-to-position)
-        }
-
-        .to-green-600 {
-            --tw-gradient-to: #16a34a var(--tw-gradient-to-position)
-        }
-
-        .to-orange-600 {
-            --tw-gradient-to: #ea580c var(--tw-gradient-to-position)
-        }
-
-        .to-purple-600 {
-            --tw-gradient-to: #9333ea var(--tw-gradient-to-position)
-        }
-
-        .to-red-600 {
-            --tw-gradient-to: #dc2626 var(--tw-gradient-to-position)
-        }
-
-        .to-teal-600 {
-            --tw-gradient-to: #0d9488 var(--tw-gradient-to-position)
-        }
-
-        .p-3 {
-            padding: 0.75rem
-        }
-
-        .p-6 {
-            padding: 1.5rem
-        }
-
-        .p-8 {
-            padding: 2rem
-        }
-
-        .px-3 {
-            padding-left: 0.75rem;
-            padding-right: 0.75rem
-        }
-
-        .px-4 {
-            padding-left: 1rem;
-            padding-right: 1rem
-        }
-
-        .px-6 {
-            padding-left: 1.5rem;
-            padding-right: 1.5rem
-        }
-
-        .px-8 {
-            padding-left: 2rem;
-            padding-right: 2rem
-        }
-
-        .py-1 {
-            padding-top: 0.25rem;
-            padding-bottom: 0.25rem
-        }
-
-        .py-16 {
-            padding-top: 4rem;
-            padding-bottom: 4rem
-        }
-
-        .py-2 {
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem
-        }
-
-        .py-20 {
-            padding-top: 5rem;
-            padding-bottom: 5rem
-        }
-
-        .py-3 {
-            padding-top: 0.75rem;
-            padding-bottom: 0.75rem
-        }
-
-        .py-4 {
-            padding-top: 1rem;
-            padding-bottom: 1rem
-        }
-
-        .py-8 {
-            padding-top: 2rem;
-            padding-bottom: 2rem
-        }
-
-        .text-center {
-            text-align: center
-        }
-
-        .text-2xl {
-            font-size: 1.5rem;
-            line-height: 2rem
-        }
-
-        .text-3xl {
-            font-size: 1.875rem;
-            line-height: 2.25rem
-        }
-
-        .text-4xl {
-            font-size: 2.25rem;
-            line-height: 2.5rem
-        }
-
-        .text-lg {
-            font-size: 1.125rem;
-            line-height: 1.75rem
-        }
-
-        .text-sm {
-            font-size: 0.875rem;
-            line-height: 1.25rem
-        }
-
-        .text-xl {
-            font-size: 1.25rem;
-            line-height: 1.75rem
-        }
-
-        .font-bold {
-            font-weight: 700
-        }
-
-        .font-medium {
-            font-weight: 500
-        }
-
-        .font-semibold {
-            font-weight: 600
-        }
-
-        .leading-relaxed {
-            line-height: 1.625
-        }
-
-        .text-blue-200 {
-            --tw-text-opacity: 1;
-            color: rgb(191 219 254 / var(--tw-text-opacity, 1))
-        }
-
-        .text-blue-400 {
-            --tw-text-opacity: 1;
-            color: rgb(96 165 250 / var(--tw-text-opacity, 1))
-        }
-
-        .text-blue-500 {
-            --tw-text-opacity: 1;
-            color: rgb(59 130 246 / var(--tw-text-opacity, 1))
-        }
-
-        .text-green-400 {
-            --tw-text-opacity: 1;
-            color: rgb(74 222 128 / var(--tw-text-opacity, 1))
-        }
-
-        .text-orange-200 {
-            --tw-text-opacity: 1;
-            color: rgb(254 215 170 / var(--tw-text-opacity, 1))
-        }
-
-        .text-slate-300 {
-            --tw-text-opacity: 1;
-            color: rgb(203 213 225 / var(--tw-text-opacity, 1))
-        }
-
-        .text-slate-400 {
-            --tw-text-opacity: 1;
-            color: rgb(148 163 184 / var(--tw-text-opacity, 1))
-        }
-
-        .text-teal-200 {
-            --tw-text-opacity: 1;
-            color: rgb(153 246 228 / var(--tw-text-opacity, 1))
-        }
-
-        .text-white {
-            --tw-text-opacity: 1;
-            color: rgb(255 255 255 / var(--tw-text-opacity, 1))
-        }
-
-        .opacity-80 {
-            opacity: 0.8
-        }
-
-        .shadow-lg {
-            --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-            --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
-        }
-
-        .transition {
-            transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
-            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-            transition-duration: 150ms
-        }
-
-        .transition-all {
-            transition-property: all;
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-            transition-duration: 150ms
-        }
-
-        .hover\:bg-blue-700:hover {
-            --tw-bg-opacity: 1;
-            background-color: rgb(29 78 216 / var(--tw-bg-opacity, 1))
-        }
-
-        .hover\:bg-slate-500:hover {
-            --tw-bg-opacity: 1;
-            background-color: rgb(100 116 139 / var(--tw-bg-opacity, 1))
-        }
-
-        .hover\:text-blue-300:hover {
-            --tw-text-opacity: 1;
-            color: rgb(147 197 253 / var(--tw-text-opacity, 1))
-        }
-
-        .hover\:text-blue-400:hover {
-            --tw-text-opacity: 1;
-            color: rgb(96 165 250 / var(--tw-text-opacity, 1))
-        }
-
-        .focus\:outline-none:focus {
-            outline: 2px solid transparent;
-            outline-offset: 2px
-        }
-
-        .focus\:ring-2:focus {
-            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)
-        }
-
-        .focus\:ring-blue-500:focus {
-            --tw-ring-opacity: 1;
-            --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity, 1))
-        }
-
-        @media (min-width: 640px) {
-            .sm\:flex-row {
-                flex-direction: row
-            }
-        }
-
-        @media (min-width: 768px) {
-            .md\:col-span-1 {
-                grid-column: span 1 / span 1
-            }
-
-            .md\:col-span-2 {
-                grid-column: span 2 / span 2
-            }
-
-            .md\:mb-0 {
-                margin-bottom: 0px
-            }
-
-            .md\:flex {
-                display: flex
-            }
-
-            .md\:hidden {
-                display: none
-            }
-
-            .md\:grid-cols-2 {
-                grid-template-columns: repeat(2, minmax(0, 1fr))
-            }
-
-            .md\:grid-cols-3 {
-                grid-template-columns: repeat(3, minmax(0, 1fr))
-            }
-
-            .md\:flex-row {
-                flex-direction: row
-            }
-
-            .md\:py-32 {
-                padding-top: 8rem;
-                padding-bottom: 8rem
-            }
-
-            .md\:text-2xl {
-                font-size: 1.5rem;
-                line-height: 2rem
-            }
-
-            .md\:text-6xl {
-                font-size: 3.75rem;
-                line-height: 1
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .lg\:grid-cols-3 {
-                grid-template-columns: repeat(3, minmax(0, 1fr))
-            }
-        }
-
-        .video-container {
-            position: relative;
-            aspect-ratio: 16 / 9;
-            /* Ensures proper ratio */
-            width: 100%;
-            max-width: 960px;
-            /* Optional */
-            border-radius: 1rem;
-            overflow: hidden;
-        }
-
-            .video-container iframe.vimeo-player {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                border-radius: 2rem;
-            }
-
-        .playPauseBtn {
-            position: absolute;
-            bottom: 30px;
-            /* aligned with slider */
-            right: 15px;
-            z-index: 10;
-            background-color: rgba(0, 0, 0, 0.6);
-            border: none;
-            color: white;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            line-height: 1;
-            transform: translateY(50%);
-        }
-
-        .videoTimeline {
-            position: absolute;
-            bottom: 24px;
-            /* same as button bottom */
-            left: 15px;
-            right: 60px;
-            /* leave space for button */
-            height: 6px;
-            border-radius: 3px;
-            background: rgba(255, 255, 255, 0.3);
-            cursor: pointer;
-            -webkit-appearance: none;
-            outline: none;
-        }
-
-            .videoTimeline::-webkit-slider-thumb {
-                -webkit-appearance: none;
-                width: 16px;
-                height: 16px;
-                border-radius: 50%;
-                background: white;
-                cursor: pointer;
-                margin-top: 0px;
-                /* vertical center on track */
-                border: none;
-                box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
-            }
-
-            .videoTimeline::-moz-range-thumb {
-                width: 16px;
-                height: 16px;
-                border-radius: 50%;
-                background: white;
-                cursor: pointer;
-                border: none;
-                box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
-            }
-
-        .vimeo-player {
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: inherit;
-            /* Match container's radius */
-            display: block;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sania Gupta — Game Developer &amp; Engineer</title>
+  <meta name="description" content="Portfolio of Sania Gupta — Game Developer, Startup Founder, ML Engineer. USC BFA Game Development.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Tailwind CDN (utility helpers only) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Design system -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
 </head>
-
 <body>
-    <div class="min-h-screen flex flex-col">
-        <!-- Navigation -->
-        <nav class="bg-slate-900 py-4 px-6 sticky top-0 z-50 shadow-lg">
-            <div class="container mx-auto flex justify-between items-center">
-                <a href="#" class="text-2xl font-bold text-blue-500">
-                    Sania Gupta
-                </a>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#" class="nav-link active text-white hover:text-blue-400 transition"
-                       data-page="home">Home</a>
-                    <a href="#" class="nav-link text-white hover:text-blue-400 transition" data-page="about">About</a>
-                    <a href="#" class="nav-link text-white hover:text-blue-400 transition"
-                       data-page="contact">Contact</a>
-                </div>
-                <button class="md:hidden text-white focus:outline-none" id="mobile-menu-button">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
-            <!-- Mobile Menu -->
-            <div class="md:hidden hidden bg-slate-800 mt-2 py-2 rounded-lg shadow-lg" id="mobile-menu">
-                <div class="flex flex-col space-y-3 px-4">
-                    <a href="#" class="text-white hover:text-blue-400 py-2 transition" data-page="home">Home</a>
-                    <a href="#" class="text-white hover:text-blue-400 py-2 transition" data-page="about">About</a>
-                    <a href="#" class="text-white hover:text-blue-400 py-2 transition" data-page="contact">Contact</a>
-                </div>
-            </div>
-        </nav>
 
-        <!-- Main Content -->
-        <main class="flex-grow">
-            <!-- Home Page -->
-            <div id="home" class="page active">
-                <!-- Hero Section -->
-                <section class="relative py-20 md:py-32 overflow-hidden">
-                    <!-- Background image -->
-                    <div class="absolute inset-0">
-                        <img src="files/background_image.png" alt="Background" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black bg-opacity-65"></div> <!-- Dark overlay -->
-                    </div>
-
-                    <!-- Foreground content -->
-                    <div class="relative container mx-auto px-6 text-center text-white">
-                        <h1 class="text-4xl md:text-6xl font-bold mb-6">Sania Gupta</h1>
-                        <p class="text-xl md:text-2xl text-blue-200 max-w-3xl mx-auto leading-relaxed">
-                            Passionate engineer focused on interactive systems, AI, and real-time 3D experiences
-                        </p>
-                        <div class="mt-10">
-                            <a href="#" class="btn-primary px-8 py-3 rounded-full font-medium text-lg inline-block"
-                               data-page="about">
-                                Learn More
-                            </a>
-                        </div>
-                    </div>
-                </section>
-
-
-                <!-- Projects Gallery -->
-                <section class="py-16 bg-slate-800">
-                    <div class="container mx-auto px-6">
-                        <h2 class="text-3xl font-bold mb-12 text-center section-title mx-auto">Featured Projects</h2>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            <!-- Featured 1: UE5 AI -->
-                            <div class="project-card bg-slate-700 rounded-xl overflow-hidden shadow-lg" data-project="project7">
-                                <div class="h-56 flex items-center justify-center bg-black">
-                                    <img src="files/ue5_ai_cover.png" alt="UE5 AI Enemy Prototype" class="h-full w-full object-cover">
-                                </div>
-                                <div class="p-6">
-                                    <h3 class="text-xl font-bold mb-2">UE5 AI Enemy Prototype</h3>
-                                    <p class="text-slate-300 mb-4">3D platformer with dynamic AI navigation and raycast platform generation</p>
-                                    <a href="#" class="text-blue-400 hover:text-blue-300 font-medium flex items-center" data-project="project7">
-                                        View Project <i class="fas fa-arrow-right ml-2"></i>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Featured 2: Gravity Manipulation -->
-                            <div class="project-card bg-slate-700 rounded-xl overflow-hidden shadow-lg" data-project="project8">
-                                <div class="h-56 flex items-center justify-center bg-black">
-                                    <img src="files/gravity_title.png" alt="Gravity Manipulation Platformer" class="h-full w-full object-cover">
-                                </div>
-                                <div class="p-6">
-                                    <h3 class="text-xl font-bold mb-2">3D Physics Puzzle Game</h3>
-                                    <p class="text-slate-300 mb-4">3D physics environmental puzzle game featuring gravity manipulation</p>
-                                    <a href="#" class="text-blue-400 hover:text-blue-300 font-medium flex items-center" data-project="project8">
-                                        View Project <i class="fas fa-arrow-right ml-2"></i>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Featured 5: Gem Rush -->
-                            <div class="project-card bg-slate-700 rounded-xl overflow-hidden shadow-lg" data-project="project5">
-                                <div class="h-56 flex items-center justify-center bg-black">
-                                    <img src="files/gemRush_title.jpg" alt="Gem Rush" class="h-full w-full object-cover">
-                                </div>
-                                <div class="p-6">
-                                    <h3 class="text-xl font-bold mb-2">Gem Rush</h3>
-                                    <p class="text-slate-300 mb-4">VR experience with procedural tunnels, coin collection, and enemy combat</p>
-                                    <a href="#" class="text-blue-400 hover:text-blue-300 font-medium flex items-center" data-project="project5">
-                                        View Project <i class="fas fa-arrow-right ml-2"></i>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Featured 3: Somebody's Watching -->
-                            <div class="project-card bg-slate-700 rounded-xl overflow-hidden shadow-lg" data-project="project6">
-                                <div class="h-56 flex items-center justify-center bg-black">
-                                    <img src="files/somebodysWatching_title.png" alt="Somebody's Watching" class="h-full w-full object-cover">
-                                </div>
-                                <div class="p-6">
-                                    <h3 class="text-xl font-bold mb-2">Somebody's Watching</h3>
-                                    <p class="text-slate-300 mb-4">Looping 3D projection installation exploring liminal spaces</p>
-                                    <a href="#" class="text-blue-400 hover:text-blue-300 font-medium flex items-center" data-project="project6">
-                                        View Project <i class="fas fa-arrow-right ml-2"></i>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Featured 4: Barnyard Bonfire -->
-                            <div class="project-card bg-slate-700 rounded-xl overflow-hidden shadow-lg" data-project="project4">
-                                <div class="h-56 flex items-center justify-center bg-black">
-                                    <img src="files/barnyardBonfire_title.png" alt="Barnyard Bonfire" class="h-full w-full object-cover">
-                                </div>
-                                <div class="p-6">
-                                    <h3 class="text-xl font-bold mb-2">Barnyard Bonfire</h3>
-                                    <p class="text-slate-300 mb-4">Physical co-op game with Arduino-driven timer urgency</p>
-                                    <a href="#" class="text-blue-400 hover:text-blue-300 font-medium flex items-center" data-project="project4">
-                                        View Project <i class="fas fa-arrow-right ml-2"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Toggle to show additional projects -->
-                        <div class="mt-10 text-center">
-                            <button id="extra-projects-toggle" type="button"
-                                    class="btn-primary px-8 py-3 rounded-full font-medium text-lg inline-flex items-center"
-                                    aria-expanded="false" aria-controls="extra-projects">
-                                Additional Systems &amp; Mechanics Projects <i class="fas fa-chevron-down ml-2"></i>
-                            </button>
-                        </div>
-
-                        <!-- Hidden additional projects -->
-                        <div id="extra-projects" class="hidden mt-10">
-                            <h3 class="text-2xl font-bold mb-6 text-center">Additional Systems &amp; Mechanics Projects</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                <!-- Dysevolution -->
-                                <div class="project-card bg-slate-700 rounded-xl overflow-hidden shadow-lg" data-project="project1">
-                                    <div class="h-56 flex items-center justify-center bg-black">
-                                        <img src="files/dysevolution_title.png" alt="Dysevolution" class="h-full w-full object-cover">
-                                    </div>
-                                    <div class="p-6">
-                                        <h3 class="text-xl font-bold mb-2">Dysevolution</h3>
-                                        <p class="text-slate-300 mb-4">Incorporates a skill tree and evolving puzzle systems across eras</p>
-                                        <a href="#" class="text-blue-400 hover:text-blue-300 font-medium flex items-center" data-project="project1">
-                                            View Project <i class="fas fa-arrow-right ml-2"></i>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <!-- Moon Patrol -->
-                                <div class="project-card bg-slate-700 rounded-xl overflow-hidden shadow-lg" data-project="project2">
-                                    <div class="h-56 flex items-center justify-center bg-black">
-                                        <img src="files/moonPatrol_title.png" alt="Moon Patrol" class="h-full w-full object-cover">
-                                    </div>
-                                    <div class="p-6">
-                                        <h3 class="text-xl font-bold mb-2">Moon Patrol</h3>
-                                        <p class="text-slate-300 mb-4">Recreation of classic arcade game with enemy AI patterns and waves</p>
-                                        <a href="#" class="text-blue-400 hover:text-blue-300 font-medium flex items-center" data-project="project2">
-                                            View Project <i class="fas fa-arrow-right ml-2"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-            </div>
-
-            <!-- Project Details Pages -->
-            <div id="project-details" class="page">
-                <!-- Project 1 Details -->
-                <div id="project1" class="project-detail">
-                    <div class="bg-slate-800 py-16">
-                        <div class="container mx-auto px-6">
-                            <a href="#" class="inline-block mb-8 text-blue-400 hover:text-blue-300 transition"
-                               data-back-to-home="">
-                                <i class="fas fa-arrow-left mr-2"></i> Back to Projects
-                            </a>
-                            <h2 class="text-4xl font-bold mb-6">Dysevolution</h2>
-                            <p class="text-xl text-slate-300 mb-8">Progression-driven puzzle systems across eras</p>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-
-                                <!-- Container for dysevolution_video -->
-                                <div class="video-container">
-                                    <iframe class="vimeo-player"
-                                            src="https://player.vimeo.com/video/1105514379?badge=0&title=0&byline=0&portrait=0&controls=0"
-                                            frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
-                                            title="dysevolution_video"></iframe>
-
-                                    <button class="playPauseBtn" aria-label="Play video">
-                                        <i class="fas fa-play"></i>
-                                    </button>
-
-                                    <input type="range" class="videoTimeline" min="0" max="100" value="0" step="0.1"
-                                           aria-label="Video timeline slider" />
-                                </div>
-
-                                <div>
-                                    <h3 class="text-2xl font-bold mb-4">Project Overview</h3>
-                                    <p class="text-slate-300 mb-4">
-                                        A 2D puzzle game structured around progression through historical eras, each introducing new mechanics,
-                                        tasks, and constraints. Players manage time, health, and resources while navigating systems that evolve
-                                        as the game advances.
-                                    </p>
-                                    <p class="text-slate-300 mb-4">
-                                        Progression is designed to create tradeoffs. Upgrades that enable early success can restrict options later,
-                                        encouraging long-term planning across interconnected systems.
-                                    </p>
-                                    <div class="flex flex-wrap gap-2 mt-6">
-                                        <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">
-                                            Unity (C#)
-                                        </span>
-                                        <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">
-                                            Systems Design
-                                        </span>
-                                        <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">
-                                            State Management
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="bg-slate-700 rounded-xl p-8 mb-12">
-                                <h3 class="text-2xl font-bold mb-4">My Contribution</h3>
-                                <p class="text-slate-300 mb-4">
-                                    Co-designed the game's overall architecture and progression structure, and co-led
-                                    implementation in Unity using C#. Built core gameplay systems including era-specific
-                                    mechanics (hunting with collision detection, agriculture with grid-based spatial
-                                    validation, and office typing workflows), health and timer systems, and grid-based
-                                    planting logic using spatial snapping. Implemented a persistent skill tree system using
-                                    singleton patterns that maintains state across scenes and eras, and resolved sequencing
-                                    and state-management issues to ensure cohesive progression throughout the game.
-                                </p>
-                            </div>
-
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                                <div class="rounded-xl h-56 overflow-hidden">
-                                    <img src="files/dysevolution_2.png" alt="Dysevolution Screenshot 2"
-                                         class="w-full h-full object-cover">
-                                </div>
-                                <div class="rounded-xl h-56 overflow-hidden">
-                                    <img src="files/dysevolution_3.png" alt="Dysevolution Screenshot 3"
-                                         class="w-full h-full object-cover">
-                                </div>
-                                <div class="rounded-xl h-56 overflow-hidden">
-                                    <img src="files/dysevolution_1.png" alt="Dysevolution Screenshot 1"
-                                         class="w-full h-full object-cover">
-                                </div>
-                            </div>
-
-                            <div class="text-center">
-                                <a href="#" class="btn-primary px-8 py-3 rounded-full font-medium text-lg inline-block"
-                                   data-back-to-home="">
-                                    Back to Projects
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 Details -->
-                <div id="project2" class="project-detail">
-                    <div class="bg-slate-800 py-16">
-                        <div class="container mx-auto px-6">
-                            <a href="#" class="inline-block mb-8 text-blue-400 hover:text-blue-300 transition"
-                               data-back-to-home="">
-                                <i class="fas fa-arrow-left mr-2"></i> Back to Projects
-                            </a>
-                            <h2 class="text-4xl font-bold mb-6">Moon Patrol</h2>
-                            <p class="text-xl text-slate-300 mb-8">Enemy behavior + pacing systems recreation</p>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                                <!-- Container for moonPatrol_video -->
-                                <div class="video-container">
-                                    <iframe class="vimeo-player"
-                                            src="https://player.vimeo.com/video/1105514422?badge=0&title=0&byline=0&portrait=0&controls=0"
-                                            frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
-                                            title="moonPatrol_video"></iframe>
-                                    <button class="playPauseBtn" aria-label="Play video">
-                                        <i class="fas fa-play"></i>
-                                    </button>
-                                    <input type="range" class="videoTimeline" min="0" max="100" value="0" step="0.1"
-                                           aria-label="Video timeline slider" />
-                                </div>
-                                <div>
-                                    <h3 class="text-2xl font-bold mb-4">Project Overview</h3>
-                                    <p class="text-slate-300 mb-4">
-                                        A Unity-based reconstruction of the original Moon Patrol focused on enemy behavior, checkpoint flow, and
-                                        difficulty pacing. The project centers on translating timing-sensitive mechanics into a modern engine while
-                                        preserving responsive control.
-                                    </p>
-                                    <p class="text-slate-300 mb-4">
-                                        The project emphasizes clean gameplay logic, AI enemy patterns, and controlled difficulty progression.
-                                    </p>
-                                    <div class="flex flex-wrap gap-2 mt-6">
-                                        <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">
-                                            Unity (C#)
-                                        </span>
-                                        <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">
-                                            AI Systems
-                                        </span>
-                                        <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">
-                                            Gameplay Systems
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="bg-slate-700 rounded-xl p-8 mb-12">
-                                <h3 class="text-2xl font-bold mb-4">My Contribution</h3>
-                                <p class="text-slate-300 mb-4">
-                                    Led core gameplay features including checkpoint implementation with
-                                    trigger-based transitions, enemy behavior,
-                                    and UI elements including menu state management and scoring systems. Developed
-                                    checkpoint transition systems and parallax scrolling systems, spawning
-                                    random ground blocks as the tiles move off-screen.
-                                    Programmed enemy attack patterns like the UFO dive using parametric motion.
-                                    Collaborated closely with my partner through version control to integrate art
-                                    assets, sound, and animations, ensuring a cohesive and polished final product.
-                                </p>
-                            </div>
-
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-24 mb-12">
-                                <div class="rounded-xl h-90 overflow-hidden">
-                                    <img src="files/moonPatrol2.png" alt="Moon Patrol Screenshot 2"
-                                         class="w-full h-full object-cover">
-                                </div>
-                                <div class="rounded-xl h-90 overflow-hidden">
-                                    <img src="files/moonPatrol3.png" alt="Moon Patrol Screenshot 3"
-                                         class="w-full h-full object-cover">
-                                </div>
-                                <div class="rounded-xl h-90 overflow-hidden">
-                                    <img src="files/moonPatrol1.png" alt="Moon Patrol Screenshot 1"
-                                         class="w-full h-full object-cover">
-                                </div>
-                            </div>
-
-                            <div class="text-center">
-                                <a href="#" class="btn-primary px-8 py-3 rounded-full font-medium text-lg inline-block"
-                                   data-back-to-home="">
-                                    Back to Projects
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 Details -->
-                <div id="project3" class="project-detail">
-                    <div class="bg-slate-800 py-16">
-                        <div class="container mx-auto px-6">
-                            <a href="#" class="inline-block mb-8 text-blue-400 hover:text-blue-300 transition"
-                               data-back-to-home="">
-                                <i class="fas fa-arrow-left mr-2"></i> Back to Projects
-                            </a>
-                            <h2 class="text-4xl font-bold mb-6">DV Prevention Animation</h2>
-                            <p class="text-xl text-slate-300 mb-8">3D animated sequence for Narika’s teen curriculum</p>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                                <!-- Container for narika_video -->
-                                <div class="video-container">
-                                    <iframe class="vimeo-player"
-                                            src="https://player.vimeo.com/video/1105514438?badge=0&title=0&byline=0&portrait=0&controls=0"
-                                            frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
-                                            title="narika_video"></iframe>
-                                    <button class="playPauseBtn" aria-label="Play video">
-                                        <i class="fas fa-play"></i>
-                                    </button>
-                                    <input type="range" class="videoTimeline" min="0" max="100" value="0" step="0.1"
-                                           aria-label="Video timeline slider" />
-                                </div>
-                                <div>
-                                    <h3 class="text-2xl font-bold mb-4">Project Overview</h3>
-                                    <p class="text-slate-300 mb-4">
-                                        This video is a 3D animated sequence for Narika's Teen Dating Violence
-                                        curriculum,
-                                        part of the S.A.P.H.A.L. program. Using Autodesk Maya, I modeled, animated, and
-                                        rendered characters and environments to vividly depict a challenging scenario
-                                        faced by the protagonist, Sakina. The animation explores complex emotional and
-                                        social dynamics, aiming to raise awareness and foster discussions around healthy
-                                        relationships and personal boundaries among teens.
-                                    </p>
-                                    <div class="flex flex-wrap gap-2 mt-6">
-                                        <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">
-                                            Animation
-                                        </span>
-                                        <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">
-                                            Rendering
-                                        </span>
-                                        <span class="bg-blue-900 text-teal-200 px-3 py-1 rounded-full text-sm">
-                                            3D Pipelines
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="bg-slate-700 rounded-xl p-8 mb-12">
-                                <h3 class="text-2xl font-bold mb-4">My Contribution</h3>
-                                <p class="text-slate-300 mb-4">
-                                    I independently managed the entire animation pipeline-from storyboarding, character
-                                    modeling, rigging, UV mapping, weight painting, and texturing, to animating,
-                                    lighting, rendering, and camera animation. I then edited the final film and
-                                    integrated a voiceover narration to effectively convey the scenario. Throughout, I
-                                    ensured the animation aligned closely with the educational goals of the curriculum.
-                                </p>
-                            </div>
-
-                            <div class="rounded-xl h-56 overflow-hidden">
-                                <img src="files/narika_2.png" alt="Narika Screenshot 2"
-                                     class="w-full h-full object-cover">
-                            </div>
-                            <div class="rounded-xl h-56 overflow-hidden">
-                                <img src="files/narika_3.png" alt="Narika Screenshot 3"
-                                     class="w-full h-full object-cover">
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                            <div class="rounded-xl h-56 overflow-hidden">
-                                <img src="files/narika_1.png" alt="Narika Screenshot 1"
-                                     class="w-full h-full object-cover">
-                            </div>
-                            <div class="text-center">
-                                <a href="#" class="btn-primary px-8 py-3 rounded-full font-medium text-lg inline-block"
-                                   data-back-to-home="">
-                                    Back to Projects
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4 Details -->
-                <div id="project4" class="project-detail">
-                    <div class="bg-slate-800 py-16">
-                        <div class="container mx-auto px-6">
-                            <a href="#" class="inline-block mb-8 text-blue-400 hover:text-blue-300 transition"
-                               data-back-to-home="">
-                                <i class="fas fa-arrow-left mr-2"></i> Back to Projects
-                            </a>
-                            <h2 class="text-4xl font-bold mb-6">Barnyard Bonfire</h2>
-                            <p class="text-xl text-slate-300 mb-8">Physical co-op game with role-based constraints</p>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                                <div class="rounded-xl overflow-hidden h-80">
-                                    <img src="files/barnyardBonfire_cover.png" alt="Barnyard Bonfire Cover"
-                                         class="w-full h-full object-cover">
-                                </div>
-                                <div>
-                                    <h3 class="text-2xl font-bold mb-4">Project Overview</h3>
-                                    <p class="text-slate-300 mb-4">
-                                        A cooperative physical game where players take on distinct roles with enforced action constraints
-                                        while racing against an Arduino-driven timer. Players must stack irregular objects to escape,
-                                        coordinating under asymmetric limitations tied to their character.
-                                    </p>
-                                    <p class="text-slate-300 mb-4">
-                                        The project investigates how rule-based constraints, physical interaction, and time pressure
-                                        influence group strategy and communication.
-                                    </p>
-                                    <div class="flex flex-wrap gap-2 mt-6">
-                                        <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">
-                                            Game
-                                            Design
-                                        </span>
-                                        <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">
-                                            Project
-                                            Management
-                                        </span>
-                                        <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">
-                                            Narrative
-                                            Design
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="bg-slate-700 rounded-xl p-8 mb-12">
-                                <h3 class="text-2xl font-bold mb-4">My Contribution</h3>
-                                <p class="text-slate-300 mb-4">
-                                    Co-designed the core game systems, including role-based constraint mechanics and rule structures
-                                    governing valid player actions. Developed and refined the physical tower components to support
-                                    cooperative interaction under asymmetric constraints. Led visual development for character cards
-                                    and supporting assets to clearly communicate system rules, and coordinated iteration and delivery
-                                    across a multidisciplinary team through final exhibition.
-                                </p>
-                            </div>
-
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                                <div class="rounded-xl h-56 overflow-hidden">
-                                    <img src="files/barnyard_1.png" alt="Barnyard Bonfire Screenshot 1"
-                                         class="w-full h-full object-cover">
-                                </div>
-                                <div class="rounded-xl h-56 overflow-hidden">
-                                    <img src="files/barnyard_2.jpg" alt="Barnyard Bonfire Screenshot 2"
-                                         class="w-full h-full object-cover">
-                                </div>
-                                <div class="rounded-xl h-56 overflow-hidden">
-                                    <img src="files/barnyard_3.jpg" alt="Barnyard Bonfire Screenshot 3"
-                                         class="w-full h-full object-cover">
-                                </div>
-                            </div>
-
-                            <div class="text-center">
-                                <a href="#" class="btn-primary px-8 py-3 rounded-full font-medium text-lg inline-block"
-                                   data-back-to-home="">
-                                    Back to Projects
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5 Details -->
-                <div id="project5" class="project-detail">
-                    <div class="bg-slate-800 py-16">
-                        <div class="container mx-auto px-6">
-                            <a href="#" class="inline-block mb-8 text-blue-400 hover:text-blue-300 transition"
-                               data-back-to-home="">
-                                <i class="fas fa-arrow-left mr-2"></i> Back to Projects
-                            </a>
-                            <h2 class="text-4xl font-bold mb-6">Gem Rush</h2>
-                            <p class="text-xl text-slate-300 mb-8">CAVE VR ride with procedural environments and physical motion</p>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                                <!-- Container for gemRush_video -->
-                                <div class="video-container">
-                                    <iframe class="vimeo-player"
-                                            src="https://player.vimeo.com/video/1105514397?badge=0&title=0&byline=0&portrait=0&controls=0"
-                                            frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
-                                            title="gemRush_video"></iframe>
-                                    <button class="playPauseBtn" aria-label="Play video">
-                                        <i class="fas fa-play"></i>
-                                    </button>
-                                    <input type="range" class="videoTimeline" min="0" max="100" value="0" step="0.1"
-                                           aria-label="Video timeline slider" />
-                                </div>
-                                <div>
-                                    <h3 class="text-2xl font-bold mb-4">Project Overview</h3>
-                                    <p class="text-slate-300 mb-4">
-                                        A VR experience built for a physical CAVE system, where players ride a mine cart through
-                                        procedurally generated tunnels rendered across synchronized projection screens. Player
-                                        movement is mirrored by a hydraulic platform that responds directly to in-game velocity
-                                        and direction.
-                                    </p>
-                                    <p class="text-slate-300 mb-4">
-                                        The project explores tight coupling between virtual motion and physical feedback,
-                                        requiring careful coordination between procedural content, interaction logic, and hardware
-                                        constraints.
-                                    </p>
-                                    <div class="flex flex-wrap gap-2 mt-6">
-                                        <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">
-                                            Unity
-                                        </span>
-                                        <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">
-                                            C#
-                                        </span>
-                                        <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">
-                                            Virtual Reality
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="bg-slate-700 rounded-xl p-8 mb-12">
-                                <h3 class="text-2xl font-bold mb-4">My Contribution</h3>
-                                <p class="text-slate-300 mb-4">
-                                    Developed the full 3D environment and modular tunnel assets with LOD optimization, designing
-                                    content for real-time, multi-screen CAVE rendering. Implemented procedural
-                                    cave model generation and collaborated with partner on player interaction
-                                    logic including collision-based collection mechanics. Integrated motion-response systems with fellow programmers to
-                                    synchronize in-game movement with the hydraulic platform. As producer for a five-person team, I
-                                    coordinated cross-disciplinary integration across art, engineering, and sound, managing sprint
-                                    cycles, debugging, and delivery under compressed timelines.
-                                </p>
-                            </div>
-
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                                <div class="rounded-xl h-56 overflow-hidden">
-                                    <img src="files/gemRush1.png" alt="Gem Rush Screenshot 1"
-                                         class="w-full h-full object-cover">
-                                </div>
-                                <div class="rounded-xl h-56 overflow-hidden">
-                                    <img src="files/gemRush2.png" alt="Gem Rush Screenshot 2"
-                                         class="w-full h-full object-cover">
-                                </div>
-                                <div class="rounded-xl h-56 overflow-hidden">
-                                    <img src="files/gemRush3.png" alt="Gem Rush Screenshot 3"
-                                         class="w-full h-full object-cover">
-                                </div>
-                            </div>
-
-                            <div class="text-center">
-                                <a href="#" class="btn-primary px-8 py-3 rounded-full font-medium text-lg inline-block"
-                                   data-back-to-home="">
-                                    Back to Projects
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 6 Details -->
-                <div id="project6" class="project-detail">
-                    <div class="bg-slate-800 py-16">
-                        <div class="container mx-auto px-6">
-                            <a href="#" class="inline-block mb-8 text-blue-400 hover:text-blue-300 transition"
-                               data-back-to-home="">
-                                <i class="fas fa-arrow-left mr-2"></i> Back to Projects
-                            </a>
-                            <h2 class="text-4xl font-bold mb-6">Somebody's Watching</h2>
-                            <p class="text-xl text-slate-300 mb-8">Looping 3D projection installation exploring liminal spaces</p>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                                <!-- Container for somebodysWatching_video -->
-                                <div class="video-container">
-                                    <iframe class="vimeo-player"
-                                            src="https://player.vimeo.com/video/1105514457?badge=0&title=0&byline=0&portrait=0&controls=0"
-                                            frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
-                                            title="somebodysWatching_video"></iframe>
-                                    <button class="playPauseBtn" aria-label="Play video">
-                                        <i class="fas fa-play"></i>
-                                    </button>
-                                    <input type="range" class="videoTimeline" min="0" max="100" value="0" step="0.1"
-                                           aria-label="Video timeline slider" />
-                                </div>
-                                <div>
-                                    <h3 class="text-2xl font-bold mb-4">Project Overview</h3>
-                                    <p class="text-slate-300 mb-4">
-                                        A 3D animated installation composed of seamlessly looping environments connected through consistent camera
-                                        motion and lighting. Scenes are designed to run continuously in a projection setting without visible cuts
-                                        or transitions.
-                                    </p>
-                                    <p class="text-slate-300 mb-4">
-                                        The work focuses on technical execution of looping animation, environmental continuity, and projection-aware
-                                        scene construction.
-                                    </p>
-                                    <div class="flex flex-wrap gap-2 mt-6">
-                                        <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">
-                                            Technical Art
-                                        </span>
-                                        <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">
-                                            Rendering
-                                        </span>
-                                        <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">
-                                            3D Pipelines
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="bg-slate-700 rounded-xl p-8 mb-12">
-                                <h3 class="text-2xl font-bold mb-4">My Contribution</h3>
-                                <p class="text-slate-300 mb-4">
-                                    Independently designed and executed the full animation pipeline in Maya, including design,
-                                    3D modeling, UV mapping, texturing, rigging, animation, lighting, and rendering with Arnold.
-                                    Built seamless looping animations to support continuous projection without visible transitions.
-                                    Applied research on the uncanny
-                                    to guide environmental design and motion choices, and managed the technical setup for multi-scene
-                                    projection during exhibition.
-                                </p>
-                            </div>
-
-                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                                <div class="rounded-xl h-56 overflow-hidden">
-                                    <img src="files/somebodysWatching1.png" alt="Somebody's Watching Screenshot 1"
-                                         class="w-full h-full object-cover">
-                                </div>
-                                <div class="rounded-xl h-56 overflow-hidden">
-                                    <img src="files/somebodysWatching2.png" alt="Somebody's Watching Screenshot 1"
-                                         class="w-full h-full object-cover">
-                                </div>
-                                <div class="rounded-xl h-56 overflow-hidden">
-                                    <img src="files/somebodysWatching3.png" alt="Somebody's Watching Screenshot 1"
-                                         class="w-full h-full object-cover">
-                                </div>
-                            </div>
-
-                            <div class="text-center">
-                                <a href="#" class="btn-primary px-8 py-3 rounded-full font-medium text-lg inline-block"
-                                   data-back-to-home="">
-                                    Back to Projects
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Project 7 Details -->
-            <div id="project7" class="project-detail">
-                <div class="bg-slate-800 py-16">
-                    <div class="container mx-auto px-6">
-                        <a href="#" class="inline-block mb-8 text-blue-400 hover:text-blue-300 transition" data-back-to-home="">
-                            <i class="fas fa-arrow-left mr-2"></i> Back to Projects
-                        </a>
-                        <h2 class="text-4xl font-bold mb-6">UE5 AI Enemy Prototype</h2>
-                        <p class="text-xl text-slate-300 mb-6">
-                            Unreal Engine 5 prototype focused on real-time agent pursuit, dynamic navigation under changing geometry, and systems-driven encounter tuning.
-                        </p>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                            <div class="video-container">
-                                <iframe class="vimeo-player"
-                                        src="https://player.vimeo.com/video/1160892773?badge=0&title=0&byline=0&portrait=0&controls=0"
-                                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
-                                        title="ue5-ai-chase"></iframe>
-
-                                <button class="playPauseBtn" aria-label="Play video">
-                                    <i class="fas fa-play"></i>
-                                </button>
-
-                                <input type="range" class="videoTimeline" min="0" max="100" value="0" step="0.1"
-                                       aria-label="Video timeline slider" />
-                            </div>
-
-                            <div>
-                                <h3 class="text-2xl font-bold mb-4">Project Overview</h3>
-                                <p class="text-slate-300 mb-4">
-                                    A first-person Unreal Engine 5 prototype exploring enemy pursuit in a dynamically
-                                    changing 3D level. Traversal platforms can be spawned at runtime, requiring AI agents
-                                    to navigate evolving geometry while maintaining continuous pursuit behavior.
-                                </p>
-                                <p class="text-slate-300 mb-4">
-                                    The project examines how real-time navigation and AI movement systems respond to player-driven
-                                    changes in the environment.
-                                </p>
-                                <div class="flex flex-wrap gap-2 mt-6">
-                                    <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">Unreal Engine</span>
-                                    <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">C++</span>
-                                    <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">AI / Pathfinding</span>
-                                </div>
-                                <div class="flex flex-wrap gap-3 mt-5 mb-8">
-                                    <a href="https://github.com/saniagupta124/UE5-AI-Chase-Prototype" target="_blank" rel="noopener noreferrer"
-                                       class="inline-flex items-center gap-2 bg-slate-600 hover:bg-slate-500 transition px-4 py-2 rounded-lg font-medium text-sm text-white">
-                                        <i class="fab fa-github"></i> View on GitHub
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-slate-700 rounded-xl p-8 mb-12">
-                            <h3 class="text-2xl font-bold mb-4">My Contribution</h3>
-                            <p class="text-slate-300 mb-4">
-                                Implemented core gameplay and AI logic in C++, including player sensing and pursuit state management. Developed runtime platform spawning
-                                using raycasts with Blueprints. Integrated dynamic navmesh and navlink updates to support AI movement across newly created paths, and tuned
-                                parameters to keep enemy behavior stable as geometry changes during runtime. Built as a solo prototype during a two-week sprint.
-                            </p>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-
-                            <!-- Image 1 -->
-                            <div class="flex flex-col">
-                                <div class="rounded-xl h-56 overflow-hidden">
-                                    <img src="files/ue5_ai_1.png"
-                                         alt="AI navigation and pathfinding debug view"
-                                         class="w-full h-full object-cover">
-                                </div>
-                                <p class="mt-2 text-sm text-slate-500">
-                                    Dynamic navmesh and pathfinding
-                                </p>
-                            </div>
-
-                            <!-- Image 2 -->
-                            <div class="flex flex-col">
-                                <div class="rounded-xl h-56 overflow-hidden">
-                                    <img src="files/ue5_ai_2.png"
-                                         alt="Raycast-driven platform spawning"
-                                         class="w-full h-full object-cover">
-                                </div>
-                                <p class="mt-2 text-sm text-slate-500">
-                                    AI enemy chase
-                                </p>
-                            </div>
-
-                            <!-- Image 3 -->
-                            <div class="flex flex-col">
-                                <div class="rounded-xl h-56 overflow-hidden">
-                                    <img src="files/ue5_ai_3.png"
-                                         alt="Enemy pursuit gameplay framing"
-                                         class="w-full h-full object-cover">
-                                </div>
-                                <p class="mt-2 text-sm text-slate-500">
-                                    Automatic navlink generation
-                                </p>
-                            </div>
-
-                        </div>
-
-
-                        <div class="text-center">
-                            <a href="#" class="btn-primary px-8 py-3 rounded-full font-medium text-lg inline-block" data-back-to-home="">
-                                Back to Projects
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 8 Details -->
-            <div id="project8" class="project-detail">
-                <div class="bg-slate-800 py-16">
-                    <div class="container mx-auto px-6">
-                        <a href="#" class="inline-block mb-8 text-blue-400 hover:text-blue-300 transition" data-back-to-home="">
-                            <i class="fas fa-arrow-left mr-2"></i> Back to Projects
-                        </a>
-                        <h2 class="text-4xl font-bold mb-6">3D Physics Puzzle Game</h2>
-                        <p class="text-xl text-slate-300 mb-8">3D physics environmental puzzle game featuring gravity manipulation</p>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                            <div class="video-container">
-                                <iframe class="vimeo-player"
-                                        src="https://player.vimeo.com/video/1161933816?badge=0&title=0&byline=0&portrait=0&controls=0"
-                                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
-                                        title="gravity-platformer"></iframe>
-
-                                <button class="playPauseBtn" aria-label="Play video">
-                                    <i class="fas fa-play"></i>
-                                </button>
-
-                                <input type="range" class="videoTimeline" min="0" max="100" value="0" step="0.1"
-                                       aria-label="Video timeline slider" />
-                            </div>
-
-                            <div>
-                                <h3 class="text-2xl font-bold mb-4">Project Overview</h3>
-                                <p class="text-slate-300 mb-4">
-                                    A 3D platformer where gravity can be flipped to unlock paths and access required
-                                    resources. Player progress depends on understanding how gravity state affects physics, movement,
-                                    and puzzle structure.
-                                </p>
-                                <p>
-                                    The project emphasizes deterministic physics behavior, controlled gravity transitions, and
-                                    using visual feedback through custom HLSL shader scripting to clearly communicate system state
-                                    during play.
-                                </p>
-                                <div class="flex flex-wrap gap-2 mt-6">
-                                    <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">Unity (C#)</span>
-                                    <span class="bg-teal-900 text-teal-200 px-3 py-1 rounded-full text-sm">Gameplay Programming</span>
-                                    <span class="bg-blue-900 text-teal-200 px-3 py-1 rounded-full text-sm">Physics Systems</span>
-                                </div>
-                                <div class="flex flex-wrap gap-3 mt-5 mb-8">
-                                    <a href="https://github.com/saniagupta124/3D-Physics-Platformer" target="_blank" rel="noopener noreferrer"
-                                       class="inline-flex items-center gap-2 bg-slate-600 hover:bg-slate-500 transition px-4 py-2 rounded-lg font-medium text-sm text-white">
-                                        <i class="fab fa-github"></i> View on GitHub
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-slate-700 rounded-xl p-8 mb-12">
-                            <h3 class="text-2xl font-bold mb-4">My Contribution</h3>
-                            <p class="text-slate-300 mb-4">
-                                Designed and implemented gravity manipulation and flipping platform systems in C# using Physics.gravity overrides and
-                                Rigidbody constraint management, enabling runtime changes to physics behavior that directly affect navigation and
-                                progression. Built resource-gated progression logic tied to gravity state with collision-based tracking, ensuring
-                                deterministic physics outcomes across puzzles. Scripted custom HLSL shaders with lerp-based color transitions to
-                                provide real-time visual feedback of game state.
-                            </p>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                            <div class="rounded-xl h-56 overflow-hidden">
-                                <img src="files/gravity_1.png" alt="Gravity Screenshot 1" class="w-full h-full object-cover">
-                            </div>
-                            <div class="rounded-xl h-56 overflow-hidden">
-                                <img src="files/gravity_2.png" alt="Gravity Screenshot 2" class="w-full h-full object-cover">
-                            </div>
-                            <div class="rounded-xl h-56 overflow-hidden">
-                                <img src="files/gravity_3.png" alt="Gravity Screenshot 3" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-
-                        <div class="text-center">
-                            <a href="#" class="btn-primary px-8 py-3 rounded-full font-medium text-lg inline-block" data-back-to-home="">
-                                Back to Projects
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 9 Details -->
-            <div id="project9" class="project-detail">
-                <div class="bg-slate-800 py-16">
-                    <div class="container mx-auto px-6">
-                        <a href="#" class="inline-block mb-8 text-blue-400 hover:text-blue-300 transition" data-back-to-home="">
-                            <i class="fas fa-arrow-left mr-2"></i> Back to Projects
-                        </a>
-                        <h2 class="text-4xl font-bold mb-6">Open Your Eyes</h2>
-                        <p class="text-xl text-slate-300 mb-8">Animated short (details coming soon).</p>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                            <div class="rounded-xl overflow-hidden h-80 bg-black flex items-center justify-center">
-                                <img src="files/open_your_eyes_cover.png" alt="Open Your Eyes cover" class="w-full h-full object-cover">
-                            </div>
-
-                            <div>
-                                <h3 class="text-2xl font-bold mb-4">Project Overview</h3>
-                                <p class="text-slate-300 mb-4">
-                                    A personal animation project exploring perspective and attention. (Add your final synopsis here.)
-                                </p>
-                                <div class="flex flex-wrap gap-2 mt-6">
-                                    <span class="bg-green-900 text-green-200 px-3 py-1 rounded-full text-sm">3D Animation</span>
-                                    <span class="bg-green-900 text-green-200 px-3 py-1 rounded-full text-sm">Maya / Rendering</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="bg-slate-700 rounded-xl p-8 mb-12">
-                            <h3 class="text-2xl font-bold mb-4">My Contribution</h3>
-                            <p class="text-slate-300 mb-4">
-                                (Add what you owned: storyboarding, modeling, rigging, animation, lighting, editing, etc.)
-                            </p>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                            <div class="rounded-xl h-56 overflow-hidden">
-                                <img src="files/open_your_eyes_1.png" alt="Open Your Eyes Screenshot 1" class="w-full h-full object-cover">
-                            </div>
-                            <div class="rounded-xl h-56 overflow-hidden">
-                                <img src="files/open_your_eyes_2.png" alt="Open Your Eyes Screenshot 2" class="w-full h-full object-cover">
-                            </div>
-                            <div class="rounded-xl h-56 overflow-hidden">
-                                <img src="files/open_your_eyes_3.png" alt="Open Your Eyes Screenshot 3" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-
-                        <div class="text-center">
-                            <a href="#" class="btn-primary px-8 py-3 rounded-full font-medium text-lg inline-block" data-back-to-home="">
-                                Back to Projects
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- About Page -->
-            <div id="about" class="page">
-                <section class="bg-slate-800 py-16">
-                    <div class="container mx-auto px-6">
-                        <h2 class="text-3xl font-bold mb-12 text-center section-title mx-auto">About</h2>
-
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                            <div class="md:col-span-1">
-                                <div class="bg-slate-700 rounded-xl overflow-hidden">
-                                    <div class="h-64 flex items-center justify-center bg-black">
-                                        <img src="files/portrait.png" alt="Sania Gupta"
-                                             class="h-full object-cover w-full">
-                                    </div>
-                                    <div class="p-6">
-                                        <h3 class="text-xl font-bold mb-2">Sania Gupta</h3>
-                                        <p class="text-slate-300 mb-4">Game Developer &amp; Designer</p>
-                                        <div class="flex space-x-4 mt-4">
-                                            <a href="https://www.linkedin.com/in/sania-gupta/" target="_blank"
-                                               rel="noopener noreferrer"
-                                               class="social-icon text-slate-300 hover:text-blue-400">
-                                                <i class="fab fa-linkedin text-xl"></i>
-                                            </a>
-                                            <a href="https://github.com/saniagupta124" target="_blank"
-                                               rel="noopener noreferrer"
-                                               class="social-icon text-slate-300 hover:text-blue-400">
-                                                <i class="fab fa-github text-xl"></i>
-                                            </a>
-                                            <a href="mailto:saniagup@usc.edu" target="_blank" rel="noopener noreferrer"
-                                               class="social-icon text-slate-300 hover:text-blue-400">
-                                                <i class="fas fa-envelope text-xl"></i>
-                                            </a>
-
-                                            <a href="files/SaniaGuptaResume2026.pdf" download
-                                               class="bg-slate-600 hover:bg-slate-500 transition px-4 py-2 rounded-md font-medium text-sm text-white text-center mt-[-2px]">
-                                                View My Resume
-                                            </a>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="md:col-span-2">
-                                <div class="bg-slate-700 rounded-xl p-8 h-full">
-                                    <h3 class="text-2xl font-bold mb-6">My Journey</h3>
-                                    <p class="text-slate-300 mb-4">
-                                        I'm a dedicated game developer and creative currently studying Game Development
-                                        and Interactive Design at the University of Southern California (Class of 2028),
-                                        with minors in Computer Programming and Artificial Intelligence Applications.
-                                        With a deep interest in both technology and the arts, I've found game
-                                        development to be the ideal space to bring creativity and technical skill
-                                        together.
-                                    </p>
-                                    <p class="text-slate-300 mb-4">
-                                        I'm endlessly curious, always exploring new ideas, tools, and ways of thinking.
-                                        Whether collaborating with others or diving into a solo project, I approach my
-                                        work with enthusiasm, openness, and a love for learning. I believe games do more
-                                        than entertain. They tell stories, spark imagination, and create meaningful
-                                        impact.
-                                    </p>
-                                    <p class="text-slate-300">
-                                        I strive to develop games that break boundaries of innovation, explore
-                                        new technologies, and set the future of gaming.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="w-full mb-16">
-                            <div class="bg-slate-700 rounded-xl p-8 w-full">
-                                <h3 class="text-2xl font-bold mb-6">Education</h3>
-                                <div class="mb-6">
-                                    <h4 class="text-xl font-semibold mb-2">University of Southern California</h4>
-                                    <p class="text-blue-400 mb-2">B.A. in Game Development and Interactive Design</p>
-                                    <p class="text-slate-300">Class of 2028, GPA: 4.0</p>
-                                    <p class="text-blue-400 mt-2">
-                                        Minors in Computer Programming, Artificial
-                                        Intelligence Applications
-                                    </p>
-                                </div>
-                                <div>
-                                    <h4 class="text-xl font-semibold mb-2">Relevant Coursework</h4>
-                                    <ul class="list-disc list-inside text-slate-300 space-y-1">
-                                        <li>Advanced Games Project</li>
-                                        <li>Applied Python</li>
-                                        <li>C++ Object Oriented Programming</li>
-                                        <li>Intermediate Game Development and Production</li>
-                                        <li>Fundamentals of Artificial Intelligence</li>
-                                        <li>Data Structures & Algorithms</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-
-            <!-- Contact Page -->
-            <div id="contact" class="page">
-                <section class="bg-slate-800 py-16">
-                    <div class="container mx-auto px-6">
-                        <h2 class="text-3xl font-bold mb-12 text-center section-title mx-auto">Get In Touch</h2>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                            <div class="bg-slate-700 rounded-xl p-8">
-                                <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
-                                <div class="space-y-4">
-                                    <div class="flex items-start">
-                                        <div class="bg-blue-500 rounded-full p-3 mr-4">
-                                            <i class="fas fa-envelope text-white"></i>
-                                        </div>
-                                        <div>
-                                            <h4 class="text-lg font-semibold mb-1">Email</h4>
-                                            <p class="text-slate-300">saniagup@usc.edu</p>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <div class="bg-blue-500 rounded-full p-3 mr-4">
-                                            <i class="fas fa-map-marker-alt text-white"></i>
-                                        </div>
-                                        <div>
-                                            <h4 class="text-lg font-semibold mb-1">Location</h4>
-                                            <p class="text-slate-300">Saratoga, California</p>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-start">
-                                        <div class="bg-blue-500 rounded-full p-3 mr-4">
-                                            <i class="fas fa-globe text-white"></i>
-                                        </div>
-                                        <div>
-                                            <h4 class="text-lg font-semibold mb-1">Social</h4>
-                                            <div class="flex space-x-4 mt-2">
-                                                <a href="https://www.linkedin.com/in/sania-gupta/" target="_blank"
-                                                   rel="noopener noreferrer"
-                                                   class="social-icon text-slate-300 hover:text-blue-400">
-                                                    <i class="fab fa-linkedin text-xl"></i>
-                                                </a>
-                                                <a href="https://github.com/saniagupta124" target="_blank"
-                                                   rel="noopener noreferrer"
-                                                   class="social-icon text-slate-300 hover:text-blue-400">
-                                                    <i class="fab fa-github text-xl"></i>
-                                                </a>
-                                                <a href="mailto:saniagup@usc.edu" target="_blank"
-                                                   rel="noopener noreferrer"
-                                                   class="social-icon text-slate-300 hover:text-blue-400">
-                                                    <i class="fas fa-envelope text-xl"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <form action="https://formspree.io/f/mqabwkov" method="POST" class="space-y-4">
-                                <div>
-                                    <label for="name" class="block text-slate-300 mb-2">Name</label>
-                                    <input type="text" id="name" name="name" required
-                                           class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                </div>
-                                <div>
-                                    <label for="email" class="block text-slate-300 mb-2">Email</label>
-                                    <input type="email" id="email" name="email" required
-                                           class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                </div>
-                                <div>
-                                    <label for="subject" class="block text-slate-300 mb-2">Subject</label>
-                                    <input type="text" id="subject" name="subject"
-                                           class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                </div>
-                                <div>
-                                    <label for="message" class="block text-slate-300 mb-2">Message</label>
-                                    <textarea id="message" name="message" rows="4" required
-                                              class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-                                </div>
-                                <button type="submit"
-                                        class="btn-primary w-full py-3 rounded-lg font-medium text-lg">
-                                    Send Message
-                                </button>
-                            </form>
-                        </div>
-
-                        <div class="mt-16 bg-slate-700 rounded-xl p-8 max-w-4xl mx-auto">
-                            <h3 class="text-2xl font-bold mb-6">Interested in Collaboration?</h3>
-                            <p class="text-slate-300 mb-6">
-                                I'm always open to discussing new projects, creative ideas, or opportunities to be part
-                                of your vision. Whether you're looking for a game developer for a specific project, need
-                                consulting on game design, or just want to chat about the industry, feel free to reach
-                                out!
-                            </p>
-                            <div class="flex flex-col sm:flex-row gap-4">
-                                <a href="mailto:saniagup@usc.edu"
-                                   class="btn-primary px-8 py-3 rounded-lg font-medium text-lg text-center">
-                                    Start a
-                                    Conversation
-                                </a>
-                                <a href="/files/SaniaGuptaResume.pdf" download
-                                   class="bg-slate-600 hover:bg-slate-500 transition px-8 py-3 rounded-lg font-medium text-lg text-white text-center">
-                                    View
-                                    My Resume
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </main>
-
-        <!-- Footer -->
-        <footer class="bg-slate-900 py-8">
-            <div class="container mx-auto px-6">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <div class="mb-4 md:mb-0">
-                        <p class="text-slate-400">© 2025 Sania Gupta. All rights reserved.</p>
-                    </div>
-                    <div class="flex space-x-6">
-                        <a href="https://www.linkedin.com/in/sania-gupta/" target="_blank" rel="noopener noreferrer"
-                           class="social-icon text-slate-400 hover:text-blue-400">
-                            <i class="fab fa-linkedin text-xl"></i>
-                        </a>
-                        <a href="https://github.com/saniagupta124" target="_blank" rel="noopener noreferrer"
-                           class="social-icon text-slate-400 hover:text-blue-400">
-                            <i class="fab fa-github text-xl"></i>
-                        </a>
-                        <a href="mailto:saniagup@usc.edu" target="_blank" rel="noopener noreferrer"
-                           class="social-icon text-slate-400 hover:text-blue-400">
-                            <i class="fas fa-envelope text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-        <script>// Navigation and Page Switching
-
-            document.addEventListener('DOMContentLoaded', function () {
-                const navLinks = document.querySelectorAll('[data-page]');
-                const pages = document.querySelectorAll('.page');
-                const mobileMenuButton = document.getElementById('mobile-menu-button');
-                const mobileMenu = document.getElementById('mobile-menu');
-                const projectLinks = document.querySelectorAll('[data-project]');
-                const backToHomeLinks = document.querySelectorAll('[data-back-to-home]');
-                const contactForm = document.getElementById('contact-form');
-                const formMessage = document.getElementById('form-message');
-                const copyCodeBtn = document.getElementById('copy-code-btn');
-
-                mobileMenuButton.addEventListener('click', function () {
-                    mobileMenu.classList.toggle('hidden');
-                });
-
-                navLinks.forEach(link => {
-                    link.addEventListener('click', function (e) {
-                        e.preventDefault();
-
-                        navLinks.forEach(navLink => navLink.classList.remove('active'));
-                        this.classList.add('active');
-
-                        const targetPage = this.getAttribute('data-page');
-
-                        pages.forEach(page => page.classList.remove('active'));
-
-                        document.getElementById('project-details').classList.remove('active');
-                        document.querySelectorAll('.project-detail').forEach(project => {
-                            project.classList.remove('active');
-                        });
-
-                        document.getElementById(targetPage).classList.add('active');
-
-                        mobileMenu.classList.add('hidden');
-
-                        window.scrollTo(0, 0);
-                    });
-                });
-
-                projectLinks.forEach(link => {
-                    link.addEventListener('click', function (e) {
-                        e.preventDefault();
-
-                        document.getElementById('home').classList.remove('active');
-
-                        document.getElementById('project-details').classList.add('active');
-
-                        const targetProject = this.getAttribute('data-project');
-
-                        window.location.hash = targetProject;
-                        document.querySelectorAll('.project-detail').forEach(project => {
-                            project.classList.remove('active');
-                        });
-                        document.getElementById(targetProject).classList.add('active');
-
-                        window.scrollTo(0, 0);
-                    });
-                });
-
-                backToHomeLinks.forEach(link => {
-                    link.addEventListener('click', function (e) {
-                        e.preventDefault();
-
-                        document.getElementById('project-details').classList.remove('active');
-                        document.querySelectorAll('.project-detail').forEach(project => {
-                            project.classList.remove('active');
-                        });
-                        pages.forEach(page => page.classList.remove('active'));
-
-                        document.getElementById('home').classList.add('active');
-
-                        navLinks.forEach(navLink => navLink.classList.remove('active'));
-                        const homeNav = document.querySelector('[data-page="home"]');
-                        if (homeNav) homeNav.classList.add('active');
-
-                        history.pushState(
-                            '',
-                            document.title,
-                            window.location.pathname + window.location.search
-                        );
-
-                        window.scrollTo(0, 0);
-                    });
-                });
-
-                if (contactForm) {
-                    contactForm.addEventListener('submit', function (e) {
-                        e.preventDefault();
-
-                        const name = document.getElementById('name').value;
-                        const email = document.getElementById('email').value;
-                        const message = document.getElementById('message').value;
-
-                        if (name && email && message) {
-                            formMessage.classList.remove('hidden');
-
-                            contactForm.reset();
-
-                            setTimeout(() => {
-                                formMessage.classList.add('hidden');
-                            }, 5000);
-                        }
-                    });
-                }
-
-                if (copyCodeBtn) {
-                    copyCodeBtn.addEventListener('click', function () {
-                        const htmlContent = document.documentElement.outerHTML;
-
-                        const textarea = document.createElement('textarea');
-                        textarea.value = htmlContent;
-                        textarea.setAttribute('readonly', '');
-                        textarea.style.position = 'absolute';
-                        textarea.style.left = '-9999px';
-                        document.body.appendChild(textarea);
-
-                        textarea.select();
-                        document.execCommand('copy');
-
-                        document.body.removeChild(textarea);
-
-                        const originalText = this.innerHTML;
-                        this.innerHTML = '<i class="fas fa-check mr-2"></i> Copied!';
-
-                        setTimeout(() => {
-                            this.innerHTML = originalText;
-                        }, 2000);
-                    });
-                }
-
-                // Extra Projects toggle (Additional Systems & Mechanics)
-                const extraToggleBtn = document.getElementById('extra-projects-toggle');
-                const extraProjectsSection = document.getElementById('extra-projects');
-
-                if (extraToggleBtn && extraProjectsSection) {
-                    extraToggleBtn.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        e.stopPropagation();
-
-                        const isHidden = extraProjectsSection.classList.contains('hidden');
-                        extraProjectsSection.classList.toggle('hidden');
-
-                        extraToggleBtn.setAttribute('aria-expanded', String(isHidden));
-                        extraToggleBtn.innerHTML = isHidden
-                            ? 'Hide Additional Systems &amp; Mechanics Projects <i class="fas fa-chevron-up ml-2"></i>'
-                            : 'Additional Systems &amp; Mechanics Projects <i class="fas fa-chevron-down ml-2"></i>';
-
-                        if (isHidden) {
-                            extraProjectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }
-                    });
-                }
-
-                // Deep-link to project details via URL hash (e.g., index.html#project5)
-                if (window.location.hash) {
-                    const targetProject = window.location.hash.replace('#', '');
-                    const targetEl = document.getElementById(targetProject);
-                    if (targetEl && targetEl.classList.contains('project-detail')) {
-                        pages.forEach(page => page.classList.remove('active'));
-                        document.getElementById('project-details').classList.add('active');
-
-                        document.querySelectorAll('.project-detail').forEach(project => project.classList.remove('active'));
-                        targetEl.classList.add('active');
-
-                        window.scrollTo(0, 0);
-                    }
-                }
-
-            });</script>
+<!-- ══════════════════════════════════════════════════
+     CUSTOM CURSOR
+══════════════════════════════════════════════════ -->
+<div id="cursor-dot"  aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+
+<!-- ══════════════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════════════ -->
+<nav id="main-nav" aria-label="Main navigation">
+  <!-- Monogram -->
+  <a href="#hero" class="nav-monogram" aria-label="Home">SG</a>
+
+  <!-- Desktop links -->
+  <ul class="nav-links" role="list">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <!-- Hamburger (mobile) -->
+  <button id="nav-hamburger" class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile nav overlay -->
+<div id="nav-mobile" class="nav-mobile" role="dialog" aria-label="Mobile navigation">
+  <a href="#hero">Home</a>
+  <a href="#projects">Projects</a>
+  <a href="#experience">Experience</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<main>
+
+<!-- ══════════════════════════════════════════════════
+     SECTION 1+2 — HERO + PROJECTS (merged, 200vh sticky)
+     Hero text sits atop blurred cards. Scroll reveals the
+     cards as the actual projects section. One seamless scroll.
+══════════════════════════════════════════════════ -->
+<section id="hero" aria-label="Introduction and Projects">
+
+  <!-- Projects nav anchor — JS subtracts 72px nav offset, so scroll lands at 125vh
+       (the sticky release point: 240vh hero - 115vh sticky) -->
+  <div id="projects" style="position:absolute;top:calc(125vh + 72px);left:0;height:1px;pointer-events:none;" aria-hidden="true"></div>
+
+  <!-- Sticky frame — pins while scroll progresses through 200vh -->
+  <div class="hero-sticky">
+
+    <!-- ── Actual interactive project cards (also serve as hero bg) ── -->
+    <div class="cards-stage" id="projects-stage" style="pointer-events:none;" role="list" aria-label="Project cards">
+
+    <!-- ── Traeco ── -->
+    <article class="project-card" role="listitem" tabindex="0"
+             data-href="pages/traeco.html"
+             aria-label="Traeco — AI agent cost-intelligence platform">
+      <div class="card-accent" style="background:var(--navy);">
+        <img class="card-img" src="files/traecocard.png" alt="Traeco dashboard">
+      </div>
+      <div class="card-body">
+        <span class="card-name">Traeco</span>
+        <p class="card-one-liner">AI agent cost-intelligence platform</p>
+        <div class="card-pills">
+          <span class="pill">FastAPI</span>
+          <span class="pill">Next.js</span>
+          <span class="pill">PostgreSQL</span>
+          <span class="pill">OpenAI/Anthropic SDKs</span>
+        </div>
+        <span class="card-cta" aria-hidden="true">VIEW →</span>
+      </div>
+    </article>
+
+    <!-- ── Stitchlings ── -->
+    <article class="project-card" role="listitem" tabindex="0"
+             data-href="pages/stitchlings.html"
+             aria-label="Stitchlings — environmental shaders and VFX for a published Steam game">
+      <div class="card-accent" style="background:var(--green);">
+        <img class="card-img" src="files/stitchlingscard.png" alt="Stitchlings game art">
+      </div>
+      <div class="card-body">
+        <span class="card-name">Stitchlings</span>
+        <p class="card-one-liner">Environmental shaders &amp; VFX for a published Steam game</p>
+        <div class="card-pills">
+          <span class="pill">Unity</span>
+          <span class="pill">HLSL</span>
+          <span class="pill">C#</span>
+        </div>
+        <span class="card-cta" aria-hidden="true">VIEW →</span>
+      </div>
+    </article>
+
+    <!-- ── Rally ── -->
+    <article class="project-card" role="listitem" tabindex="0"
+             data-href="pages/rally.html"
+             aria-label="Rally — in-client fan-engagement system designed for Riot Games">
+      <div class="card-accent" style="background:var(--bg-dark);">
+        <img class="card-img" src="files/rallycard.png" alt="Rally concept UI">
+      </div>
+      <div class="card-body">
+        <span class="card-name">Rally</span>
+        <p class="card-one-liner">In-client fan-engagement system for Riot Games</p>
+        <div class="card-pills">
+          <span class="pill">React/TypeScript</span>
+          <span class="pill">Node.js</span>
+          <span class="pill">PostgreSQL</span>
+          <span class="pill">Riot APIs</span>
+        </div>
+        <span class="card-cta" aria-hidden="true">VIEW →</span>
+      </div>
+    </article>
+
+    <!-- ── SwarmLight ── -->
+    <article class="project-card" role="listitem" tabindex="0"
+             data-href="pages/swarmlight.html"
+             aria-label="SwarmLight — emergent firefly-swarm mechanics">
+      <div class="card-accent" style="background:var(--navy);">
+        <img class="card-img" src="files/swarmlightcard.png" alt="SwarmLight gameplay">
+      </div>
+      <div class="card-body">
+        <span class="card-name">SwarmLight</span>
+        <p class="card-one-liner">Emergent firefly-swarm mechanics</p>
+        <div class="card-pills">
+          <span class="pill">Unity</span>
+          <span class="pill">C#</span>
+          <span class="pill">HLSL</span>
+        </div>
+        <span class="card-cta" aria-hidden="true">VIEW →</span>
+      </div>
+    </article>
+
+    <!-- ── Adaptive Pursuit ── -->
+    <article class="project-card" role="listitem" tabindex="0"
+             data-href="pages/adaptive-pursuit.html"
+             aria-label="Adaptive Pursuit — an AI enemy that learns to hunt you">
+      <div class="card-accent" style="background:var(--green);">
+        <img class="card-img" src="files/adaptivecard.png" alt="Adaptive Pursuit gameplay">
+      </div>
+      <div class="card-body">
+        <span class="card-name">Adaptive Pursuit</span>
+        <p class="card-one-liner">An AI enemy that learns to hunt you</p>
+        <div class="card-pills">
+          <span class="pill">Unreal Engine 5</span>
+          <span class="pill">Python</span>
+          <span class="pill">PyTorch</span>
+          <span class="pill">C++</span>
+        </div>
+        <span class="card-cta" aria-hidden="true">VIEW →</span>
+      </div>
+    </article>
+
+    </div><!-- /cards-stage -->
+
+    <!-- Tint + backdrop-blur overlay: dissolves as you scroll -->
+    <div class="hero-bg-tint" id="hero-tint" aria-hidden="true"></div>
+
+    <!-- Three.js particles -->
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+    <!-- Floating decorations — CS/game-dev themed, bigger + more elements -->
+    <div class="hero-decos" aria-hidden="true">
+      <!-- Green squiggle -->
+      <svg class="deco-squiggle" width="80" height="52" viewBox="0 0 80 52" fill="none">
+        <path d="M3 26 Q14 6 28 26 Q42 46 56 26 Q70 6 77 26" stroke="#B8FF47" stroke-width="3" stroke-linecap="round" fill="none"/>
+      </svg>
+      <!-- JS curly braces -->
+      <span class="deco-bracket">{ }</span>
+      <!-- Binary digits -->
+      <span class="deco-binary deco-b1">01101</span>
+      <span class="deco-binary deco-b2">10</span>
+      <span class="deco-binary deco-b3">1001</span>
+      <span class="deco-binary deco-b4">0</span>
+      <!-- Code snippets -->
+      <div class="deco-code">const&nbsp;<span style="color:var(--green)">build</span>&nbsp;=&nbsp;()&nbsp;=&gt;&nbsp;{}</div>
+      <div class="deco-code deco-code2"><span style="color:var(--green)">if</span>&nbsp;(creative&nbsp;&&amp;&amp;&nbsp;technical)</div>
+      <!-- Arrow function -->
+      <span class="deco-arrow">=&gt;</span>
+      <!-- Closing tag -->
+      <span class="deco-tag">&lt;/&gt;</span>
+      <!-- Game controller SVG -->
+      <svg class="deco-icon deco-gamepad" width="38" height="30" viewBox="0 0 38 30" fill="none" aria-hidden="true">
+        <rect x="1" y="5" width="36" height="20" rx="10" stroke="currentColor" stroke-width="1.8"/>
+        <line x1="10" y1="10" x2="10" y2="20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="5"  y1="15" x2="15" y2="15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="26" cy="12" r="1.6" fill="currentColor"/>
+        <circle cx="30" cy="15" r="1.6" fill="currentColor"/>
+        <circle cx="26" cy="18" r="1.6" fill="currentColor"/>
+        <circle cx="22" cy="15" r="1.6" fill="currentColor"/>
+      </svg>
+      <!-- Neural net nodes -->
+      <svg class="deco-icon deco-neural" width="54" height="46" viewBox="0 0 54 46" fill="none" aria-hidden="true">
+        <circle cx="6"  cy="15" r="4" stroke="currentColor" stroke-width="1.4"/>
+        <circle cx="6"  cy="31" r="4" stroke="currentColor" stroke-width="1.4"/>
+        <circle cx="27" cy="7"  r="4" stroke="currentColor" stroke-width="1.4"/>
+        <circle cx="27" cy="23" r="4" stroke="currentColor" stroke-width="1.4"/>
+        <circle cx="27" cy="39" r="4" stroke="currentColor" stroke-width="1.4"/>
+        <circle cx="48" cy="15" r="4" stroke="currentColor" stroke-width="1.4"/>
+        <circle cx="48" cy="31" r="4" stroke="currentColor" stroke-width="1.4"/>
+        <line x1="10" y1="15" x2="23" y2="7"  stroke="currentColor" stroke-width="1" opacity="0.45"/>
+        <line x1="10" y1="15" x2="23" y2="23" stroke="currentColor" stroke-width="1" opacity="0.45"/>
+        <line x1="10" y1="31" x2="23" y2="23" stroke="currentColor" stroke-width="1" opacity="0.45"/>
+        <line x1="10" y1="31" x2="23" y2="39" stroke="currentColor" stroke-width="1" opacity="0.45"/>
+        <line x1="31" y1="7"  x2="44" y2="15" stroke="currentColor" stroke-width="1" opacity="0.45"/>
+        <line x1="31" y1="23" x2="44" y2="15" stroke="currentColor" stroke-width="1" opacity="0.45"/>
+        <line x1="31" y1="23" x2="44" y2="31" stroke="currentColor" stroke-width="1" opacity="0.45"/>
+        <line x1="31" y1="39" x2="44" y2="31" stroke="currentColor" stroke-width="1" opacity="0.45"/>
+      </svg>
+      <!-- USC badge -->
+      <div class="deco-badge">USC '28</div>
+
+      <!-- VR headset -->
+      <svg class="deco-icon deco-vr" width="48" height="30" viewBox="0 0 48 30" fill="none" aria-hidden="true">
+        <rect x="1" y="5" width="46" height="20" rx="10" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="16" cy="15" r="5.5" stroke="currentColor" stroke-width="1.3"/>
+        <circle cx="32" cy="15" r="5.5" stroke="currentColor" stroke-width="1.3"/>
+        <line x1="21.5" y1="15" x2="26.5" y2="15" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+        <line x1="13" y1="5" x2="11" y2="1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+        <line x1="35" y1="5" x2="37" y2="1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+      </svg>
+
+      <!-- Terminal window -->
+      <svg class="deco-icon deco-terminal" width="52" height="36" viewBox="0 0 52 36" fill="none" aria-hidden="true">
+        <rect x="1" y="1" width="50" height="34" rx="5" stroke="currentColor" stroke-width="1.4"/>
+        <line x1="1" y1="10" x2="51" y2="10" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+        <circle cx="8"  cy="5.5" r="1.8" fill="currentColor" opacity="0.4"/>
+        <circle cx="14" cy="5.5" r="1.8" fill="currentColor" opacity="0.4"/>
+        <circle cx="20" cy="5.5" r="1.8" fill="currentColor" opacity="0.4"/>
+        <polyline points="8,18 16,24 8,30" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <line x1="20" y1="30" x2="36" y2="30" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+
+      <!-- 3D coordinate axes -->
+      <svg class="deco-icon deco-axes" width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <line x1="20" y1="36" x2="20" y2="6"  stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="4"  y1="24" x2="36" y2="24" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="20" y1="24" x2="6"  y2="36" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.6"/>
+        <polyline points="20,8 17,14 23,14" fill="currentColor" opacity="0.45"/>
+        <polyline points="34,24 28,21 28,27" fill="currentColor" opacity="0.45"/>
+        <polyline points="8,34 12,29 8,29"   fill="currentColor" opacity="0.45"/>
+      </svg>
+
+      <!-- Git branch -->
+      <svg class="deco-icon deco-git" width="30" height="44" viewBox="0 0 30 44" fill="none" aria-hidden="true">
+        <circle cx="8"  cy="8"  r="4.5" stroke="currentColor" stroke-width="1.4"/>
+        <circle cx="8"  cy="36" r="4.5" stroke="currentColor" stroke-width="1.4"/>
+        <circle cx="24" cy="20" r="4.5" stroke="currentColor" stroke-width="1.4"/>
+        <line x1="8" y1="12.5" x2="8" y2="31.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M8 14 Q8 20 24 20" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+      </svg>
+
+      <!-- Function snippet -->
+      <span class="deco-fn">fn(args)&nbsp;{&nbsp;}</span>
+
+      <!-- Null/undefined humour -->
+      <span class="deco-null">undefined</span>
     </div>
-    <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'9560f2ac86aa5c17',t:'MTc1MDk4NTQwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
-    <iframe height="1" width="1"
-            style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
+
+    <!-- Hero intro text -->
+    <div class="hero-content">
+      <h1 class="hero-title">Hi, I'm Sania</h1>
+      <p class="hero-subtitle"><span id="typewriter-text"></span></p>
+      <p class="hero-tagline">
+        Bachelor's <a href="https://games.usc.edu/" target="_blank" rel="noopener noreferrer" class="tagline-link">Game Development</a> @ USC<br>Minors <a href="https://www.cs.usc.edu/academic-programs/undergrad/minor-computer-science/" target="_blank" rel="noopener noreferrer" class="tagline-link">Computer Science</a> &amp; <a href="https://tac.usc.edu/academics/artificial-intelligence-applications/" target="_blank" rel="noopener noreferrer" class="tagline-link">AI Applications</a>
+      </p>
+    </div>
+
+    <!-- Projects section label — fades in as hero text fades out -->
+    <div class="projects-reveal" aria-label="Projects section">
+      <h2 class="projects-reveal-title">Projects</h2>
+      <p class="section-sub">Selected work — hover to preview, click to explore</p>
+    </div>
+
+    <!-- View mode toggle — top-right of the projects section, fades in with projects-reveal -->
+    <div class="view-toggle" role="group" aria-label="Project view mode">
+      <button type="button" class="view-toggle-btn active" data-mode="cards" aria-pressed="true">Cards</button>
+      <button type="button" class="view-toggle-btn" data-mode="gallery" aria-pressed="false">Gallery</button>
+    </div>
+
+    <!-- Resume CTA — fades in with the projects reveal -->
+    <div class="cards-resume-link">
+      <a href="files/SaniaGuptaResume2026.pdf" download class="btn-resume"
+         aria-label="Download resume">View Resume →</a>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <i class="fas fa-chevron-down scroll-indicator-arrow"></i>
+      <span>PROJECTS</span>
+    </div>
+
+  </div><!-- /hero-sticky -->
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     SECTION 3 — EXPERIENCE
+══════════════════════════════════════════════════ -->
+<section id="experience" aria-labelledby="experience-heading">
+  <h2 id="experience-heading" class="section-title gsap-clip-reveal">Experience</h2>
+  <div class="experience-rule" aria-hidden="true"></div>
+
+  <ul class="experience-list" role="list">
+
+    <!-- 01 Serve Robotics -->
+    <li class="experience-row">
+      <span class="exp-number">01</span>
+      <div class="exp-main">
+        <a href="https://www.serverobotics.com/" target="_blank" rel="noopener noreferrer" class="exp-company">Serve Robotics</a>
+        <span class="exp-role">Software Engineering Intern, Simulation</span>
+        <p class="exp-desc">
+          Developed a Claude Code–orchestrated sim town-generation pipeline for Unreal Engine,
+          cutting town-building from 30+ minutes to ~5. Programmed intersection-crossing logic
+          for simulated delivery robots — a capability that doesn't exist in the real world yet,
+          built to push autonomous navigation training forward.
+        </p>
+      </div>
+      <span class="exp-date">May 2026 – Present</span>
+    </li>
+
+    <!-- 02 BebopBee, Inc. -->
+    <li class="experience-row">
+      <span class="exp-number">02</span>
+      <div class="exp-main">
+        <a href="https://www.bebopbee.com/" target="_blank" rel="noopener noreferrer" class="exp-company">BebopBee, Inc.</a>
+        <span class="exp-role">Software Engineering Intern</span>
+        <p class="exp-desc">
+          Architected 5 autonomous AI agent systems, automating 95%+ of manual workflows across
+          content generation and marketing. Built a lighting pipeline that generates normal maps
+          on the fly, so flat 2D sprites render and light like true 3D objects.
+        </p>
+      </div>
+      <span class="exp-date">June – August 2025</span>
+    </li>
+
+    <!-- 03 AiFi -->
+    <li class="experience-row">
+      <span class="exp-number">03</span>
+      <div class="exp-main">
+        <a href="https://www.aifi.com/" target="_blank" rel="noopener noreferrer" class="exp-company">AiFi</a>
+        <span class="exp-role">Software Engineering Intern</span>
+        <p class="exp-desc">
+          Built real-time C# visualizations processing computer vision + RFID sensor-fusion
+          streams to render AI-detected customer interactions live in retail stores. Translated
+          raw computer-vision output into 3D skeletal digital twins mapped to real store
+          coordinates, turning shopper movement into spatial data.
+        </p>
+      </div>
+      <span class="exp-date">June – July 2023</span>
+    </li>
+
+  </ul>
+
+  <!-- Skills carousel — single row, bigger pills -->
+  <div class="carousel-section" aria-label="Skills">
+    <p class="skills-label">Skills</p>
+    <div class="carousel-row" aria-hidden="true">
+      <div class="carousel-track carousel-track--right">
+        <span class="carousel-pill" data-cat="lang">C++</span>
+        <span class="carousel-pill" data-cat="lang">C#</span>
+        <span class="carousel-pill" data-cat="lang">Python</span>
+        <span class="carousel-pill" data-cat="lang">JavaScript</span>
+        <span class="carousel-pill" data-cat="lang">React</span>
+        <span class="carousel-pill" data-cat="lang">Node.js</span>
+        <span class="carousel-pill" data-cat="lang">FastAPI</span>
+        <span class="carousel-pill" data-cat="graphics">Unity</span>
+        <span class="carousel-pill" data-cat="graphics">Unreal Engine</span>
+        <span class="carousel-pill" data-cat="graphics">HLSL</span>
+        <span class="carousel-pill" data-cat="ai">OpenAI/Anthropic SDKs</span>
+        <span class="carousel-pill" data-cat="ai">Agentic AI</span>
+        <span class="carousel-pill" data-cat="ai">Computer Vision</span>
+        <span class="carousel-pill" data-cat="tools">Docker</span>
+        <span class="carousel-pill" data-cat="tools">Real-Time Systems</span>
+        <span class="carousel-pill" data-cat="tools">Git</span>
+        <span class="carousel-pill" data-cat="tools">Perforce</span>
+        <!-- Duplicate for seamless loop -->
+        <span class="carousel-pill" data-cat="lang">C++</span>
+        <span class="carousel-pill" data-cat="lang">C#</span>
+        <span class="carousel-pill" data-cat="lang">Python</span>
+        <span class="carousel-pill" data-cat="lang">JavaScript</span>
+        <span class="carousel-pill" data-cat="lang">React</span>
+        <span class="carousel-pill" data-cat="lang">Node.js</span>
+        <span class="carousel-pill" data-cat="lang">FastAPI</span>
+        <span class="carousel-pill" data-cat="graphics">Unity</span>
+        <span class="carousel-pill" data-cat="graphics">Unreal Engine</span>
+        <span class="carousel-pill" data-cat="graphics">HLSL</span>
+        <span class="carousel-pill" data-cat="ai">OpenAI/Anthropic SDKs</span>
+        <span class="carousel-pill" data-cat="ai">Agentic AI</span>
+        <span class="carousel-pill" data-cat="ai">Computer Vision</span>
+        <span class="carousel-pill" data-cat="tools">Docker</span>
+        <span class="carousel-pill" data-cat="tools">Real-Time Systems</span>
+        <span class="carousel-pill" data-cat="tools">Git</span>
+        <span class="carousel-pill" data-cat="tools">Perforce</span>
+      </div>
+    </div>
+  </div><!-- /carousel-section -->
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     SECTION 4 — ABOUT
+══════════════════════════════════════════════════ -->
+<section id="about" aria-labelledby="about-heading">
+  <h2 id="about-heading" class="section-title gsap-clip-reveal">About</h2>
+
+  <div class="about-grid">
+
+    <!-- Circular headshot — height fills bio column via flex stretch -->
+    <div class="about-photo-col">
+      <div class="about-photo">
+        <img src="files/portrait.png" alt="Sania Gupta">
+      </div>
+    </div>
+
+    <!-- Bio -->
+    <div class="about-bio">
+      <p class="gsap-fade-up-sm">
+        Hi, I'm Sania, a junior at the University of Southern California studying Game Development
+        with minors in Computer Science and Artificial Intelligence Applications.
+      </p>
+      <p class="gsap-fade-up-sm">
+        Across everything I'm part of, one thing holds true: I'm consistently drawn to the
+        intersection of creativity, technology, and human interaction. Whether I'm building a
+        system like a recommendation engine for users' AI agents at Traeco, shipping a product
+        like my simulation scenario-generation pipeline at Serve Robotics, or diving into a new
+        project like Adaptive Pursuit which focuses on an intelligent enemy AI, that's the space
+        I keep coming back to.
+      </p>
+      <p class="gsap-fade-up-sm">
+        I'm a driven and curious person by nature. If something interests me, I set my mind to it,
+        dive deep, and build something real. My background across software engineering, AI,
+        graphics, and game development pushes me to keep seeking out opportunities in this space,
+        and to help build the future of interactive technology.
+      </p>
+
+      <div class="about-links gsap-fade-up-sm">
+        <a href="https://github.com/saniagupta124" target="_blank" rel="noopener noreferrer"
+           class="btn-outline" aria-label="GitHub profile">
+          <i class="fab fa-github" aria-hidden="true"></i> GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/sania-gupta/" target="_blank" rel="noopener noreferrer"
+           class="btn-outline" aria-label="LinkedIn profile">
+          <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
+        </a>
+        <a href="files/SaniaGuptaResume2026.pdf" download
+           class="btn-outline" aria-label="Download resume">
+          <i class="fas fa-download" aria-hidden="true"></i> Resume
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     SECTION 5 — CONTACT
+══════════════════════════════════════════════════ -->
+<section id="contact" aria-labelledby="contact-heading">
+  <h2 id="contact-heading" class="section-title gsap-clip-reveal">Let's Talk</h2>
+  <p class="contact-sub">Open to internships, collabs, and interesting problems.</p>
+
+  <div class="contact-grid">
+
+    <!-- Contact links -->
+    <ul class="contact-links" role="list">
+      <li class="contact-link-item">
+        <span class="contact-link-arrow" aria-hidden="true">→</span>
+        <div>
+          <p style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted);font-family:var(--font-display);margin-bottom:0.2rem;">Email</p>
+          <a href="mailto:saniagupta@usc.edu">saniagupta@usc.edu</a>
+        </div>
+      </li>
+      <li class="contact-link-item">
+        <span class="contact-link-arrow" aria-hidden="true">→</span>
+        <div>
+          <p style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted);font-family:var(--font-display);margin-bottom:0.2rem;">GitHub</p>
+          <a href="https://github.com/saniagupta124" target="_blank" rel="noopener noreferrer">github.com/saniagupta124</a>
+        </div>
+      </li>
+      <li class="contact-link-item">
+        <span class="contact-link-arrow" aria-hidden="true">→</span>
+        <div>
+          <p style="font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-muted);font-family:var(--font-display);margin-bottom:0.2rem;">LinkedIn</p>
+          <a href="https://www.linkedin.com/in/sania-gupta/" target="_blank" rel="noopener noreferrer">linkedin.com/in/sania-gupta</a>
+        </div>
+      </li>
+    </ul>
+
+    <!-- Contact form -->
+    <form id="contact-form" class="contact-form" novalidate aria-label="Contact form">
+      <div class="form-group">
+        <label for="contact-name">Name</label>
+        <input id="contact-name" class="form-input" type="text" name="name" placeholder="Your name" required autocomplete="name">
+      </div>
+      <div class="form-group">
+        <label for="contact-email">Email</label>
+        <input id="contact-email" class="form-input" type="email" name="email" placeholder="your@email.com" required autocomplete="email">
+      </div>
+      <div class="form-group">
+        <label for="contact-message">Message</label>
+        <textarea id="contact-message" class="form-input" name="message" rows="5" placeholder="What's on your mind?" required></textarea>
+      </div>
+      <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+      <button type="submit" class="btn-send">Send it →</button>
+    </form>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════ -->
+<footer>
+  <p>Sania Gupta © 2025</p>
+  <div class="footer-socials">
+    <a href="https://www.linkedin.com/in/sania-gupta/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+      <i class="fab fa-linkedin" aria-hidden="true"></i>
+    </a>
+    <a href="https://github.com/saniagupta124" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+      <i class="fab fa-github" aria-hidden="true"></i>
+    </a>
+    <a href="mailto:saniagupta@usc.edu" aria-label="Email">
+      <i class="fas fa-envelope" aria-hidden="true"></i>
+    </a>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════════════
+     CDN LIBRARIES
+══════════════════════════════════════════════════ -->
+<!-- GSAP + ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<!-- Three.js r128 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<!-- Main JS (ES module) -->
+<script type="module" src="js/main.js"></script>
 
 </body>
-
 </html>
-
-<script src="https://player.vimeo.com/api/player.js"></script>
-<script>// Custom Vimeo video controls
-
-    document.querySelectorAll('.video-container').forEach(container => {
-        const iframe = container.querySelector('.vimeo-player');
-        const playPauseBtn = container.querySelector('.playPauseBtn');
-        const videoTimeline = container.querySelector('.videoTimeline');
-        const player = new Vimeo.Player(iframe);
-
-        function setIcon(isPlaying) {
-            playPauseBtn.innerHTML = isPlaying
-                ? '<i class="fas fa-pause"></i>'
-                : '<i class="fas fa-play"></i>';
-        }
-
-        setIcon(false);
-
-        playPauseBtn.addEventListener('click', () => {
-            player.getPaused().then(paused => {
-                if (paused) {
-                    player.play();
-                    setIcon(true);
-                } else {
-                    player.pause();
-                    setIcon(false);
-                }
-            });
-        });
-
-        // Sync timeline with video progress
-        player.on('timeupdate', data => {
-            player.getDuration().then(duration => {
-                videoTimeline.max = duration;
-                videoTimeline.value = data.seconds;
-            });
-        });
-
-        videoTimeline.addEventListener('input', () => {
-            player.setCurrentTime(videoTimeline.value);
-        });
-
-        player.on('pause', () => setIcon(false));
-        player.on('play', () => setIcon(true));
-    });
-
-    // Pause videos when page hidden
-    document.addEventListener('visibilitychange', function () {
-        if (document.hidden) {
-            document.querySelectorAll('iframe.vimeo-player').forEach((iframe) => {
-                const player = new Vimeo.Player(iframe);
-                player.pause();
-            });
-        }
-    });
-
-    window.addEventListener('beforeunload', () => {
-        document.querySelectorAll('iframe.vimeo-player').forEach((iframe) => {
-            const player = new Vimeo.Player(iframe);
-            player.pause();
-        });
-    });</script>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adaptive Pursuit — Sania Gupta</title>
+  <meta name="description" content="Adaptive Pursuit — a procedural UE5 parkour-pursuit game where an AI enemy adapts to your movement patterns in real time.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/animations.css">
+
+  <style>
+    body { background: var(--bg); }
+    /* Darkest color sampled from adaptivehome.png */
+    .project-hero { background: #25253C; }
+  </style>
+</head>
+<body>
+
+<div id="cursor-dot"  aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+
+<nav class="page-nav" id="page-nav" aria-label="Page navigation">
+  <a href="../index.html#projects" class="back-link">← WORK</a>
+  <a href="../index.html" class="nav-monogram">SG</a>
+</nav>
+
+<header class="project-hero" aria-label="Adaptive Pursuit project header">
+  <img class="project-hero-img is-blur" src="../files/adaptivehome.png" alt="" aria-hidden="true">
+  <img class="project-hero-img" src="../files/adaptivehome.png" alt="Adaptive Pursuit gameplay">
+
+  <div class="card-pills" style="margin-bottom:1.5rem;">
+    <span class="pill">Unreal Engine 5</span>
+    <span class="pill">Python</span>
+    <span class="pill">PyTorch</span>
+    <span class="pill">C++</span>
+  </div>
+
+  <h1 class="project-hero-title">Adaptive Pursuit</h1>
+  <p class="project-hook">
+    A procedural UE5 parkour-pursuit game where an AI enemy adapts to your specific movement
+    patterns in real time.
+  </p>
+</header>
+
+<div class="project-content">
+
+  <div class="project-links">
+    <span class="project-link-chip project-link-chip--static">In Development</span>
+  </div>
+
+  <div class="project-meta">
+    <div class="project-meta-item">
+      <span class="project-meta-label">Role</span>
+      <span class="project-meta-value">Solo Developer</span>
+    </div>
+    <div class="project-meta-item">
+      <span class="project-meta-label">Team</span>
+      <span class="project-meta-value">1 — everything, end to end</span>
+    </div>
+    <div class="project-meta-item">
+      <span class="project-meta-label">Dates</span>
+      <span class="project-meta-value">2026 — In Development</span>
+    </div>
+  </div>
+
+  <section class="project-section">
+    <h2 class="project-section-title">The Problem</h2>
+    <p>
+      Scripted enemy AI in parkour/pursuit games becomes predictable and exploitable once a
+      player learns its patterns — the goal was an opponent that actually adapts to the
+      individual player instead of running a fixed behavior tree.
+    </p>
+  </section>
+
+  <section class="project-section">
+    <h2 class="project-section-title">What I Built</h2>
+    <ul class="highlight-list">
+      <li>
+        A <strong>custom PyTorch PPO agent</strong> — built from scratch, no stable-baselines3 —
+        governing pursuit behavior.
+      </li>
+      <li>
+        An <strong>LSTM model</strong> that trains on the player's live movement during the
+        session to predict their trajectory, feeding a <strong>runtime interception
+        planner</strong> that runs route-graph search against those predictions.
+      </li>
+      <li>
+        When initial training produced a degenerate policy (reward stuck at -3.9M with zero
+        gradient), diagnosed and fixed it through reward scaling, an advantage-normalization
+        epsilon fix, and input-state normalization to resolve <strong>entropy collapse</strong>
+        in the policy network.
+      </li>
+      <li>
+        Player movement mechanics in UE5/C++ — keyboard-controlled traversal with mouse-click
+        grapple integration.
+      </li>
+    </ul>
+  </section>
+
+  <section class="project-section">
+    <h2 class="project-section-title">Outcome &amp; Impact</h2>
+    <p>
+      The fixed training run completed <strong>3M steps on CPU</strong>, with reward crossing from
+      deeply negative to a <strong>best episode reward of +15.03</strong> — producing a viable,
+      working checkpoint. Currently developing the player mechanics further and tuning the enemy
+      intelligence.
+    </p>
+  </section>
+
+</div>
+
+<!-- Loop back to first project -->
+<div class="next-project-bar">
+  <span>Next Project</span>
+  <a href="traeco.html" class="next-project-link">Traeco <span aria-hidden="true">→</span></a>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script type="module">
+  import { initScroll } from '../js/scroll.js';
+  import { initProjectMedia } from '../js/project-media.js';
+  gsap.registerPlugin(ScrollTrigger);
+  initScroll();
+  initProjectMedia();
+
+  const nav = document.getElementById('page-nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 30), { passive: true });
+
+  const dot = document.getElementById('cursor-dot');
+  const ring = document.getElementById('cursor-ring');
+  document.addEventListener('mousemove', e => {
+    dot.style.left = ring.style.left = e.clientX + 'px';
+    dot.style.top  = ring.style.top  = e.clientY + 'px';
+  });
+  document.addEventListener('mouseover', e => {
+    if (e.target.closest('a,button,.video-wrap')) document.body.classList.add('cursor-hover');
+  });
+  document.addEventListener('mouseout', e => {
+    if (e.target.closest('a,button,.video-wrap')) document.body.classList.remove('cursor-hover');
+  });
+
+  gsap.from('body', { opacity: 0, duration: 0.5, ease: 'power2.out' });
+</script>
+</body>
+</html>

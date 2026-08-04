@@ -1,0 +1,45 @@
+/* =====================================================
+   DESIGN TOKENS — all CSS custom properties live here
+   No hardcoded colors anywhere else in the codebase
+   ===================================================== */
+:root {
+  /* Colors */
+  --bg:           #F5F4EF;
+  --bg-dark:      #0D1117;
+  --navy:         #1A48A3;
+  --green:        #B8FF47;
+  --violet:       #8B6BFF;
+  --amber:        #FFB454;
+  --text:         #111111;
+  --text-muted:   #555555;
+  --surface:      #ECEAE2;
+  --border:       #D0CEC5;
+
+  /* Typography */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body:    'Poppins', sans-serif;
+
+  /* Easing */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:   cubic-bezier(0.87, 0, 0.13, 1);
+
+  /* Spacing scale */
+  --space-xs:  0.25rem;
+  --space-sm:  0.5rem;
+  --space-md:  1rem;
+  --space-lg:  2rem;
+  --space-xl:  4rem;
+  --space-2xl: 8rem;
+
+  /* Border radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
+
+  /* Z-index layers */
+  --z-canvas:  0;
+  --z-content: 1;
+  --z-nav:     100;
+  --z-cursor:  9999;
+}

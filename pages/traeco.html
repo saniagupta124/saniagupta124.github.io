@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traeco — Sania Gupta</title>
+  <meta name="description" content="Traeco — AI agent cost-intelligence platform. Co-founded by Sania Gupta.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/animations.css">
+
+  <style>
+    body { background: var(--bg); }
+    /* Darkest color sampled from traecohome.png */
+    .project-hero { background: #1A1A1D; }
+  </style>
+</head>
+<body>
+
+<div id="cursor-dot"  aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+
+<nav class="page-nav" id="page-nav" aria-label="Page navigation">
+  <a href="../index.html#projects" class="back-link" aria-label="Back to work">← WORK</a>
+  <a href="../index.html" class="nav-monogram" aria-label="Home">SG</a>
+</nav>
+
+<header class="project-hero" aria-label="Traeco project header">
+  <img class="project-hero-img is-blur" src="../files/traecohome.png" alt="" aria-hidden="true">
+  <img class="project-hero-img" src="../files/traecohome.png" alt="Traeco dashboard">
+
+  <div class="card-pills" style="margin-bottom:1.5rem;">
+    <span class="pill">Python</span>
+    <span class="pill">FastAPI</span>
+    <span class="pill">SQLAlchemy</span>
+    <span class="pill">PostgreSQL</span>
+    <span class="pill">Next.js</span>
+    <span class="pill">TypeScript</span>
+    <span class="pill">Docker</span>
+    <span class="pill">OpenAI/Anthropic SDKs</span>
+  </div>
+
+  <h1 class="project-hero-title">Traeco</h1>
+  <p class="project-hook">
+    A quality-aware recommendation engine that helps teams cut AI agent costs without
+    sacrificing output quality.
+  </p>
+</header>
+
+<div class="project-content">
+
+  <div class="project-links">
+    <a href="https://traeco.dev/" target="_blank" rel="noopener noreferrer" class="project-link-chip">Live Site <span aria-hidden="true">↗</span></a>
+    <a href="https://app.traeco.dev/" target="_blank" rel="noopener noreferrer" class="project-link-chip">App <span aria-hidden="true">↗</span></a>
+    <a href="https://pypi.org/project/traeco-sdk/" target="_blank" rel="noopener noreferrer" class="project-link-chip">traeco-sdk on PyPI <span aria-hidden="true">↗</span></a>
+  </div>
+
+  <div class="project-meta">
+    <div class="project-meta-item">
+      <span class="project-meta-label">Role</span>
+      <span class="project-meta-value">Co-Founder &amp; Chief AI Officer</span>
+    </div>
+    <div class="project-meta-item">
+      <span class="project-meta-label">Team</span>
+      <span class="project-meta-value">4 — CEO, CTO, CPO, CAIO (me)</span>
+    </div>
+    <div class="project-meta-item">
+      <span class="project-meta-label">Dates</span>
+      <span class="project-meta-value">November 2025 – Present</span>
+    </div>
+  </div>
+
+  <section class="project-section">
+    <h2 class="project-section-title">The Problem</h2>
+    <p>
+      Teams deploying LLM agents have no reliable way to tell which model or prompt choice is
+      <strong>wasting money versus actually necessary for quality</strong> — cost and quality live
+      in separate dashboards, if they're tracked at all.
+    </p>
+  </section>
+
+  <section class="project-section">
+    <h2 class="project-section-title">What I Built</h2>
+    <p>
+      Co-built the core web app foundation with one other developer — the agent spend-breakdown
+      dashboard and surrounding platform. On top of that, I specifically built:
+    </p>
+    <ul class="highlight-list">
+      <li>
+        An <strong>LLM-judge-scored recommendation engine</strong> (faithfulness and
+        structure-conformance checks) that surfaces cost-saving model-switch and prompt
+        optimizations.
+      </li>
+      <li>
+        A custom <strong>eval-cluster framework</strong> for benchmarking agent quality across teams.
+      </li>
+      <li>
+        Multi-user infrastructure with invite and role/permission flows.
+      </li>
+      <li>
+        The published <strong><code>traeco-sdk</code> (PyPI)</strong> for instrumenting OpenAI and
+        Anthropic calls.
+      </li>
+      <li>
+        A custom <strong>n8n community node</strong> so no-code workflows can report cost/token
+        data in.
+      </li>
+    </ul>
+  </section>
+
+  <section class="project-section">
+    <h2 class="project-section-title">Outcome &amp; Impact</h2>
+    <ul class="highlight-list">
+      <li><strong>Top 10% of applicants, YC Summer 2026</strong> batch.</li>
+      <li>
+        In active conversations with design partners — including <strong>Amazon's Ring</strong> —
+        on integrating Traeco's cost/quality monitoring into their AI agent workflows.
+      </li>
+      <li>SDK published and live on PyPI.</li>
+    </ul>
+  </section>
+
+</div>
+
+<!-- ── Media gallery ── -->
+<div class="media-grid" aria-label="Traeco media">
+  <div class="media-item media-item--wide video-wrap">
+    <video src="../files/traecovid.mp4" muted loop playsinline preload="metadata" aria-label="Traeco product walkthrough"></video>
+  </div>
+  <div class="media-item">
+    <img src="../files/traecocheck.jpeg" alt="Traeco quality-check view" loading="lazy">
+  </div>
+  <div class="media-item">
+    <img src="../files/traecopres.jpeg" alt="Presenting Traeco" loading="lazy">
+  </div>
+</div>
+
+<div class="next-project-bar">
+  <span>Next Project</span>
+  <a href="stitchlings.html" class="next-project-link">Stitchlings <span aria-hidden="true">→</span></a>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script type="module">
+  import { initScroll } from '../js/scroll.js';
+  import { initProjectMedia } from '../js/project-media.js';
+  gsap.registerPlugin(ScrollTrigger);
+  initScroll();
+  initProjectMedia();
+
+  const nav = document.getElementById('page-nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 30), { passive: true });
+
+  const dot  = document.getElementById('cursor-dot');
+  const ring = document.getElementById('cursor-ring');
+  document.addEventListener('mousemove', e => {
+    dot.style.left  = ring.style.left = e.clientX + 'px';
+    dot.style.top   = ring.style.top  = e.clientY + 'px';
+  });
+  document.addEventListener('mouseover', e => {
+    if (e.target.closest('a,button,.video-wrap')) document.body.classList.add('cursor-hover');
+  });
+  document.addEventListener('mouseout', e => {
+    if (e.target.closest('a,button,.video-wrap')) document.body.classList.remove('cursor-hover');
+  });
+
+  gsap.from('body', { opacity: 0, duration: 0.5, ease: 'power2.out' });
+</script>
+</body>
+</html>

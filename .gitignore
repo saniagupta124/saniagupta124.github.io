@@ -1,0 +1,7 @@
+# macOS
+.DS_Store
+
+# Raw video originals — web-optimized .mp4 versions are committed instead.
+# SwarmLight_Trailer.mp4 (248MB) exceeds GitHub's 100MB file limit.
+files/*.mov
+files/SwarmLight_Trailer.mp4

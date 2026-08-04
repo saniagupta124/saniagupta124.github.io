@@ -1,0 +1,163 @@
+/* =====================================================
+   ANIMATIONS — keyframes, transitions, GSAP targets
+   ===================================================== */
+
+/* ── Floating hero decorations ── */
+@keyframes drift-y {
+  from { transform: translateY(0px); }
+  to   { transform: translateY(-12px); }
+}
+
+@keyframes drift-x {
+  from { transform: translateX(0px) rotate(-3deg); }
+  to   { transform: translateX(8px) rotate(3deg); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ── Skills carousel rows ── */
+@keyframes scroll-right {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes scroll-left {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+/* ── Scroll bounce indicator ── */
+@keyframes bounce-down {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50%       { transform: translateY(8px); opacity: 1; }
+}
+
+/* ── Cursor ring pulse (on hover) ── */
+@keyframes cursor-grow {
+  from { transform: translate(-50%, -50%) scale(1); }
+  to   { transform: translate(-50%, -50%) scale(1.15); }
+}
+
+/* ── Typewriter cursor blink ── */
+@keyframes caret-blink {
+  0%, 100% { border-color: var(--navy); }
+  50%       { border-color: transparent; }
+}
+
+/* ── Hero floating decorations ── */
+.deco-squiggle {
+  animation: drift-y 7s ease-in-out infinite alternate;
+}
+
+.deco-bracket {
+  animation: drift-x 8s ease-in-out infinite alternate;
+}
+
+.deco-badge {
+  animation: drift-y 6s ease-in-out infinite alternate-reverse;
+}
+
+.deco-binary {
+  animation: drift-y 9s ease-in-out infinite alternate;
+}
+
+.deco-b1 { animation-duration: 9s;  animation-delay: -2s; }
+.deco-b2 { animation-duration: 11s; animation-delay: -5s; }
+.deco-b3 { animation-duration: 7s;  animation-delay: -1s; }
+.deco-b4 { animation-duration: 13s; animation-delay: -3s; }
+
+.deco-code    { animation: drift-x 10s  ease-in-out infinite alternate-reverse; }
+.deco-vr      { animation: drift-y 9s   ease-in-out infinite alternate-reverse; animation-delay: -4s; }
+.deco-terminal{ animation: drift-x 12s  ease-in-out infinite alternate;         animation-delay: -6s; }
+.deco-axes    { animation: drift-y 10s  ease-in-out infinite alternate-reverse; animation-delay: -2s; }
+.deco-git     { animation: drift-x 8s   ease-in-out infinite alternate;         animation-delay: -7s; }
+.deco-fn      { animation: drift-y 9s   ease-in-out infinite alternate;         animation-delay: -3s; }
+.deco-null    { animation: drift-x 13s  ease-in-out infinite alternate-reverse; animation-delay: -5s; }
+
+/* ── Blink dot (available for work) ── */
+.blink-dot {
+  animation: blink 1.4s ease-in-out infinite;
+}
+
+/* ── Skills carousel ── */
+.carousel-track--right {
+  animation: scroll-right 55s linear infinite;
+}
+
+.carousel-track--left {
+  animation: scroll-left 55s linear infinite;
+}
+
+.carousel-row:hover .carousel-track--right,
+.carousel-row:hover .carousel-track--left {
+  animation-play-state: paused;
+}
+
+/* ── Scroll indicator ── */
+.scroll-indicator-arrow {
+  animation: bounce-down 1.6s ease-in-out infinite;
+}
+
+/* ── Nav blur (JS adds .scrolled class) ── */
+nav.scrolled {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background-color: rgba(245, 244, 239, 0.85);
+  box-shadow: 0 1px 0 var(--border);
+}
+
+/* ── GSAP initial states — elements start hidden ── */
+.gsap-hero-char {
+  opacity: 0;
+  transform: translateY(60px);
+  display: inline-block;
+}
+
+/* Hero subtitle, tagline, scroll indicator — GSAP reveals on load */
+.hero-subtitle,
+.hero-tagline,
+.scroll-indicator {
+  opacity: 0;
+}
+
+/* Hero title hides before JS splits it, preventing FOUC */
+.hero-title {
+  opacity: 0;
+  transition: none;
+}
+
+/* Once JS runs it removes this class and works per-char */
+.hero-title.chars-ready {
+  opacity: 1;
+}
+
+/* gsap-fade-up / gsap-clip-reveal: NOT pre-hidden.
+   GSAP uses fromTo() so content shows even if JS is slow/fails. */
+.gsap-fade-up    { }
+.gsap-fade-up-sm { }
+.gsap-clip-reveal { }
+
+/* ── Card initial fan state transforms set by JS ── */
+.project-card {
+  transition: box-shadow 0.3s ease, transform 0.15s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* ── Media placeholder ── */
+.media-placeholder {
+  border: 2px dashed var(--navy);
+  border-radius: var(--radius-md);
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  background: transparent;
+}

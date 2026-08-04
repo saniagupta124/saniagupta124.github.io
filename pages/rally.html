@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rally — Sania Gupta</title>
+  <meta name="description" content="Rally — in-client fan-engagement system, designed for Riot Games.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/animations.css">
+
+  <style>
+    body { background: var(--bg); }
+    /* Darkest color sampled from rallyhome.png */
+    .project-hero { background: #372F27; }
+  </style>
+</head>
+<body>
+
+<div id="cursor-dot"  aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+
+<nav class="page-nav" id="page-nav" aria-label="Page navigation">
+  <a href="../index.html#projects" class="back-link">← WORK</a>
+  <a href="../index.html" class="nav-monogram">SG</a>
+</nav>
+
+<header class="project-hero" aria-label="Rally project header">
+  <img class="project-hero-img is-blur" src="../files/rallyhome.png" alt="" aria-hidden="true">
+  <img class="project-hero-img" src="../files/rallyhome.png" alt="Rally concept UI">
+
+  <div class="card-pills" style="margin-bottom:1.5rem;">
+    <span class="pill">React/TypeScript</span>
+    <span class="pill">Pixi.js</span>
+    <span class="pill">Node.js</span>
+    <span class="pill">PostgreSQL</span>
+    <span class="pill">Redis</span>
+    <span class="pill">Riot CEF</span>
+    <span class="pill">Riot APIs</span>
+  </div>
+
+  <h1 class="project-hero-title">Rally</h1>
+  <p class="project-hook">
+    Designed an algorithm-matched, story-driven esports engagement system — architected
+    end-to-end and recognized by Riot Games leadership for technical feasibility.
+  </p>
+</header>
+
+<div class="project-content">
+
+  <div class="project-meta">
+    <div class="project-meta-item">
+      <span class="project-meta-label">Role</span>
+      <span class="project-meta-value">Technical Product Manager / Developer</span>
+    </div>
+    <div class="project-meta-item">
+      <span class="project-meta-label">Team</span>
+      <span class="project-meta-value">3 — TPM/dev (me), PM, designer</span>
+    </div>
+    <div class="project-meta-item">
+      <span class="project-meta-label">Dates</span>
+      <span class="project-meta-value">September – December 2025</span>
+    </div>
+  </div>
+
+  <section class="project-section">
+    <h2 class="project-section-title">The Problem</h2>
+    <p>
+      Riot Esports' mid-season lull has no story-driven way for fans to connect personally with
+      pro players between splits. Existing in-client seasonal gaming events — Spirit Blossom,
+      Star Guardian — proved the format works for skins, but nothing applied it to esports
+      fandom itself.
+    </p>
+  </section>
+
+  <section class="project-section">
+    <h2 class="project-section-title">What I Built</h2>
+    <ul class="highlight-list">
+      <li>
+        A <strong>personality- and playstyle-based matching algorithm</strong> pairing fans with
+        pro players and teams.
+      </li>
+      <li>
+        An in-client <strong>visual-novel-style narrative layer</strong> with branching dialogue.
+      </li>
+      <li>
+        Quests that unlock through <strong>real in-game actions</strong> — tracked via Riot's
+        Match History API — with rewards issued through the existing cosmetics pipeline.
+      </li>
+      <li>
+        The <strong>full system architecture</strong>: client UI (React/TypeScript/Pixi.js over
+        Riot's CEF), backend (Node.js/PostgreSQL/Redis), and integration with Riot's SSO,
+        telemetry, and reward services.
+      </li>
+    </ul>
+  </section>
+
+  <section class="project-section">
+    <h2 class="project-section-title">Outcome &amp; Impact</h2>
+    <p>
+      Recognized by Riot Games leadership as the <strong>strongest submission for technical
+      feasibility and user impact</strong>, with features recommended for implementation.
+    </p>
+  </section>
+
+</div>
+
+<!-- ── Media gallery ── -->
+<div class="media-grid media-grid--triple" aria-label="Rally media">
+  <div class="media-item media-item--wide video-wrap">
+    <video src="../files/rallymov.mp4" muted loop playsinline preload="metadata" aria-label="Rally prototype walkthrough"></video>
+  </div>
+  <div class="media-item media-item--portrait">
+    <img src="../files/rallypres.jpeg" alt="Presenting Rally at Riot Games" loading="lazy">
+  </div>
+  <div class="media-item media-item--portrait">
+    <img src="../files/rallyteam.jpeg" alt="The Rally team" loading="lazy">
+  </div>
+  <div class="media-item media-item--portrait">
+    <img src="../files/riotgroup.jpeg" alt="Riot Games internship cohort" loading="lazy">
+  </div>
+</div>
+
+<div class="next-project-bar">
+  <span>Next Project</span>
+  <a href="swarmlight.html" class="next-project-link">SwarmLight <span aria-hidden="true">→</span></a>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script type="module">
+  import { initScroll } from '../js/scroll.js';
+  import { initProjectMedia } from '../js/project-media.js';
+  gsap.registerPlugin(ScrollTrigger);
+  initScroll();
+  initProjectMedia();
+
+  const nav = document.getElementById('page-nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 30), { passive: true });
+
+  const dot = document.getElementById('cursor-dot');
+  const ring = document.getElementById('cursor-ring');
+  document.addEventListener('mousemove', e => {
+    dot.style.left = ring.style.left = e.clientX + 'px';
+    dot.style.top  = ring.style.top  = e.clientY + 'px';
+  });
+  document.addEventListener('mouseover', e => {
+    if (e.target.closest('a,button,.video-wrap')) document.body.classList.add('cursor-hover');
+  });
+  document.addEventListener('mouseout', e => {
+    if (e.target.closest('a,button,.video-wrap')) document.body.classList.remove('cursor-hover');
+  });
+
+  gsap.from('body', { opacity: 0, duration: 0.5, ease: 'power2.out' });
+</script>
+</body>
+</html>
