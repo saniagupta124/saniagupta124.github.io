@@ -130,51 +130,43 @@ export function initHeroAnimations() {
       trigger: '#hero',
       start:   'top top',
       end:     'bottom bottom',
-      scrub:   1, /* slight lag for feel, without leaving ghosts on nav jumps */
+      scrub:   2.5, /* slower feel — animation lags behind scroll more */
     },
     defaults: { ease: 'none' },
   });
 
   tl
-    /* Hero text and decos fade over the first half of the scroll range;
-       the empty padding tween extends the timeline so these fades don't
-       stretch across the whole range. */
-    .to('.hero-content', { opacity:0, y:-45 }, 0)
-    .to('.hero-decos',   { opacity:0 },        0)
-    .to({},              { duration: 0.5 },    0.5);
+    /* Hero text and decos fade by 35% of scroll range */
+    .to('.hero-content',      { opacity:0, y:-45 },               0)
+    .to('.hero-decos',        { opacity:0 },                      0)
+    /* Tint clears from 10% to 55% */
+    .to('#hero-tint',         { opacity:0 },                    '10%')
+    /* Projects label + view toggle + resume button: come in at 55% */
+    .to('.projects-reveal',   { opacity:1, pointerEvents:'auto' },'55%')
+    .to('.view-toggle',       { opacity:1, pointerEvents:'auto' },'55%')
+    .to('.cards-resume-link', { opacity:1, pointerEvents:'auto' },'55%');
 
-  /* Tint + blur overlay gets its own lag-free trigger, fully transparent by
-     ~101vh — comfortably before the nav "Projects" landing point (125vh),
-     so no fade ever covers the cards there. */
-  gsap.to('#hero-tint', {
-    opacity: 0,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: '#hero',
-      start: '5% top',   /* 12vh  */
-      end:   '42% top',  /* 101vh */
-      scrub: true,
-    },
+  /* ── Nav-jump snap ──
+     The 2.5s scrub lag feels right for manual scrolling, but when a nav
+     link jumps to #projects it would leave the fades mid-transition on
+     arrival. While the programmatic scroll is in flight, force the scrub
+     tween to complete each frame (zero lag), so the moment the scroll
+     lands, the fade state is exactly final — no lingering overlay. */
+  function snapScrubDuringNavScroll() {
+    let idleFrames = 0;
+    let lastY = -1;
+    (function step() {
+      const scrubTween = tl.scrollTrigger && tl.scrollTrigger.getTween();
+      if (scrubTween) scrubTween.progress(1);
+      idleFrames = Math.abs(window.scrollY - lastY) < 1 ? idleFrames + 1 : 0;
+      lastY = window.scrollY;
+      if (idleFrames < 10) requestAnimationFrame(step);
+    })();
+  }
+
+  document.querySelectorAll('a[href="#projects"]').forEach(link => {
+    link.addEventListener('click', snapScrubDuringNavScroll);
   });
-
-  /* Projects label + view toggle + resume button get their own trigger with
-     scrub:true (no smoothing lag) that completes at 120vh — before the nav
-     "Projects" landing point (125vh). On the lagged main timeline, a nav
-     jump would land with the title still mid-fade (gray) for ~2.5s. */
-  const revealTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: '#hero',
-      start: '30% top',  /* 72vh  */
-      end:   '50% top',  /* 120vh */
-      scrub: true,
-    },
-    defaults: { ease: 'none' },
-  });
-
-  revealTl
-    .to('.projects-reveal',   { opacity:1, pointerEvents:'auto' }, 0)
-    .to('.view-toggle',       { opacity:1, pointerEvents:'auto' }, 0)
-    .to('.cards-resume-link', { opacity:1, pointerEvents:'auto' }, 0);
 
   /* Scroll indicator ("PROJECTS ↓") — hard show/hide, not a scrubbed fade.
      Any scroll past ~5vh of the hero hides it (visibility:hidden via
